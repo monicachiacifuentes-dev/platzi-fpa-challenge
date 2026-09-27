@@ -1,0 +1,69 @@
+segment,lever,scenario,cac,gm_pct,lifetime_months,ltv,ltv_cac,cac_payback_months
+B2C,cac_period,T16M,405.24,0.2931,15.92,196.94,0.49,32.8
+B2C,cac_period,T6M (base),392.22,0.2931,15.92,196.94,0.5,31.7
+B2C,gm_allocation,"base (all COGS by MRR share, neutral)",392.22,0.2931,15.92,196.94,0.5,31.7
+B2C,gm_allocation,downside sensitivity (CS/Infra by customers),392.22,-0.3701,15.92,-248.72,-0.63,-25.1
+B2C,gna_pct_allocated,0% of G&A (T6M),345.32,0.2931,15.92,196.94,0.57,27.9
+B2C,gna_pct_allocated,25% of G&A (T6M),368.31,0.2931,15.92,196.94,0.53,29.8
+B2C,gna_pct_allocated,50% of G&A (T6M),391.3,0.2931,15.92,196.94,0.5,31.6
+B2C,gna_split_method,base_by_marketing_share (T6M),392.22,0.2931,15.92,196.94,0.5,31.7
+B2C,gna_split_method,sens_by_customer_share (T6M),419.12,0.2931,15.92,196.94,0.47,33.9
+B2C,lifetime_cap,36 months,392.22,0.2931,14.16,175.16,0.45,31.7
+B2C,lifetime_cap,60 months (base),392.22,0.2931,15.92,196.94,0.5,31.7
+B2C,lifetime_cap,uncapped (reference only),392.22,0.2931,16.66,206.09,0.53,31.7
+B2C,retention_curve,base ($ / dollar retention curve),392.22,0.2931,15.92,196.94,0.5,31.7
+B2C,retention_curve,sensitivity (logo survival curve),392.22,0.2931,19.56,241.96,0.62,31.7
+SMB,cac_period,T16M,802.66,0.2931,42.48,2215.26,2.76,15.4
+SMB,cac_period,T6M (base),759.41,0.2931,42.48,2215.26,2.92,14.6
+SMB,gm_allocation,"base (all COGS by MRR share, neutral)",759.41,0.2931,42.48,2215.26,2.92,14.6
+SMB,gm_allocation,downside sensitivity (CS/Infra by customers),759.41,0.4907,42.48,3708.9,4.88,8.7
+SMB,gm_x_lifetime_grid,base GM x 36mo cap,759.41,0.2931,28.85,1504.48,1.98,14.6
+SMB,gm_x_lifetime_grid,base GM x 60mo cap,759.41,0.2931,42.48,2215.26,2.92,14.6
+SMB,gm_x_lifetime_grid,base GM x uncapped,759.41,0.2931,82.15,4283.98,5.64,14.6
+SMB,gm_x_lifetime_grid,downside GM x 36mo cap,759.41,0.4907,28.85,2518.87,3.32,8.7
+SMB,gm_x_lifetime_grid,downside GM x 60mo cap,759.41,0.4907,42.48,3708.9,4.88,8.7
+SMB,gm_x_lifetime_grid,downside GM x uncapped,759.41,0.4907,82.15,7172.45,9.44,8.7
+SMB,gna_pct_allocated,0% of G&A (T6M),668.6,0.2931,42.48,2215.26,3.31,12.8
+SMB,gna_pct_allocated,25% of G&A (T6M),713.12,0.2931,42.48,2215.26,3.11,13.7
+SMB,gna_pct_allocated,50% of G&A (T6M),757.64,0.2931,42.48,2215.26,2.92,14.5
+SMB,gna_split_method,base_by_marketing_share (T6M),759.41,0.2931,42.48,2215.26,2.92,14.6
+SMB,gna_split_method,sens_by_customer_share (T6M),742.4,0.2931,42.48,2215.26,2.98,14.2
+SMB,lifetime_cap,36 months,759.41,0.2931,28.85,1504.48,1.98,14.6
+SMB,lifetime_cap,60 months (base),759.41,0.2931,42.48,2215.26,2.92,14.6
+SMB,lifetime_cap,uncapped (reference only),759.41,0.2931,82.15,4283.98,5.64,14.6
+SMB,retention_curve,base ($ / dollar retention curve),759.41,0.2931,42.48,2215.26,2.92,14.6
+SMB,retention_curve,sensitivity (logo survival curve),759.41,0.2931,41.27,2152.16,2.83,14.6
+Enterprise,cac_period,T16M,5040.39,0.2931,36.94,9177.64,1.82,20.3
+Enterprise,cac_period,T6M (base),4249.0,0.2931,36.94,9177.64,2.16,17.1
+Enterprise,gm_allocation,"base (all COGS by MRR share, neutral)",4249.0,0.2931,36.94,9177.64,2.16,17.1
+Enterprise,gm_allocation,downside sensitivity (CS/Infra by customers),4249.0,0.7024,36.94,21997.32,5.18,7.1
+Enterprise,gm_x_lifetime_grid,base GM x 36mo cap,4249.0,0.2931,26.78,6653.42,1.57,17.1
+Enterprise,gm_x_lifetime_grid,base GM x 60mo cap,4249.0,0.2931,36.94,9177.64,2.16,17.1
+Enterprise,gm_x_lifetime_grid,base GM x uncapped,4249.0,0.2931,55.14,13699.38,3.22,17.1
+Enterprise,gm_x_lifetime_grid,downside GM x 36mo cap,4249.0,0.7024,26.78,15947.16,3.75,7.1
+Enterprise,gm_x_lifetime_grid,downside GM x 60mo cap,4249.0,0.7024,36.94,21997.32,5.18,7.1
+Enterprise,gm_x_lifetime_grid,downside GM x uncapped,4249.0,0.7024,55.14,32835.2,7.73,7.1
+Enterprise,gna_pct_allocated,0% of G&A (T6M),3740.93,0.2931,36.94,9177.64,2.45,15.1
+Enterprise,gna_pct_allocated,25% of G&A (T6M),3990.01,0.2931,36.94,9177.64,2.3,16.1
+Enterprise,gna_pct_allocated,50% of G&A (T6M),4239.09,0.2931,36.94,9177.64,2.17,17.1
+Enterprise,gna_split_method,base_by_marketing_share (T6M),4249.0,0.2931,36.94,9177.64,2.16,17.1
+Enterprise,gna_split_method,sens_by_customer_share (T6M),3814.73,0.2931,36.94,9177.64,2.41,15.4
+Enterprise,lifetime_cap,36 months,4249.0,0.2931,26.78,6653.42,1.57,17.1
+Enterprise,lifetime_cap,60 months (base),4249.0,0.2931,36.94,9177.64,2.16,17.1
+Enterprise,lifetime_cap,uncapped (reference only),4249.0,0.2931,55.14,13699.38,3.22,17.1
+Enterprise,retention_curve,base ($ / dollar retention curve),4249.0,0.2931,36.94,9177.64,2.16,17.1
+Enterprise,retention_curve,sensitivity (logo survival curve),4249.0,0.2931,40.45,10049.69,2.37,17.1
+Total,cac_period,T16M,645.95,0.2931,26.56,799.56,1.24,21.5
+Total,cac_period,T6M (base),617.19,0.2931,26.56,799.56,1.3,20.5
+Total,gm_allocation,"base (all COGS by MRR share, neutral)",617.19,0.2931,26.56,799.56,1.3,20.5
+Total,gm_allocation,downside sensitivity (CS/Infra by customers),617.19,0.2931,26.56,799.56,1.3,20.5
+Total,gna_pct_allocated,0% of G&A (T6M),543.39,0.2931,26.56,799.56,1.47,18.1
+Total,gna_pct_allocated,25% of G&A (T6M),579.57,0.2931,26.56,799.56,1.38,19.3
+Total,gna_pct_allocated,50% of G&A (T6M),615.75,0.2931,26.56,799.56,1.3,20.5
+Total,gna_split_method,base_by_marketing_share (T6M),617.19,0.2931,26.56,799.56,1.3,20.5
+Total,gna_split_method,sens_by_customer_share (T6M),617.19,0.2931,26.56,799.56,1.3,20.5
+Total,lifetime_cap,36 months,617.19,0.2931,21.15,636.7,1.03,20.5
+Total,lifetime_cap,60 months (base),617.19,0.2931,26.56,799.56,1.3,20.5
+Total,lifetime_cap,uncapped (reference only),617.19,0.2931,31.26,941.05,1.52,20.5
+Total,retention_curve,base ($ / dollar retention curve),617.19,0.2931,26.56,799.56,1.3,20.5
+Total,retention_curve,sensitivity (logo survival curve),617.19,0.2931,21.68,652.65,1.06,20.5

@@ -1,0 +1,18 @@
+# Python environment & caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Databases (rebuilt by `python sql/run_pipeline.py`)
+*.duckdb
+*.duckdb.wal
+
+# Raw challenge materials provided by Platzi: not redistributed.
+# Place the 7 CSVs + the brief PDF in Docs/Originals/ to rerun the pipeline.
+Docs/Originals/
+
+# Local-only files
+.claude/
+CLAUDE.md
+*.log

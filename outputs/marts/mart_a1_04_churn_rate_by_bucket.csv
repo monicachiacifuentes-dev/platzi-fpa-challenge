@@ -1,0 +1,48 @@
+dimension,bucket,sort_order,n,churned,churn_rate
+active_days,0-5,1,612,311,0.5081699346405228
+active_days,6-10,2,1957,322,0.16453755748594787
+active_days,11-15,3,1906,121,0.06348373557187828
+active_days,16-20,4,1761,0,0.0
+active_days,21-25,5,1489,0,0.0
+active_days,26-28,6,17,0,0.0
+courses_seen,0-2,1,1153,559,0.48482220294882916
+courses_seen,3-5,2,2127,195,0.09167842031029619
+courses_seen,6-8,3,1831,0,0.0
+courses_seen,9-11,4,1866,0,0.0
+courses_seen,12+,5,765,0,0.0
+favorite_category,English,1,631,48,0.07606973058637084
+favorite_category,Startup,1,641,69,0.10764430577223089
+favorite_category,Marketing,1,648,71,0.1095679012345679
+favorite_category,Product Management,1,689,57,0.08272859216255443
+favorite_category,Cloud Computing,1,648,77,0.11882716049382716
+favorite_category,AI & Machine Learning,1,626,63,0.10063897763578275
+favorite_category,Leadership,1,680,64,0.09411764705882353
+favorite_category,Software Development,1,615,66,0.1073170731707317
+favorite_category,Design,1,625,58,0.0928
+favorite_category,DevOps,1,648,60,0.09259259259259259
+favorite_category,Business,1,661,64,0.09682299546142209
+favorite_category,Data Science,1,630,57,0.09047619047619047
+main_gateway,PayPal,1,1962,171,0.0871559633027523
+main_gateway,Wire Transfer,1,30,3,0.1
+main_gateway,Payoneer,1,685,69,0.10072992700729927
+main_gateway,MercadoPago,1,2264,215,0.09496466431095406
+main_gateway,Stripe,1,2801,296,0.10567654409139593
+materials_seen,0-9,1,934,674,0.721627408993576
+materials_seen,10-19,2,1498,80,0.0534045393858478
+materials_seen,20-29,3,1384,0,0.0
+materials_seen,30-49,4,2830,0,0.0
+materials_seen,50+,5,1096,0,0.0
+plan_type,monthly,1,7587,748,0.09858969289574272
+plan_type,annual,2,155,6,0.03870967741935484
+renewal_change_at_prev_renewal,no_prior_renewal,1,1715,137,0.07988338192419825
+renewal_change_at_prev_renewal,contraction,2,27,2,0.07407407407407407
+renewal_change_at_prev_renewal,flat,3,5884,609,0.10350101971447995
+renewal_change_at_prev_renewal,expansion,4,116,6,0.05172413793103448
+segment,B2C,1,6815,689,0.10110051357300073
+segment,SMB,2,843,58,0.06880189798339265
+segment,Enterprise,3,84,7,0.08333333333333333
+tenure_periods,1,1,1715,137,0.07988338192419825
+tenure_periods,2,2,1300,147,0.11307692307692307
+tenure_periods,3,3,1039,112,0.10779595765158806
+tenure_periods,4-6,4,2086,200,0.09587727708533078
+tenure_periods,7+,5,1602,158,0.0986267166042447

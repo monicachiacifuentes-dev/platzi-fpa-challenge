@@ -1,0 +1,10 @@
+segment,pct_change_bin,n_events
+B2C,4_0% (flat),5803
+Enterprise,2_-20% to -5%,3
+Enterprise,4_0% (flat),64
+Enterprise,6_5% to 20%,6
+Enterprise,7_>=20%,2
+SMB,2_-20% to -5%,26
+SMB,4_0% (flat),602
+SMB,6_5% to 20%,101
+SMB,7_>=20%,28

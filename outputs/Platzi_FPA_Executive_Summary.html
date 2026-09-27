@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platzi FP&amp;A Review</title>
+<style>
+  :root {
+    --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+    --rule: #e1e0d9; --accent: #2a78d6; --accent-soft: #eef4fc; --warn-soft: #fdf1ec;
+  }
+  @page { size: Letter; margin: 0.45in 0.5in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink);
+         font: 9.1pt/1.38 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  .page { max-width: 7.5in; margin: 0 auto; }
+  h1 { font-size: 16pt; line-height: 1.2; margin: 0 0 2px; }
+  h2 { font-size: 10.5pt; margin: 12px 0 5px; padding-bottom: 2px; border-bottom: 1px solid var(--rule); }
+  p { margin: 0 0 6px; }
+  .meta { color: var(--ink2); font-size: 8.3pt; margin-bottom: 8px; }
+  .bottomline { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 7px 10px; margin-bottom: 8px; }
+  .bottomline ul { margin: 3px 0 0; padding-left: 16px; }
+  .bottomline li { margin-bottom: 2px; }
+  .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 6px 0 4px; }
+  .kpi { border: 1px solid var(--rule); border-radius: 6px; padding: 5px 7px; }
+  .kpi .v { font-size: 14pt; font-weight: 700; line-height: 1.1; }
+  .kpi .l { font-size: 7.6pt; color: var(--ink2); }
+  table { width: 100%; border-collapse: collapse; font-size: 8.4pt; margin: 2px 0 6px; }
+  th, td { text-align: left; padding: 3px 5px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--ink2); font-weight: 600; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; margin: 4px 0; }
+  .charts img { width: 100%; display: block; }
+  .find { margin-bottom: 6px; }
+  .find b.t { display: block; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .small { font-size: 7.9pt; color: var(--ink2); }
+  .small ul { margin: 2px 0; padding-left: 14px; }
+  .caveat { background: var(--warn-soft); padding: 5px 8px; border-radius: 4px; }
+  .pb { break-before: page; }
+  ul.tight { margin: 2px 0 6px; padding-left: 16px; }
+  ul.tight li { margin-bottom: 2px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Platzi: fast growth, but B2C retention decides whether it's profitable</h1>
+<div class="meta">FP&amp;A review for the CEO &amp; CFO · Data: Jan 2023 – Apr 2024 (16 months, simulated datasets) · Prepared by [Candidate name]</div>
+
+<div class="bottomline">
+  <b>Bottom line</b>
+  <ul>
+    <li><b>Growth is real and margins are scaling.</b> MRR reached <b>$204.7k</b> (×5.9 in 12 months) and gross margin turned from negative to <b>41%</b> as revenue outgrew the cost base.</li>
+    <li><b>B2B is the economic engine; B2C loses money on every paid acquisition.</b> SMB and Enterprise earn 3–4× their acquisition cost at today's margin. B2C earns back only 0.5–0.7×.</li>
+    <li><b>Churn is the leak, and it's visible before it happens.</b> Customers who barely use the product in a billing period are the ones who leave. A mid-cycle alert-and-save program is the fastest, cheapest lever (+$7.7k MRR in 6 months).</li>
+  </ul>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">$204.7k</div><div class="l">MRR, Apr-24</div></div>
+  <div class="kpi"><div class="v">1,941</div><div class="l">Active subscribers</div></div>
+  <div class="kpi"><div class="v">90.1%</div><div class="l">Q1-24 renewal rate (B2C 89.6% · B2B 93.8%)</div></div>
+  <div class="kpi"><div class="v">63.7%</div><div class="l">NDR, trailing 12 mo (81.6% trailing 6 mo)</div></div>
+  <div class="kpi"><div class="v">41%</div><div class="l">Gross margin, Apr-24 (29% 6-mo avg)</div></div>
+</div>
+
+<h2>Answers to the four questions</h2>
+<table>
+  <tr><th style="width:23%">Question</th><th>Answer</th><th style="width:30%">How it's measured</th></tr>
+  <tr><td>1. MRR, April 2024</td><td><b>$204,709</b>: B2C $64,365 (31%) · SMB $53,869 (26%) · Enterprise $86,475 (42%)</td><td>Sum of the monthly-normalized MRR of subscriptions active on 30-Apr-24 (annual plans ÷ 12)</td></tr>
+  <tr><td>2. Q1-24 retention</td><td><b>90.1%</b> of renewals renewed. B2C <b>89.6%</b> vs. B2B <b>93.8%</b> (SMB 93.8%, Ent 93.9%). In $: 92.2% · 89.5% · 95.2%</td><td>Subscriptions whose period ended Jan–Mar 24: renewed ÷ (renewed + churned)</td></tr>
+  <tr><td>3. Active subscribers, Apr-24</td><td><b>1,941</b>: B2C 844 monthly / 692 annual · SMB 113 / 190 · Enterprise 12 / 90</td><td>Subscription period covers 30-Apr-24</td></tr>
+  <tr><td>4. NDR, trailing 12 months</td><td><b>63.7%</b> (gross retention 59.9%). B2C 43.1% · SMB 89.8% · Enterprise 71.8%</td><td>MRR in Apr-24 ÷ MRR in Apr-23 of the 417 customers active in Apr-23. A small, early base; on 6 months (1,124 customers): 81.6%</td></tr>
+</table>
+
+<div class="charts">
+  <img src="charts/c1_mrr_by_segment.png" alt="Stacked bars of monthly MRR by segment from Jan-23 to Apr-24, rising to $204.7k; Enterprise is the largest segment">
+  <img src="charts/c4_ltv_cac.png" alt="LTV to CAC by segment: B2C 0.5 to 0.7 times, SMB 2.9 to 4.1 times, Enterprise 2.2 to 3.0 times, against a 3 times benchmark">
+</div>
+
+<h2>What the numbers say</h2>
+<div class="find"><b class="t">1 · B2B carries the business, and SMB is the growth engine.</b>
+B2B is 69% of MRR from 21% of subscribers. At today's 41% margin, SMB returns <b>4.1×</b> its fully loaded acquisition cost (payback ≈ 10 months) and Enterprise <b>3.0×</b> (≈ 12 months). SMB also generates <b>4× more expansion revenue</b> than Enterprise. Contraction is negligible (&lt; 1.2% of starting MRR); churn is what drags NDR.</div>
+<div class="find"><b class="t">2 · Paid B2C acquisition doesn't pay back today.</b>
+B2C takes 52% of the marketing budget ($790k of $1.52M). It costs <b>$392</b> to win a paying B2C customer, who generates ≈ <b>$200–280</b> of gross profit over their life. Marketing's "new users" are sign-ups: only ~10% become paying subscribers, so the $37 cost per sign-up looks deceptively cheap. B2C monthly subscribers churn ≈ 10% a month, and no subscriber has ever switched to the stickier annual plan.</div>
+
+<div class="pb"></div>
+<div class="charts">
+  <img src="charts/c3_churn_by_engagement.png" alt="Churn rate by active days in the billing period: 100% at 1-3 days, 24% at 4-6, 16% at 7-9, 15% at 10-12, 0% at 13 or more">
+  <img src="charts/c2_scenarios.png" alt="Actual MRR to Apr-24 and 12-month projection: bear $320k, base $354k, bull $452k by Apr-25">
+</div>
+
+<div class="find"><b class="t">3 · Churn is predictable, but only within the billing period.</b>
+Periods with ≤ 3 active days all churned; periods with 13+ days never did (the simulated data makes this sharper than reality will be). Last month's usage does <i>not</i> predict this month's churn, so the signal has to be acted on <b>mid-cycle</b>. Of the <b>1,024</b> subscriptions renewing in May-24 ($87.8k MRR), <b>72 are high-risk</b>; the named list is ready for Customer Success.</div>
+<div class="find"><b class="t">4 · Operating leverage is kicking in.</b>
+Revenue grew 29× from Jan-23 to Apr-24 while delivery costs grew 1.7×, lifting gross margin from deeply negative to 41%. Each dollar of retained MRR now largely drops to gross profit, which makes retention the highest-return use of the next dollar.</div>
+
+<h2>Recommendations (ranked by effort vs. impact)</h2>
+<table>
+  <tr><th>Initiative</th><th class="n">MRR in 6 mo</th><th class="n">NDR</th><th>Effort · time</th><th>Why</th></tr>
+  <tr><td><b>1. Mid-cycle low-engagement alert + save play</b>: flag subs with low usage by day 10–15; in-app nudges for B2C, a CSM call for B2B. Start with the May-24 list.</td><td class="n"><b>+$7.7k</b><br>(+2.7%)</td><td class="n">+2.7 pp</td><td>Low · 1 month</td><td>Rule-based, uses data we already have. Assumes 20% of flagged churners are saved (range 10–30% → +$3.8k to +$11.8k).</td></tr>
+  <tr><td><b>2. B2B expansion &amp; renewal playbook</b>: quarterly business reviews for SMB seat growth; a save motion at Enterprise's 2nd renewal, where its contraction concentrates.</td><td class="n">+$1.6k<br>(+0.6%)</td><td class="n">+0.6 pp</td><td>Medium · 3 months</td><td>Compounds the segment with the best unit economics; no downside.</td></tr>
+  <tr><td><b>3. B2C monthly → annual offer</b>: a prepaid annual plan pitched to engaged monthly users.</td><td class="n">−$0.8k<br>(−0.3%)</td><td class="n">−0.2 pp<br>(+0.8 at 12 mo)</td><td>Medium · breakeven ~9 mo</td><td>Annual churn is ~4%/yr vs. ~10%/mo monthly, but each switch cuts MRR from $49 to $33. Brings ≈ $72k cash upfront in 6 months. Launch after #1.</td></tr>
+</table>
+<p><b>Capital allocation:</b> hold B2C paid acquisition flat until conversion and retention improve (target LTV:CAC ≥ 3×), and redirect incremental budget to SMB, the segment with the best return and the fastest expansion.</p>
+
+<h2>12-month outlook (to Apr-25)</h2>
+<p><b>Base: $354k MRR (+73%), 3,119 subscribers</b>, assuming acquisition stays flat at the last-6-month average and churn continues at recent rates (a prudent case). <b>Bear: $320k</b> (higher churn, flat-to-lower acquisition, half the expansion). <b>Bull: $452k</b> (acquisition keeps trending up and all three initiatives deliver). When back-tested on the last 6 months, the model's average error was about 10% of actual MRR (it under-forecast, because growth accelerated).</p>
+
+<div class="two">
+  <div class="small caveat"><b>Key assumptions &amp; caveats</b>
+    <ul>
+      <li>MRR comes from subscriptions; payment amounts are list prices and don't reflect B2B price changes.</li>
+      <li>CAC = marketing + sales spend + a share of G&amp;A, ÷ new <i>paying</i> customers (not sign-ups).</li>
+      <li>Delivery costs (CS, infrastructure, content) are allocated by MRR share, so all segments get the same margin %. LTV is capped at 60 months.</li>
+      <li>12-month NDR rests on 417 early customers (12 Enterprise); the 6-month view is more robust.</li>
+      <li>Each user = one customer: B2B company domains mix segments, so accounts can't be rebuilt.</li>
+    </ul>
+  </div>
+  <div class="small"><b>Next steps</b>
+    <ul>
+      <li>Pilot the engagement alert on the May-24 list; measure the save rate against a holdout group.</li>
+      <li>A/B test the annual offer (price point and timing) before a full rollout.</li>
+      <li>Add seat and account IDs for B2B, and channel attribution for paying customers, to sharpen CAC and expansion analysis.</li>
+      <li>Model, SQL and dashboards: see the accompanying files. Every number here is reproducible from the SQL pipeline.</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

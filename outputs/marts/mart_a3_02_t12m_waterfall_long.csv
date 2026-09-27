@@ -1,0 +1,26 @@
+segment,step,step_order,amount
+B2B,Start MRR,1,19301.54
+B2B,Churn,2,-4976.57
+B2B,Contraction,3,-168.42
+B2B,Expansion,4,1329.43
+B2B,End MRR,5,15485.980000000003
+B2C,Start MRR,1,15470.0
+B2C,Churn,2,-8806.0
+B2C,Contraction,3,-0.0
+B2C,Expansion,4,0.0
+B2C,End MRR,5,6664.0
+Enterprise,Start MRR,1,10230.0
+Enterprise,Churn,2,-2805.0
+Enterprise,Contraction,3,-127.63999999999999
+Enterprise,Expansion,4,42.629999999999995
+Enterprise,End MRR,5,7339.99
+SMB,Start MRR,1,9071.54
+SMB,Churn,2,-2171.57
+SMB,Contraction,3,-40.78
+SMB,Expansion,4,1286.8
+SMB,End MRR,5,8145.990000000002
+Total,Start MRR,1,34771.539999999964
+Total,Churn,2,-13782.57
+Total,Contraction,3,-168.42
+Total,Expansion,4,1329.43
+Total,End MRR,5,22149.979999999992

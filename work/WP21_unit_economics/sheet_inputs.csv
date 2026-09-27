@@ -1,0 +1,100 @@
+id,name,value,unit,source,note
+A2-001,D-06: CAC denominator,new paying customers (users.csv signups),definition,D-06 (approved),"marketing new_users_acquired reported only as a funnel metric, not the CAC denominator"
+A2-002,D-05: G&A allocation formula,marketing / (marketing + support costs) x total G&A,formula,D-05 (proposed),support costs = CS Salaries + Infrastructure + Content Production (excl. G&A itself)
+A2-003,D-05: G&A segment split (base),by segment share of marketing spend,definition,D-05 (proposed),sensitivity: by share of new customers
+A2-004,"GM allocation (base, revised)",all COGS (CS Salaries + Infrastructure + Content Production) by MRR share,definition,results.md WP21 (lead-analyst review),neutral default with no cost-driver data; forces uniform GM% across segments by construction
+A2-005,GM allocation (downside sensitivity),CS Salaries & Infrastructure by active-customer share; Content by MRR share,definition,results.md WP21,was the base case in the prior draft (-37% B2C GM%); demoted to sensitivity per review
+A2-006,Proposed A-15: survival curve reliability threshold,20,min cohort exposure n per k,mart_a2_11_lifetime.sql,k-points with exposed_n below this are dropped as unreliable/too-censored
+A2-007,Proposed A-16: dollar curve tail fallback,use logo tail churn,rule,mart_a2_11_lifetime.sql,applied when no window shows net dollar decay (net expansion in the tail)
+A2-008,Proposed A-17: dollar curve tail floor,dollar decay >= logo tail churn,rule,mart_a2_11_lifetime.sql,prevents implausible multi-decade LTV when dollar-tail decay is near zero on a small sample (SMB)
+A2-009,Proposed A-18: LTV horizon cap,60 months (base),months,mart_a2_11_lifetime.sql,sensitivity 36 months; uncapped reference also reported
+A2-010,Tail churn estimation window,cascading last3 -> last6 -> full_range average of period-over-period ratios,method,mart_a2_11_lifetime.sql,
+A2-011,ARPA / GM% base window,T6M average (Nov-23..Apr-24),period,mart_a2_08/09,T16M and Apr-24 snapshot also reported
+A2-012,Enterprise payback benchmark,18,months,SaaS benchmark (brief),vs 12 months for B2C/SMB; LTV:CAC benchmark = 3.0x for all segments
+A2-013,Enterprise: marketing spend (T16M),481235.59,USD,mart_a2_02/03,
+A2-014,Enterprise: new signups per marketing (T16M),82,signups,marketing_spend.csv,
+A2-015,"Enterprise: new paying customers (T16M, D-06 base)",109,customers,users.csv / mart_a2_01,
+A2-016,Enterprise: cost per signup (T16M),5868.73,USD/signup,mart_a2_03,
+A2-017,Enterprise: signup->paid conversion (T16M),1.3293,ratio,mart_a2_03,Enterprise > 100%: users.csv (109) > marketing signups (82) -- D-11 caveat
+A2-018,B2C: marketing spend (T16M),789794.31,USD,mart_a2_02/03,
+A2-019,B2C: new signups per marketing (T16M),21573,signups,marketing_spend.csv,
+A2-020,"B2C: new paying customers (T16M, D-06 base)",2225,customers,users.csv / mart_a2_01,
+A2-021,B2C: cost per signup (T16M),36.61,USD/signup,mart_a2_03,
+A2-022,B2C: signup->paid conversion (T16M),0.1031,ratio,mart_a2_03,Enterprise > 100%: users.csv (109) > marketing signups (82) -- D-11 caveat
+A2-023,SMB: marketing spend (T16M),253809.03,USD,mart_a2_02/03,
+A2-024,SMB: new signups per marketing (T16M),695,signups,marketing_spend.csv,
+A2-025,"SMB: new paying customers (T16M, D-06 base)",361,customers,users.csv / mart_a2_01,
+A2-026,SMB: cost per signup (T16M),365.19,USD/signup,mart_a2_03,
+A2-027,SMB: signup->paid conversion (T16M),0.5194,ratio,mart_a2_03,Enterprise > 100%: users.csv (109) > marketing signups (82) -- D-11 caveat
+A2-028,B2C/Organic: cost per signup (T16M),14.47,USD/signup,mart_a2_04,
+A2-029,B2C/Content: cost per signup (T16M),28.9,USD/signup,mart_a2_04,
+A2-030,B2C/Paid Search: cost per signup (T16M),44.64,USD/signup,mart_a2_04,
+A2-031,B2C/Paid Social: cost per signup (T16M),53.15,USD/signup,mart_a2_04,
+A2-032,SMB/Content: cost per signup (T16M),271.19,USD/signup,mart_a2_04,
+A2-033,SMB/Paid Search: cost per signup (T16M),384.47,USD/signup,mart_a2_04,
+A2-034,SMB/Paid Social: cost per signup (T16M),428.74,USD/signup,mart_a2_04,
+A2-035,Acquisition share of G&A (T6M),0.51,ratio,mart_a2_05,
+A2-036,Total G&A pool allocated to acquisition (T6M),95423.0,USD,mart_a2_05,
+A2-037,"B2C: allocated G&A, base (T6M)",49337.69,USD,mart_a2_05,
+A2-038,"SMB: allocated G&A, base (T6M)",16617.36,USD,mart_a2_05,
+A2-039,"Enterprise: allocated G&A, base (T6M)",29467.95,USD,mart_a2_05,
+A2-040,B2C: ARPA (T6M avg),42.21,USD/month,mart_a2_09,
+A2-041,"B2C: GM% base, all-by-MRR (T6M avg)",0.2931,ratio,mart_a2_08,
+A2-042,"B2C: GM% downside sensitivity, customer-weighted (T6M avg)",-0.3701,ratio,mart_a2_08,
+A2-043,B2C: CAC fully loaded (T6M),392.22,USD,mart_a2_06,
+A2-044,B2C: CAC fully loaded (T16M),405.24,USD,mart_a2_06,
+A2-045,B2C: reliable survival curve horizon,15,months,mart_a2_10,exposed_n >= 20
+A2-046,"B2C: lifetime, logo curve (60mo cap)",19.56,months,mart_a2_11,
+A2-047,"B2C: lifetime, dollar curve (60mo cap, base)",15.92,months,mart_a2_11,
+A2-048,"B2C: lifetime, dollar curve (36mo cap)",14.16,months,mart_a2_11,
+A2-049,"B2C: lifetime, dollar curve (uncapped, reference)",16.66,months,mart_a2_11,
+A2-050,"B2C: lifetime cross-check, 1/logo churn",28.44,months,mart_a2_11,
+A2-051,B2C: LTV base (60mo cap),196.94,USD,mart_a2_12,
+A2-052,B2C: LTV:CAC (T6M),0.5,ratio,mart_a2_12,benchmark >= 3.0x
+A2-053,B2C: CAC payback (T6M),31.7,months,mart_a2_12,benchmark <= 12.0
+A2-054,B2C: retention-adjusted payback,,months,mart_a2_12,never (not reached within observed 15-month horizon)
+A2-055,SMB: ARPA (T6M avg),177.94,USD/month,mart_a2_09,
+A2-056,"SMB: GM% base, all-by-MRR (T6M avg)",0.2931,ratio,mart_a2_08,
+A2-057,"SMB: GM% downside sensitivity, customer-weighted (T6M avg)",0.4907,ratio,mart_a2_08,
+A2-058,SMB: CAC fully loaded (T6M),759.41,USD,mart_a2_06,
+A2-059,SMB: CAC fully loaded (T16M),802.66,USD,mart_a2_06,
+A2-060,SMB: reliable survival curve horizon,14,months,mart_a2_10,exposed_n >= 20
+A2-061,"SMB: lifetime, logo curve (60mo cap)",41.27,months,mart_a2_11,
+A2-062,"SMB: lifetime, dollar curve (60mo cap, base)",42.48,months,mart_a2_11,
+A2-063,"SMB: lifetime, dollar curve (36mo cap)",28.85,months,mart_a2_11,
+A2-064,"SMB: lifetime, dollar curve (uncapped, reference)",82.15,months,mart_a2_11,
+A2-065,"SMB: lifetime cross-check, 1/logo churn",81.79,months,mart_a2_11,
+A2-066,SMB: LTV base (60mo cap),2215.26,USD,mart_a2_12,
+A2-067,SMB: LTV:CAC (T6M),2.92,ratio,mart_a2_12,benchmark >= 3.0x
+A2-068,SMB: CAC payback (T6M),14.6,months,mart_a2_12,benchmark <= 12.0
+A2-069,SMB: retention-adjusted payback,,months,mart_a2_12,never (not reached within observed 14-month horizon)
+A2-070,Enterprise: ARPA (T6M avg),847.75,USD/month,mart_a2_09,
+A2-071,"Enterprise: GM% base, all-by-MRR (T6M avg)",0.2931,ratio,mart_a2_08,
+A2-072,"Enterprise: GM% downside sensitivity, customer-weighted (T6M avg)",0.7024,ratio,mart_a2_08,
+A2-073,Enterprise: CAC fully loaded (T6M),4249.0,USD,mart_a2_06,
+A2-074,Enterprise: CAC fully loaded (T16M),5040.39,USD,mart_a2_06,
+A2-075,Enterprise: reliable survival curve horizon,11,months,mart_a2_10,exposed_n >= 20
+A2-076,"Enterprise: lifetime, logo curve (60mo cap)",40.45,months,mart_a2_11,
+A2-077,"Enterprise: lifetime, dollar curve (60mo cap, base)",36.94,months,mart_a2_11,
+A2-078,"Enterprise: lifetime, dollar curve (36mo cap)",26.78,months,mart_a2_11,
+A2-079,"Enterprise: lifetime, dollar curve (uncapped, reference)",55.14,months,mart_a2_11,
+A2-080,"Enterprise: lifetime cross-check, 1/logo churn",71.15,months,mart_a2_11,
+A2-081,Enterprise: LTV base (60mo cap),9177.64,USD,mart_a2_12,
+A2-082,Enterprise: LTV:CAC (T6M),2.16,ratio,mart_a2_12,benchmark >= 3.0x
+A2-083,Enterprise: CAC payback (T6M),17.1,months,mart_a2_12,benchmark <= 18.0
+A2-084,Enterprise: retention-adjusted payback,,months,mart_a2_12,never (not reached within observed 11-month horizon)
+A2-085,Total: ARPA (T6M avg),102.72,USD/month,mart_a2_09,
+A2-086,"Total: GM% base, all-by-MRR (T6M avg)",0.2931,ratio,mart_a2_08,
+A2-087,"Total: GM% downside sensitivity, customer-weighted (T6M avg)",0.2931,ratio,mart_a2_08,
+A2-088,Total: CAC fully loaded (T6M),617.19,USD,mart_a2_06,
+A2-089,Total: CAC fully loaded (T16M),645.95,USD,mart_a2_06,
+A2-090,Total: reliable survival curve horizon,15,months,mart_a2_10,exposed_n >= 20
+A2-091,"Total: lifetime, logo curve (60mo cap)",21.68,months,mart_a2_11,
+A2-092,"Total: lifetime, dollar curve (60mo cap, base)",26.56,months,mart_a2_11,
+A2-093,"Total: lifetime, dollar curve (36mo cap)",21.15,months,mart_a2_11,
+A2-094,"Total: lifetime, dollar curve (uncapped, reference)",31.26,months,mart_a2_11,
+A2-095,"Total: lifetime cross-check, 1/logo churn",31.81,months,mart_a2_11,
+A2-096,Total: LTV base (60mo cap),799.56,USD,mart_a2_12,
+A2-097,Total: LTV:CAC (T6M),1.3,ratio,mart_a2_12,benchmark >= 3.0x
+A2-098,Total: CAC payback (T6M),20.5,months,mart_a2_12,benchmark <= 12.0
+A2-099,Total: retention-adjusted payback,,months,mart_a2_12,never (not reached within observed 15-month horizon)

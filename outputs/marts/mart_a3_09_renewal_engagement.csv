@@ -1,0 +1,8 @@
+segment,renewal_change,n_events,avg_ended_active_days,avg_ended_courses_seen
+B2C,flat,5803,14.55,6.91
+Enterprise,contraction,3,22.0,14.0
+Enterprise,expansion,8,18.25,9.38
+Enterprise,flat,64,20.45,10.98
+SMB,contraction,26,16.65,9.5
+SMB,expansion,129,16.17,8.57
+SMB,flat,602,16.5,8.52

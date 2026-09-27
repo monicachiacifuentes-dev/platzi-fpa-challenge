@@ -1,0 +1,6 @@
+status,plan_type,bucket,n,avg_active_days,avg_courses_seen,avg_materials_seen
+active,monthly,active: 10-20d elapsed,312,14.27,5.74,27.1
+active,monthly,active: 20d+ elapsed,330,13.19,5.69,25.76
+active,monthly,active: <10d elapsed,327,13.44,5.55,25.78
+renewed,monthly,completed,6839,14.82,7.12,32.86
+churned,monthly,completed,748,6.49,1.54,4.83

@@ -1,0 +1,9 @@
+cohort_month,customer_type,plan_type,n,avg_active_days,avg_courses,avg_materials
+2023-02-01,B2B,annual,12,18.33,9.58,47.58
+2023-02-01,B2B,monthly,5,18.2,6.4,32.4
+2023-02-01,B2C,annual,27,13.93,5.78,28.85
+2023-02-01,B2C,monthly,58,15.0,6.74,28.76
+2023-11-01,B2B,annual,18,16.67,7.0,37.44
+2023-11-01,B2B,monthly,15,15.13,6.73,37.27
+2023-11-01,B2C,annual,49,13.55,5.82,25.43
+2023-11-01,B2C,monthly,103,13.58,6.16,27.43

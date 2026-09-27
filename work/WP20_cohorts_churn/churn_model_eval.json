@@ -1,0 +1,53 @@
+{
+  "train_n": 4318,
+  "test_n": 3424,
+  "train_churn_rate": 0.09773043075497916,
+  "test_churn_rate": 0.0969626168224299,
+  "results": {
+    "balanced": {
+      "auc": 0.9996873003008152,
+      "precision_at_50": 0.8623376623376623,
+      "recall_at_50": 1.0,
+      "f1_at_50": 0.9260808926080892,
+      "confusion_matrix": [
+        [
+          3039,
+          53
+        ],
+        [
+          0,
+          332
+        ]
+      ]
+    },
+    "unweighted": {
+      "auc": 0.9996804813042597,
+      "precision_at_50": 0.9452449567723343,
+      "recall_at_50": 0.9879518072289156,
+      "f1_at_50": 0.9661266568483063,
+      "confusion_matrix": [
+        [
+          3073,
+          19
+        ],
+        [
+          4,
+          328
+        ]
+      ]
+    }
+  },
+  "scaler_mean": {
+    "active_days": 14.029874942102825,
+    "courses_seen": 6.508800370541918,
+    "materials_seen": 29.788096340898566,
+    "period_number": 3.5013895321908293
+  },
+  "scaler_std": {
+    "active_days": 6.06761244867727,
+    "courses_seen": 3.5310167243215504,
+    "materials_seen": 16.37717706767147,
+    "period_number": 2.3722326293407354
+  },
+  "chosen_model": "balanced"
+}

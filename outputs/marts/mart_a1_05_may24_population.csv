@@ -1,0 +1,1025 @@
+subscription_id,user_id,segment,customer_type,plan_type,start_date,end_date,mrr,prev_mrr,mrr_delta,active_days,courses_seen,materials_seen,favorite_category,period_number,main_gateway,renewal_change_bucket
+S07762,U01468,B2C,B2C,annual,2023-05-23,2024-05-22,33.25,,,17,3,24,DevOps,1,Stripe,no_prior_renewal
+S07823,U01480,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,5,10,5,English,12,MercadoPago,flat
+S07981,U01508,B2C,B2C,annual,2023-05-03,2024-05-02,33.25,,,8,8,26,AI & Machine Learning,1,MercadoPago,no_prior_renewal
+S08179,U01543,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,16,7,39,Software Development,12,MercadoPago,flat
+S08273,U01561,SMB,B2B,annual,2023-05-31,2024-05-30,149.92,,,14,2,10,Startup,1,Stripe,no_prior_renewal
+S08348,U01575,SMB,B2B,annual,2023-05-30,2024-05-29,149.92,,,22,6,21,DevOps,1,PayPal,no_prior_renewal
+S08379,U01585,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,18,8,31,Marketing,11,MercadoPago,flat
+S08629,U01635,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,16,9,16,DevOps,11,MercadoPago,flat
+S09381,U01782,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,10,8,41,Startup,10,MercadoPago,flat
+S09920,U01893,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,21,4,23,Startup,9,Payoneer,flat
+S10034,U01916,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,6,5,9,Cloud Computing,10,PayPal,flat
+S10345,U01982,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,16,10,38,Data Science,9,PayPal,flat
+S10572,U02044,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,17,4,28,DevOps,8,Stripe,flat
+S10806,U02097,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,18,3,5,AI & Machine Learning,8,Stripe,flat
+S10851,U02112,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,14,3,14,Software Development,9,MercadoPago,flat
+S10879,U02118,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,7,1,15,AI & Machine Learning,8,Stripe,flat
+S11075,U02161,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,22,10,41,Cloud Computing,8,MercadoPago,flat
+S11717,U02343,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,14,1,43,Software Development,7,Stripe,flat
+S11810,U02368,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,5,6,19,Software Development,7,MercadoPago,flat
+S11988,U02429,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,11,6,5,Marketing,6,MercadoPago,flat
+S12104,U02459,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,7,7,41,Data Science,6,MercadoPago,flat
+S12317,U02517,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,8,5,25,Data Science,6,MercadoPago,flat
+S12335,U02520,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,6,7,25,English,6,MercadoPago,flat
+S12884,U02708,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,21,3,18,Design,5,Stripe,flat
+S12912,U02716,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,20,6,29,Business,5,MercadoPago,flat
+S13021,U02755,SMB,B2B,monthly,2024-04-07,2024-05-07,273.77,223.41,50.359999999999985,17,10,50,Business,5,PayPal,expansion
+S13052,U02764,SMB,B2B,monthly,2024-04-01,2024-05-01,199.0,199.0,0.0,14,5,22,AI & Machine Learning,5,Stripe,flat
+S13103,U02791,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,18,3,17,Product Management,4,PayPal,flat
+S13316,U02873,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,8,1,40,AI & Machine Learning,4,MercadoPago,flat
+S13346,U02884,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,12,4,19,DevOps,4,MercadoPago,flat
+S13364,U02894,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,21,10,16,Product Management,4,Stripe,flat
+S13394,U02904,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,9,7,20,English,4,Stripe,flat
+S13423,U02913,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,6,9,31,Startup,4,Payoneer,flat
+S13521,U02954,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,9,1,27,Software Development,4,PayPal,flat
+S13836,U03102,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,19,7,37,Marketing,3,PayPal,flat
+S13851,U03109,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,10,3,30,Startup,3,MercadoPago,flat
+S13967,U03166,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,9,6,34,Product Management,3,MercadoPago,flat
+S14101,U03242,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,16,7,26,Business,2,PayPal,flat
+S14133,U03262,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,9,5,37,Startup,2,Payoneer,flat
+S14167,U03284,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,8,9,33,Software Development,2,PayPal,flat
+S14189,U03296,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,14,5,14,Software Development,2,MercadoPago,flat
+S14225,U03319,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,17,5,17,Design,2,Stripe,flat
+S14243,U03331,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,16,2,30,Software Development,2,MercadoPago,flat
+S14275,U03351,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,16,6,36,AI & Machine Learning,2,PayPal,flat
+S14420,U03437,SMB,B2B,monthly,2024-04-24,2024-05-24,217.77,199.0,18.77000000000001,25,5,49,Startup,2,PayPal,expansion
+S14495,U03507,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,8,9,38,Leadership,1,Stripe,no_prior_renewal
+S14501,U03513,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,,,20,7,42,AI & Machine Learning,1,Stripe,no_prior_renewal
+S14505,U03517,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,,,9,1,34,Leadership,1,Payoneer,no_prior_renewal
+S14527,U03539,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,,,14,10,33,Design,1,Stripe,no_prior_renewal
+S14531,U03543,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,,,15,8,26,Business,1,Stripe,no_prior_renewal
+S14533,U03545,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,,,7,7,42,Startup,1,MercadoPago,no_prior_renewal
+S14536,U03548,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,,,21,2,30,English,1,PayPal,no_prior_renewal
+S14549,U03561,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,7,3,11,Cloud Computing,1,MercadoPago,no_prior_renewal
+S14573,U03585,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,,,11,1,23,English,1,Stripe,no_prior_renewal
+S14605,U03617,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,,,6,4,23,Leadership,1,PayPal,no_prior_renewal
+S14617,U03629,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,,,18,1,22,AI & Machine Learning,1,MercadoPago,no_prior_renewal
+S14634,U03646,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,20,4,6,DevOps,1,PayPal,no_prior_renewal
+S05879,U01154,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,13,5,8,Business,15,Stripe,flat
+S06631,U01273,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,17,6,18,Startup,14,PayPal,flat
+S06891,U01315,SMB,B2B,monthly,2024-04-25,2024-05-25,265.48,265.48,0.0,9,5,38,DevOps,15,PayPal,flat
+S06923,U01319,SMB,B2B,monthly,2024-04-17,2024-05-17,232.55,199.95,32.60000000000002,18,12,28,Business,14,Stripe,expansion
+S07057,U01346,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,21,10,40,Design,14,Stripe,flat
+S07282,U01379,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,16,5,26,Startup,13,Stripe,flat
+S07397,U01394,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,20,1,37,Product Management,13,Stripe,flat
+S07637,U01443,SMB,B2B,monthly,2024-04-09,2024-05-09,515.3,515.3,0.0,25,3,56,Design,13,Stripe,flat
+S07982,U01509,B2C,B2C,annual,2023-05-15,2024-05-14,33.25,,,7,8,27,Product Management,1,MercadoPago,no_prior_renewal
+S08042,U01521,B2C,B2C,annual,2023-05-09,2024-05-08,33.25,,,4,7,25,Design,1,PayPal,no_prior_renewal
+S08323,U01572,SMB,B2B,annual,2023-05-18,2024-05-17,149.92,,,24,8,16,Design,1,Stripe,no_prior_renewal
+S08368,U01584,Enterprise,B2B,annual,2023-05-29,2024-05-28,825.0,,,28,3,22,Startup,1,Wire Transfer,no_prior_renewal
+S09086,U01729,Enterprise,B2B,monthly,2024-04-11,2024-05-11,795.26,795.26,0.0,11,4,74,DevOps,11,Stripe,flat
+S09256,U01760,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,10,6,15,English,10,MercadoPago,flat
+S09473,U01801,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,17,9,7,DevOps,10,Stripe,flat
+S09762,U01852,SMB,B2B,monthly,2024-04-15,2024-05-15,232.99,209.4,23.590000000000003,23,8,34,DevOps,10,MercadoPago,expansion
+S09977,U01904,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,14,9,16,Cloud Computing,9,Stripe,flat
+S10463,U02014,SMB,B2B,monthly,2024-04-09,2024-05-09,269.37,269.37,0.0,25,3,52,DevOps,9,Stripe,flat
+S10895,U02120,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,9,3,25,DevOps,8,PayPal,flat
+S11423,U02265,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,12,1,37,Marketing,7,MercadoPago,flat
+S11582,U02306,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,5,7,45,English,7,PayPal,flat
+S11638,U02320,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,11,1,15,Business,7,Stripe,flat
+S11672,U02330,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,20,7,36,Business,7,Stripe,flat
+S11796,U02366,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,20,1,40,Software Development,7,Stripe,flat
+S12050,U02446,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,17,3,8,Startup,6,Stripe,flat
+S12150,U02475,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,7,10,29,Leadership,6,Stripe,flat
+S12261,U02500,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,7,9,7,Product Management,6,PayPal,flat
+S12722,U02655,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,17,10,19,Marketing,5,Stripe,flat
+S13010,U02752,SMB,B2B,monthly,2024-04-09,2024-05-09,173.28,199.0,-25.72,13,3,41,Marketing,5,PayPal,contraction
+S13037,U02761,SMB,B2B,monthly,2024-04-12,2024-05-12,200.48,200.48,0.0,17,7,34,Software Development,5,Stripe,flat
+S13067,U02771,SMB,B2B,monthly,2024-04-23,2024-05-23,231.64,231.64,0.0,20,4,30,Design,5,Stripe,flat
+S13130,U02801,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,13,4,13,English,4,Stripe,flat
+S13369,U02896,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,17,6,27,Design,4,Payoneer,flat
+S13580,U02976,SMB,B2B,monthly,2024-04-27,2024-05-27,165.12,165.12,0.0,17,7,15,Leadership,4,Stripe,flat
+S14012,U03189,SMB,B2B,monthly,2024-04-15,2024-05-15,199.0,199.0,0.0,23,6,60,Product Management,3,Stripe,flat
+S14032,U03199,SMB,B2B,monthly,2024-04-29,2024-05-29,199.0,199.0,0.0,16,7,31,DevOps,3,MercadoPago,flat
+S14095,U03239,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,9,2,45,Software Development,2,Stripe,flat
+S14145,U03270,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,14,6,42,Data Science,2,MercadoPago,flat
+S14153,U03275,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,5,2,19,Leadership,2,Stripe,flat
+S14181,U03291,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,18,7,20,Software Development,2,Stripe,flat
+S14211,U03310,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,9,3,5,Product Management,2,Stripe,flat
+S14282,U03354,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,12,9,42,Software Development,2,Stripe,flat
+S14299,U03363,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,22,10,22,Data Science,2,Stripe,flat
+S14360,U03400,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,17,5,16,Startup,2,Stripe,flat
+S14407,U03430,SMB,B2B,monthly,2024-04-19,2024-05-19,242.67,199.0,43.66999999999999,21,3,55,Data Science,2,Stripe,expansion
+S14412,U03433,SMB,B2B,monthly,2024-04-01,2024-05-01,199.0,199.0,0.0,13,7,33,Cloud Computing,2,Stripe,flat
+S14470,U03482,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,,,8,7,19,Marketing,1,MercadoPago,no_prior_renewal
+S14474,U03486,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,,,10,6,45,Cloud Computing,1,MercadoPago,no_prior_renewal
+S14524,U03536,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,,,20,4,26,Software Development,1,Stripe,no_prior_renewal
+S14526,U03538,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,,,20,8,41,Software Development,1,MercadoPago,no_prior_renewal
+S14545,U03557,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,,,10,6,33,Data Science,1,MercadoPago,no_prior_renewal
+S14550,U03562,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,,,14,5,45,Product Management,1,MercadoPago,no_prior_renewal
+S14565,U03577,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,18,5,35,Design,1,MercadoPago,no_prior_renewal
+S14628,U03640,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,,,19,9,38,DevOps,1,PayPal,no_prior_renewal
+S05457,U01078,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,5,6,40,Data Science,16,Stripe,flat
+S06069,U01180,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,11,1,22,Marketing,15,Stripe,flat
+S06873,U01312,SMB,B2B,monthly,2024-04-22,2024-05-22,282.68,282.68,0.0,12,3,54,Data Science,14,Stripe,flat
+S07102,U01352,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,11,2,37,Product Management,14,Stripe,flat
+S07371,U01392,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,6,8,32,Business,14,Stripe,flat
+S07954,U01503,B2C,B2C,annual,2023-05-07,2024-05-06,33.25,,,20,6,44,Software Development,1,PayPal,no_prior_renewal
+S08044,U01523,B2C,B2C,annual,2023-05-29,2024-05-28,33.25,,,16,10,9,Data Science,1,Payoneer,no_prior_renewal
+S08128,U01536,B2C,B2C,annual,2023-05-16,2024-05-15,33.25,,,9,9,15,DevOps,1,Stripe,no_prior_renewal
+S08154,U01541,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,6,10,39,English,12,MercadoPago,flat
+S08247,U01555,B2C,B2C,annual,2023-05-14,2024-05-13,33.25,,,10,7,45,Leadership,1,PayPal,no_prior_renewal
+S08298,U01569,SMB,B2B,annual,2023-05-22,2024-05-21,149.92,,,16,4,51,Data Science,1,PayPal,no_prior_renewal
+S08455,U01603,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,22,2,13,Product Management,11,Payoneer,flat
+S08928,U01697,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,19,7,33,Cloud Computing,12,Stripe,flat
+S09180,U01746,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,22,5,39,DevOps,11,Stripe,flat
+S09522,U01808,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,21,9,16,AI & Machine Learning,10,Stripe,flat
+S09752,U01851,SMB,B2B,monthly,2024-04-08,2024-05-08,267.52,267.52,0.0,14,8,50,Data Science,10,Stripe,flat
+S09805,U01862,SMB,B2B,monthly,2024-04-25,2024-05-25,245.91,245.91,0.0,18,10,41,Leadership,10,PayPal,flat
+S09885,U01883,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,17,8,31,Cloud Computing,9,PayPal,flat
+S10275,U01968,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,22,3,30,Data Science,9,PayPal,flat
+S10408,U01998,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,19,6,44,English,9,PayPal,flat
+S10903,U02121,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,9,3,30,DevOps,8,Payoneer,flat
+S11064,U02159,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,15,10,37,Leadership,8,MercadoPago,flat
+S11165,U02180,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,15,1,8,Product Management,8,Stripe,flat
+S11174,U02182,SMB,B2B,monthly,2024-04-17,2024-05-17,212.41,212.41,0.0,21,5,55,Business,8,MercadoPago,flat
+S11449,U02274,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,21,4,17,Data Science,7,Stripe,flat
+S11593,U02309,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,12,6,14,Business,7,Stripe,flat
+S11702,U02340,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,13,8,10,Software Development,7,MercadoPago,flat
+S12128,U02470,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,22,1,8,DevOps,6,PayPal,flat
+S12143,U02473,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,4,2,17,Software Development,7,MercadoPago,flat
+S12223,U02492,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,19,9,17,Design,6,MercadoPago,flat
+S12329,U02519,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,13,5,43,Data Science,6,PayPal,flat
+S12489,U02569,SMB,B2B,monthly,2024-04-14,2024-05-14,198.21,230.43,-32.22,8,7,26,Marketing,6,PayPal,contraction
+S12615,U02619,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,10,3,25,Startup,5,Stripe,flat
+S12624,U02623,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,18,10,6,Cloud Computing,5,Stripe,flat
+S12717,U02654,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,12,6,21,Cloud Computing,5,MercadoPago,flat
+S12738,U02661,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,13,8,7,English,5,MercadoPago,flat
+S13079,U02776,SMB,B2B,monthly,2024-04-18,2024-05-18,199.0,199.0,0.0,25,7,46,Leadership,5,Stripe,flat
+S13096,U02788,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,22,10,11,Data Science,4,Stripe,flat
+S13335,U02879,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,6,7,43,AI & Machine Learning,4,Stripe,flat
+S13419,U02912,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,17,6,38,Leadership,4,PayPal,flat
+S13633,U03004,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,22,5,19,Design,3,MercadoPago,flat
+S13741,U03055,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,7,3,6,AI & Machine Learning,3,MercadoPago,flat
+S13814,U03090,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,4,2,38,Leadership,3,PayPal,flat
+S13825,U03097,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,18,6,36,Marketing,3,MercadoPago,flat
+S13896,U03134,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,22,2,45,Software Development,3,Stripe,flat
+S13911,U03141,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,12,3,40,Software Development,3,Stripe,flat
+S13919,U03145,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,8,9,12,Product Management,3,Payoneer,flat
+S14119,U03253,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,16,9,17,Data Science,2,Payoneer,flat
+S14184,U03293,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,4,5,27,Marketing,2,Stripe,flat
+S14206,U03307,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,6,8,33,Software Development,2,PayPal,flat
+S14227,U03320,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,10,10,14,Cloud Computing,2,MercadoPago,flat
+S14277,U03352,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,22,2,13,Business,2,PayPal,flat
+S14350,U03394,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,7,4,17,Business,2,Stripe,flat
+S14367,U03404,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,14,9,9,Software Development,2,Stripe,flat
+S14410,U03432,SMB,B2B,monthly,2024-04-09,2024-05-09,199.0,199.0,0.0,18,6,52,Leadership,2,PayPal,flat
+S14448,U03460,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,,,19,5,29,Data Science,1,MercadoPago,no_prior_renewal
+S14453,U03465,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,,,16,3,44,Startup,1,PayPal,no_prior_renewal
+S14462,U03474,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,,,15,4,7,Product Management,1,PayPal,no_prior_renewal
+S14475,U03487,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,10,6,13,Cloud Computing,1,Payoneer,no_prior_renewal
+S14491,U03503,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,,,18,3,37,English,1,Stripe,no_prior_renewal
+S14499,U03511,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,,,12,4,44,Design,1,Stripe,no_prior_renewal
+S14541,U03553,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,,,17,5,26,Design,1,PayPal,no_prior_renewal
+S14553,U03565,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,16,8,21,Software Development,1,PayPal,no_prior_renewal
+S14577,U03589,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,17,10,14,AI & Machine Learning,1,MercadoPago,no_prior_renewal
+S07532,U01423,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,4,3,17,Design,14,Payoneer,flat
+S07665,U01446,SMB,B2B,monthly,2024-04-11,2024-05-11,226.52,280.58,-54.059999999999974,15,8,48,Marketing,13,Stripe,contraction
+S07728,U01458,B2C,B2C,annual,2023-05-20,2024-05-19,33.25,,,4,6,19,Marketing,1,MercadoPago,no_prior_renewal
+S08017,U01515,B2C,B2C,annual,2023-05-09,2024-05-08,33.25,,,7,4,26,Product Management,1,PayPal,no_prior_renewal
+S08043,U01522,B2C,B2C,annual,2023-05-14,2024-05-13,33.25,,,10,3,20,Startup,1,PayPal,no_prior_renewal
+S08130,U01538,B2C,B2C,annual,2023-05-02,2024-05-01,33.25,,,12,9,16,English,1,MercadoPago,no_prior_renewal
+S08362,U01578,Enterprise,B2B,annual,2023-05-26,2024-05-25,825.0,,,16,3,24,Marketing,1,Wire Transfer,no_prior_renewal
+S08618,U01634,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,21,6,18,Startup,11,Stripe,flat
+S08750,U01666,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,10,7,33,Data Science,11,MercadoPago,flat
+S09501,U01805,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,11,3,13,DevOps,10,Stripe,flat
+S10433,U02003,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,11,10,45,AI & Machine Learning,9,MercadoPago,flat
+S10585,U02048,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,11,3,38,DevOps,8,Stripe,flat
+S10926,U02125,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,10,8,11,Product Management,9,MercadoPago,flat
+S10980,U02136,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,16,8,38,Leadership,8,Payoneer,flat
+S11028,U02152,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,4,5,34,English,8,Payoneer,flat
+S11600,U02310,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,11,10,26,Business,7,Stripe,flat
+S11774,U02357,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,21,7,14,English,7,PayPal,flat
+S11884,U02392,SMB,B2B,monthly,2024-04-08,2024-05-08,269.69,269.69,0.0,21,7,36,Cloud Computing,7,PayPal,flat
+S11920,U02405,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,10,7,43,Startup,6,MercadoPago,flat
+S12020,U02437,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,16,2,12,Software Development,6,PayPal,flat
+S12034,U02441,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,14,5,5,Startup,6,Payoneer,flat
+S12090,U02456,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,10,10,6,Leadership,6,MercadoPago,flat
+S12191,U02484,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,15,9,5,Leadership,6,Stripe,flat
+S12356,U02526,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,19,6,44,Startup,6,MercadoPago,flat
+S12550,U02597,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,21,6,21,Cloud Computing,5,MercadoPago,flat
+S12901,U02713,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,6,8,45,Business,5,Stripe,flat
+S13062,U02770,SMB,B2B,monthly,2024-04-20,2024-05-20,259.15,238.26,20.889999999999986,21,6,57,Business,5,Stripe,expansion
+S13266,U02855,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,5,6,35,Cloud Computing,4,PayPal,flat
+S13286,U02863,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,15,3,14,Product Management,4,Stripe,flat
+S13428,U02915,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,5,9,40,Startup,4,MercadoPago,flat
+S13602,U02987,Enterprise,B2B,monthly,2024-04-10,2024-05-10,990.0,990.0,0.0,16,6,58,Cloud Computing,4,Stripe,flat
+S13615,U02995,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,12,7,45,Startup,3,Payoneer,flat
+S13701,U03036,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,7,3,43,AI & Machine Learning,3,Stripe,flat
+S13888,U03129,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,10,7,35,Business,3,Stripe,flat
+S14038,U03203,SMB,B2B,monthly,2024-04-28,2024-05-28,199.0,199.0,0.0,9,6,14,Leadership,3,Stripe,flat
+S14081,U03231,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,4,3,20,AI & Machine Learning,2,Stripe,flat
+S14121,U03254,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,12,10,45,Design,2,PayPal,flat
+S14179,U03290,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,6,7,12,DevOps,2,Stripe,flat
+S14199,U03303,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,10,9,25,Product Management,2,PayPal,flat
+S14261,U03342,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,7,1,14,English,2,Stripe,flat
+S14284,U03355,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,11,1,16,Product Management,2,Stripe,flat
+S14297,U03362,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,18,6,34,Cloud Computing,2,PayPal,flat
+S14370,U03406,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,19,1,35,Leadership,2,Stripe,flat
+S14441,U03454,Enterprise,B2B,monthly,2024-04-03,2024-05-03,990.0,990.0,0.0,14,4,43,Product Management,2,Wire Transfer,flat
+S14450,U03462,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,,,13,4,18,Leadership,1,Stripe,no_prior_renewal
+S14485,U03497,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,,,21,5,39,Product Management,1,Stripe,no_prior_renewal
+S14500,U03512,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,,,21,9,10,Leadership,1,Stripe,no_prior_renewal
+S14507,U03519,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,,,9,8,19,Startup,1,Payoneer,no_prior_renewal
+S14563,U03575,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,,,19,9,38,Business,1,Stripe,no_prior_renewal
+S14583,U03595,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,,,18,5,12,Business,1,Payoneer,no_prior_renewal
+S14604,U03616,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,,,9,5,10,English,1,MercadoPago,no_prior_renewal
+S14657,U03669,SMB,B2B,monthly,2024-04-16,2024-05-16,199.0,,,25,11,11,Software Development,1,PayPal,no_prior_renewal
+S05057,U01005,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,21,7,25,Business,16,PayPal,flat
+S06542,U01257,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,8,8,6,Startup,14,PayPal,flat
+S06712,U01282,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,14,8,38,Marketing,14,Payoneer,flat
+S07357,U01391,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,18,4,31,AI & Machine Learning,13,Stripe,flat
+S07624,U01442,SMB,B2B,monthly,2024-04-04,2024-05-04,346.54,346.54,0.0,15,6,19,Data Science,13,Stripe,flat
+S07835,U01481,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,8,7,39,Marketing,12,Stripe,flat
+S07934,U01497,B2C,B2C,annual,2023-05-23,2024-05-22,33.25,,,19,6,17,Marketing,1,PayPal,no_prior_renewal
+S07951,U01500,B2C,B2C,annual,2023-05-23,2024-05-22,33.25,,,8,7,9,AI & Machine Learning,1,Stripe,no_prior_renewal
+S08045,U01524,B2C,B2C,annual,2023-05-16,2024-05-15,33.25,,,21,7,29,Business,1,MercadoPago,no_prior_renewal
+S08270,U01558,SMB,B2B,annual,2023-05-19,2024-05-18,149.92,,,8,9,28,Startup,1,PayPal,no_prior_renewal
+S08521,U01617,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,17,10,14,Leadership,11,PayPal,flat
+S08595,U01632,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,14,2,8,Design,11,MercadoPago,flat
+S08735,U01664,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,8,6,7,DevOps,11,PayPal,flat
+S08773,U01669,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,4,1,17,Software Development,11,Payoneer,flat
+S08953,U01700,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,11,6,44,Leadership,11,Payoneer,flat
+S09025,U01714,SMB,B2B,monthly,2024-04-15,2024-05-15,187.07,166.49,20.579999999999984,14,2,53,Product Management,11,Stripe,expansion
+S09164,U01743,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,15,5,5,English,10,Stripe,flat
+S09572,U01818,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,14,1,33,DevOps,10,MercadoPago,flat
+S09642,U01831,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,17,6,34,Marketing,11,MercadoPago,flat
+S09815,U01863,SMB,B2B,monthly,2024-04-06,2024-05-06,233.62,233.62,0.0,15,7,49,AI & Machine Learning,10,PayPal,flat
+S10593,U02049,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,8,7,7,Data Science,8,PayPal,flat
+S10693,U02071,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,10,9,29,Business,8,PayPal,flat
+S10798,U02096,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,19,8,40,English,8,PayPal,flat
+S10868,U02116,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,13,9,29,DevOps,8,MercadoPago,flat
+S10935,U02127,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,8,2,34,AI & Machine Learning,8,PayPal,flat
+S11565,U02301,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,22,1,16,DevOps,7,Stripe,flat
+S11743,U02350,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,7,1,26,Startup,7,Stripe,flat
+S11997,U02432,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,18,3,39,Marketing,6,PayPal,flat
+S12185,U02483,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,22,5,7,Startup,6,Stripe,flat
+S12342,U02522,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,4,3,29,DevOps,6,Stripe,flat
+S12362,U02527,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,22,8,28,Cloud Computing,6,MercadoPago,flat
+S12402,U02538,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,21,4,5,Data Science,6,PayPal,flat
+S12584,U02609,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,13,7,21,Product Management,5,Stripe,flat
+S12681,U02643,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,16,10,6,English,5,Stripe,flat
+S12748,U02663,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,22,6,17,English,6,Stripe,flat
+S12926,U02720,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,15,2,25,Marketing,5,PayPal,flat
+S13042,U02762,SMB,B2B,monthly,2024-04-13,2024-05-13,199.0,199.0,0.0,17,2,21,Marketing,5,Stripe,flat
+S13111,U02793,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,13,7,18,Design,4,MercadoPago,flat
+S13121,U02797,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,14,2,25,AI & Machine Learning,4,Stripe,flat
+S13137,U02803,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,11,2,45,English,4,PayPal,flat
+S13167,U02816,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,15,6,10,English,4,Stripe,flat
+S13282,U02862,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,4,2,19,Product Management,4,PayPal,flat
+S13320,U02874,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,4,6,45,Product Management,4,Stripe,flat
+S13324,U02875,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,7,3,24,Software Development,4,MercadoPago,flat
+S13351,U02886,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,8,5,32,Marketing,4,PayPal,flat
+S13380,U02899,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,18,3,45,Design,4,PayPal,flat
+S13452,U02926,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,8,5,22,Cloud Computing,4,PayPal,flat
+S13459,U02928,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,15,4,22,Leadership,4,Stripe,flat
+S13584,U02977,SMB,B2B,monthly,2024-04-11,2024-05-11,219.57,199.0,20.569999999999993,24,3,57,DevOps,4,Stripe,expansion
+S13723,U03047,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,15,2,10,English,3,Stripe,flat
+S13752,U03060,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,11,7,23,Startup,3,Payoneer,flat
+S13761,U03063,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,16,7,18,Product Management,3,Stripe,flat
+S13787,U03074,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,17,2,40,DevOps,3,Stripe,flat
+S13792,U03077,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,8,3,15,Startup,3,PayPal,flat
+S13821,U03095,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,17,10,35,Marketing,3,Stripe,flat
+S13862,U03114,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,9,2,34,Business,3,MercadoPago,flat
+S13885,U03128,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,21,10,39,Design,3,MercadoPago,flat
+S13942,U03155,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,7,7,5,Marketing,3,Payoneer,flat
+S13948,U03157,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,22,9,29,DevOps,3,PayPal,flat
+S13956,U03161,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,13,1,16,Leadership,3,PayPal,flat
+S13959,U03162,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,11,6,26,Software Development,3,Stripe,flat
+S14051,U03212,SMB,B2B,monthly,2024-04-01,2024-05-01,199.0,199.0,0.0,17,11,27,English,3,MercadoPago,flat
+S14099,U03241,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,22,8,43,English,2,MercadoPago,flat
+S14129,U03259,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,21,8,43,DevOps,2,MercadoPago,flat
+S14140,U03267,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,19,8,9,Product Management,2,Stripe,flat
+S14163,U03281,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,12,4,41,Data Science,2,PayPal,flat
+S14323,U03377,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,5,4,28,AI & Machine Learning,2,PayPal,flat
+S14343,U03389,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,6,9,10,Design,2,PayPal,flat
+S14449,U03461,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,,,20,2,32,Business,1,MercadoPago,no_prior_renewal
+S14559,U03571,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,,,4,9,16,Business,1,PayPal,no_prior_renewal
+S14579,U03591,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,,,9,8,45,Startup,1,PayPal,no_prior_renewal
+S14580,U03592,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,,,11,1,33,Leadership,1,Stripe,no_prior_renewal
+S14586,U03598,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,,,14,10,27,Startup,1,MercadoPago,no_prior_renewal
+S14620,U03632,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,,,18,2,28,DevOps,1,MercadoPago,no_prior_renewal
+S05212,U01039,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,9,1,7,Cloud Computing,16,Stripe,flat
+S05276,U01044,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,5,2,26,Design,16,Stripe,flat
+S05779,U01133,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,7,2,7,Cloud Computing,15,PayPal,flat
+S05962,U01167,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,19,4,6,DevOps,15,PayPal,flat
+S06175,U01203,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,7,10,18,Software Development,14,Stripe,flat
+S06617,U01272,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,20,2,30,Startup,14,Payoneer,flat
+S06909,U01318,SMB,B2B,monthly,2024-04-16,2024-05-16,223.15,223.15,0.0,22,8,47,Cloud Computing,14,PayPal,flat
+S07736,U01463,B2C,B2C,annual,2023-05-12,2024-05-11,33.25,,,17,6,13,Data Science,1,Stripe,no_prior_renewal
+S07952,U01501,B2C,B2C,annual,2023-05-29,2024-05-28,33.25,,,11,5,7,English,1,Stripe,no_prior_renewal
+S08112,U01533,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,12,4,24,Marketing,12,Payoneer,flat
+S08226,U01550,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,4,5,40,AI & Machine Learning,12,PayPal,flat
+S08297,U01568,SMB,B2B,annual,2023-05-30,2024-05-29,149.92,,,21,11,43,Data Science,1,MercadoPago,no_prior_renewal
+S08433,U01596,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,11,2,32,DevOps,11,MercadoPago,flat
+S08813,U01679,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,15,2,17,Software Development,11,MercadoPago,flat
+S08824,U01680,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,8,10,22,Cloud Computing,11,Payoneer,flat
+S08836,U01681,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,6,8,36,Product Management,12,Payoneer,flat
+S08851,U01684,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,7,5,9,Software Development,11,Stripe,flat
+S09610,U01826,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,21,5,22,AI & Machine Learning,10,MercadoPago,flat
+S09876,U01882,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,12,2,9,Marketing,9,MercadoPago,flat
+S10252,U01964,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,22,10,13,AI & Machine Learning,9,Stripe,flat
+S11096,U02164,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,9,6,31,Design,8,Stripe,flat
+S11152,U02178,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,10,5,6,Leadership,8,PayPal,flat
+S11276,U02217,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,16,7,39,Product Management,7,MercadoPago,flat
+S11307,U02228,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,17,1,33,Cloud Computing,7,Stripe,flat
+S11322,U02232,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,22,5,19,Business,7,MercadoPago,flat
+S11440,U02271,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,10,7,42,Data Science,7,Stripe,flat
+S11534,U02295,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,18,2,34,Leadership,7,MercadoPago,flat
+S11755,U02353,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,21,1,18,Software Development,7,Stripe,flat
+S11858,U02382,SMB,B2B,monthly,2024-04-15,2024-05-15,199.0,199.0,0.0,21,7,17,Product Management,7,Stripe,flat
+S11982,U02428,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,8,5,17,Business,6,MercadoPago,flat
+S12043,U02444,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,4,1,14,Design,7,PayPal,flat
+S12122,U02469,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,16,10,10,Data Science,6,MercadoPago,flat
+S12462,U02559,SMB,B2B,monthly,2024-04-25,2024-05-25,199.0,199.0,0.0,18,11,23,Software Development,6,Stripe,flat
+S12556,U02599,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,6,2,25,Software Development,5,PayPal,flat
+S12578,U02607,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,13,1,26,English,5,MercadoPago,flat
+S12694,U02648,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,5,3,39,AI & Machine Learning,5,Stripe,flat
+S12707,U02652,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,5,5,23,Startup,5,PayPal,flat
+S12712,U02653,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,22,5,17,Marketing,5,Payoneer,flat
+S12731,U02658,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,19,3,24,AI & Machine Learning,5,Stripe,flat
+S12819,U02685,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,17,8,12,English,5,MercadoPago,flat
+S12906,U02714,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,20,9,6,AI & Machine Learning,5,Stripe,flat
+S12958,U02731,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,13,3,17,Marketing,5,PayPal,flat
+S13178,U02820,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,20,3,10,English,4,PayPal,flat
+S13231,U02841,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,22,6,7,AI & Machine Learning,4,Payoneer,flat
+S13304,U02869,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,18,1,44,DevOps,4,Stripe,flat
+S13398,U02905,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,12,10,19,Product Management,4,PayPal,flat
+S13415,U02911,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,10,5,32,Cloud Computing,4,Stripe,flat
+S13475,U02934,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,16,7,31,English,4,PayPal,flat
+S13636,U03005,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,13,9,14,DevOps,3,Payoneer,flat
+S13720,U03046,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,8,5,6,Business,3,MercadoPago,flat
+S13871,U03119,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,8,3,44,Software Development,3,Stripe,flat
+S14056,U03215,SMB,B2B,monthly,2024-04-20,2024-05-20,199.0,199.0,0.0,13,10,18,Marketing,3,MercadoPago,flat
+S14070,U03225,Enterprise,B2B,monthly,2024-04-28,2024-05-28,990.0,990.0,0.0,25,10,74,Product Management,3,Stripe,flat
+S14073,U03227,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,13,4,29,Marketing,2,PayPal,flat
+S14106,U03245,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,13,9,35,Data Science,2,Stripe,flat
+S14148,U03272,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,18,1,44,Leadership,2,PayPal,flat
+S14248,U03334,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,20,4,23,Cloud Computing,2,Stripe,flat
+S14266,U03346,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,8,4,40,Marketing,2,MercadoPago,flat
+S14329,U03380,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,16,2,38,Data Science,2,MercadoPago,flat
+S14339,U03387,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,11,3,21,Software Development,2,MercadoPago,flat
+S14348,U03393,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,21,6,12,Software Development,2,MercadoPago,flat
+S14443,U03455,Enterprise,B2B,monthly,2024-04-17,2024-05-17,990.0,990.0,0.0,13,14,44,Startup,2,Stripe,flat
+S14483,U03495,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,,,13,3,24,Startup,1,MercadoPago,no_prior_renewal
+S14519,U03531,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,,,15,6,6,DevOps,1,MercadoPago,no_prior_renewal
+S14571,U03583,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,,,10,2,10,Startup,1,Stripe,no_prior_renewal
+S14574,U03586,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,,,10,8,8,DevOps,1,Stripe,no_prior_renewal
+S14588,U03600,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,,,19,2,43,Cloud Computing,1,MercadoPago,no_prior_renewal
+S14593,U03605,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,,,16,3,10,Cloud Computing,1,PayPal,no_prior_renewal
+S14609,U03621,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,,,14,5,12,Product Management,1,PayPal,no_prior_renewal
+S14621,U03633,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,,,21,8,16,Startup,1,MercadoPago,no_prior_renewal
+S14666,U03678,SMB,B2B,monthly,2024-04-16,2024-05-16,199.0,,,14,4,31,Design,1,PayPal,no_prior_renewal
+S14667,U03679,SMB,B2B,monthly,2024-04-21,2024-05-21,199.0,,,21,3,29,Business,1,Stripe,no_prior_renewal
+S05033,U01002,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,18,4,13,DevOps,17,MercadoPago,flat
+S05896,U01156,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,20,3,32,Data Science,15,Stripe,flat
+S06232,U01210,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,6,10,6,English,14,MercadoPago,flat
+S06372,U01231,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,19,4,37,English,14,PayPal,flat
+S06452,U01243,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,16,6,26,Leadership,14,Stripe,flat
+S07857,U01486,B2C,B2C,annual,2023-05-17,2024-05-16,33.25,,,18,2,13,English,1,Stripe,no_prior_renewal
+S07995,U01511,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,9,10,19,AI & Machine Learning,12,Stripe,flat
+S08127,U01535,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,15,10,45,Software Development,12,Stripe,flat
+S08347,U01574,SMB,B2B,monthly,2024-04-10,2024-05-10,238.74,238.74,0.0,12,8,37,Product Management,12,Stripe,flat
+S08361,U01577,SMB,B2B,monthly,2024-04-23,2024-05-23,197.38,197.38,0.0,12,6,11,Marketing,12,Stripe,flat
+S08495,U01611,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,16,5,7,Cloud Computing,11,Stripe,flat
+S09009,U01712,SMB,B2B,monthly,2024-04-13,2024-05-13,246.95,246.95,0.0,17,3,46,Software Development,11,MercadoPago,flat
+S09205,U01751,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,12,8,33,Cloud Computing,10,PayPal,flat
+S09230,U01756,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,4,2,9,Startup,10,Stripe,flat
+S09241,U01757,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,19,7,31,DevOps,11,Stripe,flat
+S09631,U01830,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,18,6,8,DevOps,10,PayPal,flat
+S09794,U01860,SMB,B2B,monthly,2024-04-16,2024-05-16,273.79,273.79,0.0,10,9,14,Design,10,Stripe,flat
+S10243,U01963,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,13,10,10,Design,9,PayPal,flat
+S10499,U02022,SMB,B2B,monthly,2024-04-06,2024-05-06,237.07,237.07,0.0,10,8,27,Software Development,9,Stripe,flat
+S10555,U02040,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,20,4,22,Startup,8,Stripe,flat
+S10758,U02087,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,9,3,27,Product Management,8,PayPal,flat
+S10972,U02135,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,13,9,12,Software Development,8,MercadoPago,flat
+S11088,U02163,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,14,1,7,Cloud Computing,8,PayPal,flat
+S11114,U02168,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,14,10,38,AI & Machine Learning,8,PayPal,flat
+S11520,U02293,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,22,8,9,Marketing,7,PayPal,flat
+S11679,U02331,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,14,9,6,Design,7,Payoneer,flat
+S11914,U02404,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,11,4,38,Marketing,6,Payoneer,flat
+S12198,U02486,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,13,8,16,Leadership,6,Stripe,flat
+S12250,U02498,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,15,4,37,AI & Machine Learning,6,Payoneer,flat
+S12383,U02532,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,12,5,6,English,6,Payoneer,flat
+S12469,U02561,SMB,B2B,monthly,2024-04-13,2024-05-13,210.99,210.99,0.0,12,9,27,Marketing,6,Stripe,flat
+S12503,U02572,SMB,B2B,monthly,2024-04-23,2024-05-23,222.2,222.2,0.0,18,5,10,Marketing,6,PayPal,flat
+S12864,U02698,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,9,9,44,Cloud Computing,5,MercadoPago,flat
+S13182,U02821,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,9,4,5,Product Management,4,Stripe,flat
+S13197,U02827,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,21,9,8,Startup,4,MercadoPago,flat
+S13609,U02991,Enterprise,B2B,monthly,2024-04-14,2024-05-14,990.0,990.0,0.0,24,4,63,Leadership,4,Wire Transfer,flat
+S13648,U03010,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,14,3,28,Product Management,3,MercadoPago,flat
+S13681,U03027,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,11,4,38,Product Management,3,MercadoPago,flat
+S13749,U03059,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,17,9,19,Marketing,3,MercadoPago,flat
+S13866,U03116,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,7,2,13,Data Science,3,Stripe,flat
+S13905,U03137,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,15,8,5,Marketing,3,Stripe,flat
+S13988,U03178,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,6,7,6,Product Management,3,PayPal,flat
+S14008,U03187,SMB,B2B,monthly,2024-04-14,2024-05-14,199.0,199.0,0.0,23,4,36,Startup,3,Stripe,flat
+S14015,U03190,SMB,B2B,monthly,2024-04-20,2024-05-20,233.86,233.86,0.0,22,8,50,Business,3,PayPal,flat
+S14085,U03233,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,18,9,33,Cloud Computing,2,PayPal,flat
+S14123,U03255,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,8,6,33,DevOps,2,MercadoPago,flat
+S14151,U03274,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,6,3,37,Data Science,2,Stripe,flat
+S14187,U03295,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,19,6,35,Business,2,Stripe,flat
+S14209,U03309,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,22,8,33,Startup,2,PayPal,flat
+S14257,U03339,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,4,1,34,Startup,2,Stripe,flat
+S14311,U03370,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,16,6,17,Design,2,PayPal,flat
+S14364,U03402,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,17,8,34,English,2,MercadoPago,flat
+S14405,U03429,SMB,B2B,monthly,2024-04-17,2024-05-17,199.0,199.0,0.0,21,6,43,Leadership,2,MercadoPago,flat
+S14424,U03440,SMB,B2B,monthly,2024-04-22,2024-05-22,199.0,199.0,0.0,9,2,46,Product Management,2,PayPal,flat
+S14452,U03464,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,,,5,1,42,Software Development,1,Stripe,no_prior_renewal
+S14473,U03485,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,,,22,7,15,AI & Machine Learning,1,Stripe,no_prior_renewal
+S14489,U03501,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,17,10,7,Product Management,1,Stripe,no_prior_renewal
+S14511,U03523,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,,,18,7,44,Design,1,MercadoPago,no_prior_renewal
+S14529,U03541,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,,,21,2,8,Product Management,1,Stripe,no_prior_renewal
+S14537,U03549,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,,,6,5,13,Leadership,1,PayPal,no_prior_renewal
+S14589,U03601,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,,,18,6,10,AI & Machine Learning,1,Payoneer,no_prior_renewal
+S14597,U03609,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,,,13,9,12,Design,1,PayPal,no_prior_renewal
+S14643,U03655,SMB,B2B,monthly,2024-04-23,2024-05-23,199.0,,,25,5,43,Startup,1,MercadoPago,no_prior_renewal
+S06134,U01195,SMB,B2B,monthly,2024-04-05,2024-05-05,199.0,199.0,0.0,9,11,39,Product Management,15,MercadoPago,flat
+S06741,U01290,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,6,10,29,Data Science,14,MercadoPago,flat
+S06839,U01307,SMB,B2B,monthly,2024-04-26,2024-05-26,371.83,371.83,0.0,10,6,45,Data Science,15,MercadoPago,flat
+S07177,U01361,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,11,5,19,Leadership,13,PayPal,flat
+S07652,U01445,SMB,B2B,monthly,2024-04-24,2024-05-24,244.38,244.38,0.0,23,3,40,Product Management,13,Stripe,flat
+S07761,U01467,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,9,8,26,Design,12,Stripe,flat
+S07763,U01469,B2C,B2C,annual,2023-05-03,2024-05-02,33.25,,,5,6,16,Design,1,MercadoPago,no_prior_renewal
+S07923,U01495,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,10,10,29,Design,12,MercadoPago,flat
+S07974,U01506,B2C,B2C,annual,2023-05-03,2024-05-02,33.25,,,8,10,22,Business,1,Stripe,no_prior_renewal
+S08272,U01560,SMB,B2B,annual,2023-05-27,2024-05-26,149.92,,,21,6,21,DevOps,1,Stripe,no_prior_renewal
+S08397,U01591,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,16,2,17,AI & Machine Learning,11,PayPal,flat
+S08762,U01668,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,14,10,41,Business,11,Stripe,flat
+S09058,U01723,SMB,B2B,monthly,2024-04-23,2024-05-23,332.91,332.91,0.0,8,2,37,Product Management,11,Stripe,flat
+S09486,U01803,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,6,2,44,Business,10,Stripe,flat
+S09652,U01832,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,20,2,21,AI & Machine Learning,10,Stripe,flat
+S10080,U01928,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,7,6,16,DevOps,9,MercadoPago,flat
+S10178,U01953,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,5,4,12,English,10,PayPal,flat
+S10210,U01957,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,9,4,37,AI & Machine Learning,9,MercadoPago,flat
+S10219,U01958,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,6,6,30,Startup,9,MercadoPago,flat
+S10229,U01960,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,21,8,30,AI & Machine Learning,9,Payoneer,flat
+S10712,U02076,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,17,3,20,Marketing,8,MercadoPago,flat
+S10740,U02083,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,14,5,36,Cloud Computing,8,MercadoPago,flat
+S11134,U02174,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,13,3,28,Data Science,8,MercadoPago,flat
+S11483,U02285,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,21,4,18,English,7,Payoneer,flat
+S11939,U02409,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,7,2,26,Leadership,6,Stripe,flat
+S12028,U02440,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,15,3,19,English,6,Stripe,flat
+S12064,U02449,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,16,1,25,AI & Machine Learning,6,Payoneer,flat
+S12156,U02476,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,6,3,22,Design,6,PayPal,flat
+S12176,U02481,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,10,7,26,Product Management,6,Stripe,flat
+S12244,U02497,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,21,10,26,Software Development,6,MercadoPago,flat
+S12377,U02531,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,16,3,33,Business,6,Stripe,flat
+S12396,U02537,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,6,8,13,Product Management,6,Stripe,flat
+S12441,U02550,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,17,4,24,Leadership,6,Stripe,flat
+S12571,U02604,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,5,9,23,Marketing,5,Stripe,flat
+S12642,U02628,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,16,7,31,Software Development,5,PayPal,flat
+S12687,U02645,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,10,8,5,Design,5,Stripe,flat
+S12762,U02666,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,13,1,16,Marketing,5,Stripe,flat
+S12780,U02670,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,22,9,20,Marketing,5,MercadoPago,flat
+S12889,U02709,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,17,10,7,Data Science,5,MercadoPago,flat
+S13047,U02763,SMB,B2B,monthly,2024-04-07,2024-05-07,199.0,199.0,0.0,15,3,32,Cloud Computing,5,Stripe,flat
+S13439,U02920,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,17,6,29,DevOps,4,Payoneer,flat
+S13470,U02932,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,19,5,16,DevOps,4,Payoneer,flat
+S13540,U02962,SMB,B2B,monthly,2024-04-15,2024-05-15,199.0,199.0,0.0,15,9,12,Data Science,4,Stripe,flat
+S13642,U03007,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,9,10,32,Product Management,3,PayPal,flat
+S13678,U03026,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,15,3,6,Marketing,3,MercadoPago,flat
+S13691,U03032,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,14,1,34,AI & Machine Learning,3,MercadoPago,flat
+S13780,U03071,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,19,5,41,DevOps,3,PayPal,flat
+S13799,U03081,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,9,8,36,Leadership,3,Stripe,flat
+S13839,U03103,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,12,4,35,Design,3,MercadoPago,flat
+S13848,U03108,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,9,2,31,Startup,3,PayPal,flat
+S13855,U03111,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,6,10,22,Leadership,3,PayPal,flat
+S13902,U03136,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,15,10,26,English,3,Payoneer,flat
+S13984,U03176,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,11,4,45,Software Development,3,Stripe,flat
+S14004,U03185,SMB,B2B,monthly,2024-04-28,2024-05-28,199.0,199.0,0.0,8,9,54,Product Management,3,Stripe,flat
+S14029,U03198,SMB,B2B,monthly,2024-04-16,2024-05-16,159.95,159.95,0.0,18,5,33,AI & Machine Learning,3,Stripe,flat
+S14083,U03232,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,17,4,32,Startup,2,Stripe,flat
+S14161,U03280,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,13,5,35,Marketing,2,MercadoPago,flat
+S14201,U03304,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,20,6,40,Product Management,2,Stripe,flat
+S14253,U03337,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,18,7,24,Business,2,Stripe,flat
+S14352,U03395,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,12,3,32,Leadership,2,MercadoPago,flat
+S14358,U03399,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,22,10,32,Design,2,Payoneer,flat
+S14381,U03412,SMB,B2B,monthly,2024-04-07,2024-05-07,199.0,199.0,0.0,8,12,35,Startup,2,Stripe,flat
+S14416,U03435,SMB,B2B,monthly,2024-04-23,2024-05-23,199.0,199.0,0.0,12,10,44,DevOps,2,PayPal,flat
+S14446,U03458,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,,,22,1,22,Marketing,1,Stripe,no_prior_renewal
+S14451,U03463,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,,,19,4,6,Startup,1,MercadoPago,no_prior_renewal
+S14461,U03473,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,,,6,6,40,Cloud Computing,1,PayPal,no_prior_renewal
+S14486,U03498,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,19,7,9,Software Development,1,Payoneer,no_prior_renewal
+S14492,U03504,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,,,20,1,14,Software Development,1,MercadoPago,no_prior_renewal
+S14504,U03516,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,,,10,1,36,DevOps,1,Stripe,no_prior_renewal
+S14509,U03521,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,,,21,9,41,English,1,Stripe,no_prior_renewal
+S14538,U03550,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,,,12,4,14,Startup,1,MercadoPago,no_prior_renewal
+S14558,U03570,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,,,6,2,12,English,1,PayPal,no_prior_renewal
+S14575,U03587,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,,,12,8,11,Design,1,MercadoPago,no_prior_renewal
+S14594,U03606,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,,,4,9,41,Cloud Computing,1,Payoneer,no_prior_renewal
+S14595,U03607,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,,,19,5,40,English,1,Stripe,no_prior_renewal
+S14612,U03624,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,19,8,17,Startup,1,Stripe,no_prior_renewal
+S14636,U03648,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,,,22,2,23,Leadership,1,MercadoPago,no_prior_renewal
+S14678,U03690,Enterprise,B2B,monthly,2024-04-27,2024-05-27,990.0,,,16,14,25,English,1,Stripe,no_prior_renewal
+S05423,U01074,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,10,1,29,English,16,PayPal,flat
+S06089,U01183,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,9,6,26,Cloud Computing,15,PayPal,flat
+S06417,U01238,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,20,8,7,Design,14,Stripe,flat
+S07203,U01363,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,22,2,19,Software Development,14,Stripe,flat
+S07344,U01390,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,5,4,26,Product Management,13,PayPal,flat
+S07455,U01406,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,16,3,37,Cloud Computing,13,Stripe,flat
+S07773,U01472,B2C,B2C,annual,2023-05-13,2024-05-12,33.25,,,18,6,35,AI & Machine Learning,1,PayPal,no_prior_renewal
+S08086,U01529,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,12,5,21,Product Management,12,PayPal,flat
+S08296,U01567,SMB,B2B,annual,2023-05-13,2024-05-12,149.92,,,21,3,14,Product Management,1,PayPal,no_prior_renewal
+S08322,U01571,SMB,B2B,monthly,2024-04-10,2024-05-10,225.95,225.95,0.0,24,4,56,Business,12,Stripe,flat
+S08364,U01580,Enterprise,B2B,annual,2023-05-21,2024-05-20,825.0,,,24,4,55,Software Development,1,Wire Transfer,no_prior_renewal
+S09336,U01774,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,6,3,14,Product Management,11,MercadoPago,flat
+S09346,U01775,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,22,8,27,Data Science,10,MercadoPago,flat
+S09511,U01806,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,9,8,42,Data Science,10,Stripe,flat
+S10111,U01935,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,8,6,7,Data Science,9,MercadoPago,flat
+S10187,U01954,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,22,8,36,English,9,MercadoPago,flat
+S10287,U01970,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,7,8,5,Marketing,9,MercadoPago,flat
+S10636,U02059,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,4,4,13,Marketing,8,MercadoPago,flat
+S11250,U02211,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,21,2,11,Leadership,7,MercadoPago,flat
+S11395,U02255,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,9,4,36,English,7,Stripe,flat
+S11558,U02300,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,4,1,29,Marketing,7,MercadoPago,flat
+S12013,U02435,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,18,9,10,Design,6,Stripe,flat
+S12058,U02448,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,17,7,38,AI & Machine Learning,6,MercadoPago,flat
+S12348,U02523,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,9,9,9,English,6,Stripe,flat
+S12435,U02549,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,4,6,38,Startup,6,MercadoPago,flat
+S12452,U02554,SMB,B2B,monthly,2024-04-16,2024-05-16,199.0,199.0,0.0,9,7,46,Design,6,Stripe,flat
+S12600,U02613,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,19,9,23,Cloud Computing,5,MercadoPago,flat
+S12637,U02627,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,16,6,22,AI & Machine Learning,5,Stripe,flat
+S12983,U02742,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,22,1,33,Design,5,MercadoPago,flat
+S13219,U02837,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,21,2,33,English,4,PayPal,flat
+S13227,U02840,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,6,3,8,Leadership,4,MercadoPago,flat
+S13484,U02937,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,9,7,37,DevOps,4,Stripe,flat
+S13526,U02956,SMB,B2B,monthly,2024-04-24,2024-05-24,231.86,231.86,0.0,23,9,15,Software Development,4,PayPal,flat
+S13556,U02968,SMB,B2B,monthly,2024-04-13,2024-05-13,199.0,199.0,0.0,20,9,20,Design,4,Stripe,flat
+S13591,U02979,SMB,B2B,monthly,2024-04-02,2024-05-02,199.0,199.0,0.0,12,5,47,Product Management,4,MercadoPago,flat
+S13673,U03023,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,16,10,5,Marketing,3,Stripe,flat
+S13698,U03035,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,7,6,13,DevOps,3,Payoneer,flat
+S13711,U03041,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,8,8,5,AI & Machine Learning,3,MercadoPago,flat
+S13758,U03062,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,20,7,29,Software Development,3,Stripe,flat
+S13828,U03098,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,17,10,23,Business,3,Stripe,flat
+S13833,U03101,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,21,10,14,English,3,PayPal,flat
+S13899,U03135,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,17,10,21,Business,3,MercadoPago,flat
+S13939,U03154,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,13,10,6,Software Development,3,Stripe,flat
+S14019,U03192,SMB,B2B,monthly,2024-04-23,2024-05-23,199.0,199.0,0.0,22,4,11,Software Development,3,PayPal,flat
+S14023,U03194,SMB,B2B,monthly,2024-04-27,2024-05-27,199.0,199.0,0.0,11,2,31,AI & Machine Learning,3,PayPal,flat
+S14077,U03229,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,6,9,19,Cloud Computing,2,PayPal,flat
+S14114,U03250,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,10,5,10,Cloud Computing,2,Stripe,flat
+S14195,U03300,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,4,10,7,Leadership,2,MercadoPago,flat
+S14239,U03328,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,19,7,30,DevOps,2,PayPal,flat
+S14287,U03357,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,18,2,24,AI & Machine Learning,2,Payoneer,flat
+S14292,U03359,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,9,6,16,Cloud Computing,2,Stripe,flat
+S14302,U03365,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,18,1,28,Cloud Computing,2,MercadoPago,flat
+S14325,U03378,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,15,7,23,Software Development,2,Stripe,flat
+S14354,U03396,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,14,10,17,Business,2,MercadoPago,flat
+S14434,U03448,Enterprise,B2B,monthly,2024-04-19,2024-05-19,990.0,990.0,0.0,15,5,37,Business,2,Wire Transfer,flat
+S14459,U03471,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,,,5,10,11,AI & Machine Learning,1,MercadoPago,no_prior_renewal
+S14478,U03490,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,,,16,7,7,Startup,1,Stripe,no_prior_renewal
+S14487,U03499,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,,,5,6,44,Business,1,Stripe,no_prior_renewal
+S14556,U03568,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,,,11,2,6,Product Management,1,Payoneer,no_prior_renewal
+S14576,U03588,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,,,6,5,18,Startup,1,Stripe,no_prior_renewal
+S14582,U03594,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,,,14,8,8,Startup,1,PayPal,no_prior_renewal
+S14585,U03597,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,,,4,2,11,Leadership,1,PayPal,no_prior_renewal
+S14590,U03602,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,,,12,5,33,Product Management,1,Stripe,no_prior_renewal
+S14601,U03613,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,,,19,4,5,Product Management,1,PayPal,no_prior_renewal
+S14602,U03614,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,,,15,7,16,AI & Machine Learning,1,Stripe,no_prior_renewal
+S14635,U03647,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,,,12,2,18,Startup,1,Stripe,no_prior_renewal
+S14644,U03656,SMB,B2B,monthly,2024-04-16,2024-05-16,199.0,,,12,3,37,AI & Machine Learning,1,Stripe,no_prior_renewal
+S05567,U01094,SMB,B2B,monthly,2024-04-03,2024-05-03,327.5,310.92,16.579999999999984,20,5,28,Leadership,16,PayPal,expansion
+S07576,U01433,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,8,9,33,Software Development,13,Stripe,flat
+S07723,U01455,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,14,9,10,Cloud Computing,13,MercadoPago,flat
+S07953,U01502,B2C,B2C,annual,2023-05-26,2024-05-25,33.25,,,13,7,23,Startup,1,Stripe,no_prior_renewal
+S08087,U01530,B2C,B2C,annual,2023-05-18,2024-05-17,33.25,,,11,2,36,Leadership,1,PayPal,no_prior_renewal
+S08295,U01566,SMB,B2B,annual,2023-05-18,2024-05-17,149.92,,,10,12,50,Leadership,1,Stripe,no_prior_renewal
+S08365,U01581,Enterprise,B2B,annual,2023-05-07,2024-05-06,825.0,,,13,3,34,Leadership,1,Stripe,no_prior_renewal
+S08890,U01693,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,8,5,30,Startup,11,Stripe,flat
+S09831,U01868,SMB,B2B,monthly,2024-04-17,2024-05-17,269.68,235.63,34.05000000000001,22,3,42,Startup,10,Stripe,expansion
+S10520,U02030,SMB,B2B,monthly,2024-04-04,2024-05-04,244.24,244.24,0.0,12,4,23,English,9,Stripe,flat
+S10627,U02057,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,15,4,43,DevOps,8,Stripe,flat
+S10702,U02073,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,14,4,25,Business,8,MercadoPago,flat
+S11616,U02314,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,22,3,32,English,7,Payoneer,flat
+S11782,U02359,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,10,1,33,Business,7,Stripe,flat
+S11824,U02370,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,11,7,29,Cloud Computing,7,MercadoPago,flat
+S11896,U02396,Enterprise,B2B,monthly,2024-04-25,2024-05-25,842.3,842.3,0.0,25,10,74,Business,7,Stripe,flat
+S11933,U02408,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,6,7,32,Leadership,6,PayPal,flat
+S11970,U02424,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,22,8,27,Leadership,6,MercadoPago,flat
+S12084,U02455,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,11,6,37,Software Development,6,Payoneer,flat
+S12216,U02490,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,22,6,9,Leadership,6,Stripe,flat
+S12418,U02542,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,6,9,39,Marketing,6,PayPal,flat
+S12787,U02673,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,14,4,44,Marketing,5,Stripe,flat
+S12934,U02724,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,5,6,37,Marketing,5,PayPal,flat
+S13252,U02850,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,16,1,21,Design,4,Stripe,flat
+S13277,U02860,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,21,4,10,Data Science,4,MercadoPago,flat
+S13298,U02866,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,5,2,9,Data Science,4,MercadoPago,flat
+S13373,U02897,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,17,8,11,Cloud Computing,4,PayPal,flat
+S13480,U02936,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,12,1,5,Software Development,4,PayPal,flat
+S13514,U02952,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,22,3,28,Marketing,4,PayPal,flat
+S13545,U02964,SMB,B2B,monthly,2024-04-24,2024-05-24,239.62,239.62,0.0,11,4,38,Cloud Computing,4,Stripe,flat
+S13630,U03003,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,17,7,35,Data Science,3,Stripe,flat
+S13659,U03017,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,11,7,26,Startup,3,PayPal,flat
+S13663,U03019,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,15,4,41,Cloud Computing,3,PayPal,flat
+S13755,U03061,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,19,6,26,DevOps,3,Stripe,flat
+S13764,U03064,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,5,2,34,Startup,3,PayPal,flat
+S13844,U03106,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,16,3,35,Design,3,PayPal,flat
+S13964,U03165,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,7,2,19,Marketing,3,Stripe,flat
+S13971,U03168,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,8,1,11,Design,3,MercadoPago,flat
+S14079,U03230,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,11,5,30,Design,2,PayPal,flat
+S14088,U03235,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,20,4,13,Marketing,2,Stripe,flat
+S14104,U03244,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,14,10,26,Business,2,Payoneer,flat
+S14169,U03285,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,15,10,17,Product Management,2,MercadoPago,flat
+S14192,U03298,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,5,8,17,Data Science,2,Stripe,flat
+S14229,U03321,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,5,9,17,Startup,2,Stripe,flat
+S14255,U03338,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,9,6,22,DevOps,2,Stripe,flat
+S14273,U03350,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,20,8,17,Product Management,2,PayPal,flat
+S14372,U03407,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,12,8,21,English,2,MercadoPago,flat
+S14455,U03467,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,,,12,2,5,Leadership,1,Payoneer,no_prior_renewal
+S14468,U03480,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,,,16,6,22,Design,1,Stripe,no_prior_renewal
+S14469,U03481,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,20,5,21,Data Science,1,MercadoPago,no_prior_renewal
+S14493,U03505,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,,,20,3,8,Cloud Computing,1,Stripe,no_prior_renewal
+S14494,U03506,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,,,16,5,29,Software Development,1,Stripe,no_prior_renewal
+S14514,U03526,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,,,10,8,40,Business,1,PayPal,no_prior_renewal
+S14543,U03555,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,,,9,5,33,Cloud Computing,1,Stripe,no_prior_renewal
+S14587,U03599,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,,,11,2,40,English,1,MercadoPago,no_prior_renewal
+S14616,U03628,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,,,8,8,23,Leadership,1,MercadoPago,no_prior_renewal
+S14618,U03630,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,,,14,8,10,Leadership,1,MercadoPago,no_prior_renewal
+S14638,U03650,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,,,20,10,35,Business,1,PayPal,no_prior_renewal
+S14671,U03683,SMB,B2B,monthly,2024-04-04,2024-05-04,199.0,,,22,9,43,Design,1,PayPal,no_prior_renewal
+S06247,U01211,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,9,6,20,Cloud Computing,15,Stripe,flat
+S06263,U01213,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,8,3,39,Cloud Computing,14,PayPal,flat
+S08203,U01548,B2C,B2C,annual,2023-05-02,2024-05-01,33.25,,,12,4,17,Marketing,1,PayPal,no_prior_renewal
+S08227,U01551,B2C,B2C,annual,2023-05-06,2024-05-05,33.25,,,4,2,30,English,1,PayPal,no_prior_renewal
+S08286,U01563,SMB,B2B,monthly,2024-04-17,2024-05-17,263.31,263.31,0.0,8,8,36,English,12,PayPal,flat
+S08363,U01579,Enterprise,B2B,annual,2023-05-31,2024-05-30,825.0,,,15,14,51,Design,1,Wire Transfer,no_prior_renewal
+S08367,U01583,Enterprise,B2B,annual,2023-05-19,2024-05-18,825.0,,,19,13,31,Leadership,1,Wire Transfer,no_prior_renewal
+S08879,U01692,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,19,8,37,Software Development,11,MercadoPago,flat
+S09037,U01716,SMB,B2B,monthly,2024-04-18,2024-05-18,231.61,231.61,0.0,13,4,36,Design,11,PayPal,flat
+S09266,U01761,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,17,2,7,Data Science,10,Payoneer,flat
+S09544,U01812,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,14,4,22,Software Development,10,PayPal,flat
+S09774,U01855,SMB,B2B,monthly,2024-04-20,2024-05-20,208.91,184.71,24.19999999999999,19,3,60,Data Science,10,Stripe,expansion
+S10011,U01912,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,8,1,31,Startup,9,Stripe,flat
+S10668,U02067,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,12,10,15,Product Management,8,PayPal,flat
+S10676,U02068,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,12,5,14,Cloud Computing,8,Payoneer,flat
+S10748,U02084,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,5,2,11,Product Management,8,Stripe,flat
+S11466,U02279,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,17,4,5,Marketing,7,Stripe,flat
+S11542,U02297,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,4,1,14,English,7,Stripe,flat
+S11626,U02317,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,15,9,35,English,7,MercadoPago,flat
+S11867,U02385,SMB,B2B,monthly,2024-04-15,2024-05-15,233.67,233.67,0.0,11,7,33,Data Science,7,Stripe,flat
+S11927,U02407,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,20,9,20,Marketing,6,MercadoPago,flat
+S12071,U02451,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,4,10,44,Leadership,6,Stripe,flat
+S12162,U02477,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,14,9,19,Marketing,6,Stripe,flat
+S12235,U02495,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,21,4,19,Cloud Computing,6,PayPal,flat
+S12280,U02505,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,6,8,8,Leadership,6,Payoneer,flat
+S12323,U02518,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,21,5,24,Marketing,6,MercadoPago,flat
+S12371,U02530,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,10,1,33,AI & Machine Learning,6,Stripe,flat
+S12523,U02585,Enterprise,B2B,monthly,2024-04-08,2024-05-08,1215.21,1215.21,0.0,17,14,51,Business,6,Stripe,flat
+S12530,U02588,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,22,2,43,Business,5,PayPal,flat
+S12630,U02625,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,18,7,40,Marketing,5,Stripe,flat
+S12659,U02634,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,19,1,18,AI & Machine Learning,5,Stripe,flat
+S12800,U02680,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,7,10,20,Marketing,5,PayPal,flat
+S12855,U02695,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,15,4,22,English,5,MercadoPago,flat
+S12942,U02727,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,11,4,27,Startup,5,Stripe,flat
+S12947,U02728,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,13,9,14,Cloud Computing,5,MercadoPago,flat
+S13160,U02814,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,14,9,39,DevOps,4,MercadoPago,flat
+S13248,U02849,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,16,10,45,Product Management,4,Payoneer,flat
+S13331,U02878,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,14,7,40,Product Management,4,Payoneer,flat
+S13435,U02919,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,15,5,16,Software Development,4,PayPal,flat
+S13618,U02996,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,8,5,36,Data Science,3,Stripe,flat
+S13727,U03049,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,22,3,19,Business,3,PayPal,flat
+S13745,U03057,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,20,4,14,Product Management,3,MercadoPago,flat
+S13768,U03066,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,9,4,40,Software Development,3,PayPal,flat
+S13807,U03085,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,19,6,33,Business,3,Stripe,flat
+S13859,U03113,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,10,2,42,Marketing,3,PayPal,flat
+S13914,U03142,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,18,6,41,Marketing,3,PayPal,flat
+S14000,U03183,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,12,9,24,Business,3,Stripe,flat
+S14047,U03210,SMB,B2B,monthly,2024-04-29,2024-05-29,199.0,199.0,0.0,20,5,36,Software Development,3,PayPal,flat
+S14135,U03263,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,14,6,19,Cloud Computing,2,MercadoPago,flat
+S14158,U03278,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,5,5,39,Startup,2,Stripe,flat
+S14175,U03288,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,7,2,38,Business,2,Stripe,flat
+S14295,U03361,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,8,3,9,DevOps,2,MercadoPago,flat
+S14337,U03386,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,19,3,21,Leadership,2,MercadoPago,flat
+S14402,U03427,SMB,B2B,monthly,2024-04-28,2024-05-28,199.0,199.0,0.0,14,12,53,Leadership,2,PayPal,flat
+S14414,U03434,SMB,B2B,monthly,2024-04-27,2024-05-27,199.0,199.0,0.0,10,9,54,Product Management,2,Stripe,flat
+S14460,U03472,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,,,13,7,9,Startup,1,MercadoPago,no_prior_renewal
+S14506,U03518,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,,,20,1,16,Product Management,1,MercadoPago,no_prior_renewal
+S14525,U03537,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,,,9,7,27,Marketing,1,Payoneer,no_prior_renewal
+S14551,U03563,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,18,9,43,DevOps,1,MercadoPago,no_prior_renewal
+S14669,U03681,SMB,B2B,monthly,2024-04-13,2024-05-13,199.0,,,19,3,30,Product Management,1,Stripe,no_prior_renewal
+S14672,U03684,SMB,B2B,monthly,2024-04-08,2024-05-08,199.0,,,17,2,28,Cloud Computing,1,MercadoPago,no_prior_renewal
+S05517,U01086,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,16,9,35,Business,17,Stripe,flat
+S06149,U01196,SMB,B2B,monthly,2024-04-13,2024-05-13,209.22,209.22,0.0,25,7,25,Data Science,15,PayPal,flat
+S06795,U01298,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,14,9,25,Marketing,14,MercadoPago,flat
+S07589,U01434,SMB,B2B,monthly,2024-04-04,2024-05-04,302.78,246.61,56.16999999999996,19,9,59,English,13,MercadoPago,expansion
+S07700,U01453,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,12,2,40,Product Management,13,PayPal,flat
+S07808,U01478,B2C,B2C,annual,2023-05-12,2024-05-11,33.25,,,13,1,8,Startup,1,MercadoPago,no_prior_renewal
+S07880,U01489,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,11,5,39,DevOps,12,PayPal,flat
+S08041,U01520,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,8,1,10,Design,13,Payoneer,flat
+S08274,U01562,SMB,B2B,annual,2023-05-15,2024-05-14,149.92,,,13,2,58,Data Science,1,MercadoPago,no_prior_renewal
+S08349,U01576,SMB,B2B,annual,2023-05-04,2024-05-03,149.92,,,18,9,14,Business,1,Stripe,no_prior_renewal
+S08964,U01701,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,14,8,9,Marketing,11,Payoneer,flat
+S09145,U01740,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,22,2,38,Software Development,10,PayPal,flat
+S09445,U01794,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,21,4,9,Design,10,Stripe,flat
+S10399,U01997,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,17,9,27,AI & Machine Learning,10,Stripe,flat
+S10484,U02020,SMB,B2B,monthly,2024-04-06,2024-05-06,199.0,199.0,0.0,12,2,23,English,9,PayPal,flat
+S10789,U02094,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,21,7,15,Startup,8,Stripe,flat
+S11104,U02165,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,9,3,38,AI & Machine Learning,8,MercadoPago,flat
+S11257,U02212,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,6,9,33,Cloud Computing,7,MercadoPago,flat
+S11300,U02227,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,6,4,43,Startup,7,MercadoPago,flat
+S11388,U02254,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,19,6,6,Data Science,7,Payoneer,flat
+S11527,U02294,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,18,2,31,AI & Machine Learning,7,PayPal,flat
+S11573,U02303,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,10,8,23,English,7,Stripe,flat
+S11689,U02335,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,15,8,16,AI & Machine Learning,7,Payoneer,flat
+S11817,U02369,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,11,10,36,Design,7,MercadoPago,flat
+S12286,U02506,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,10,8,15,Data Science,6,Stripe,flat
+S12311,U02516,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,7,9,16,Leadership,6,MercadoPago,flat
+S12702,U02651,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,13,1,38,Marketing,5,PayPal,flat
+S12775,U02669,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,19,3,6,Business,5,Stripe,flat
+S12896,U02712,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,13,2,30,Leadership,5,MercadoPago,flat
+S12972,U02737,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,11,4,7,Product Management,5,Payoneer,flat
+S12988,U02743,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,22,1,23,Cloud Computing,5,PayPal,flat
+S13153,U02811,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,7,8,12,Leadership,4,Payoneer,flat
+S13206,U02832,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,13,1,6,Startup,4,MercadoPago,flat
+S13243,U02847,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,19,3,8,English,4,Stripe,flat
+S13256,U02851,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,15,4,25,AI & Machine Learning,4,PayPal,flat
+S13262,U02854,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,21,8,25,Leadership,4,MercadoPago,flat
+S13341,U02882,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,5,5,33,AI & Machine Learning,4,PayPal,flat
+S13510,U02951,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,9,8,18,Data Science,4,MercadoPago,flat
+S13536,U02961,SMB,B2B,monthly,2024-04-14,2024-05-14,199.0,199.0,0.0,17,7,16,Marketing,4,Stripe,flat
+S13804,U03084,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,19,7,31,Leadership,3,Payoneer,flat
+S13936,U03153,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,14,8,26,Data Science,3,Payoneer,flat
+S13952,U03159,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,15,2,19,Software Development,3,Payoneer,flat
+S13996,U03181,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,9,7,40,Marketing,3,Stripe,flat
+S14093,U03238,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,22,1,9,Product Management,2,Stripe,flat
+S14171,U03286,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,8,7,11,Startup,2,Stripe,flat
+S14173,U03287,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,6,7,38,DevOps,2,PayPal,flat
+S14204,U03306,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,8,5,30,Marketing,2,MercadoPago,flat
+S14220,U03317,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,7,4,36,DevOps,2,MercadoPago,flat
+S14251,U03336,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,11,9,33,AI & Machine Learning,2,Stripe,flat
+S14308,U03368,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,8,3,10,Business,2,PayPal,flat
+S14321,U03376,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,12,9,22,English,2,Stripe,flat
+S14362,U03401,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,8,3,22,Business,2,Stripe,flat
+S14379,U03411,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,5,7,36,Product Management,2,Stripe,flat
+S14480,U03492,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,,,22,3,45,Leadership,1,Payoneer,no_prior_renewal
+S14481,U03493,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,,,14,5,23,Startup,1,MercadoPago,no_prior_renewal
+S14521,U03533,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,,,11,10,41,English,1,MercadoPago,no_prior_renewal
+S14581,U03593,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,,,15,1,21,DevOps,1,MercadoPago,no_prior_renewal
+S14603,U03615,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,9,4,44,Leadership,1,PayPal,no_prior_renewal
+S14610,U03622,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,,,22,6,6,Product Management,1,Payoneer,no_prior_renewal
+S14629,U03641,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,,,4,3,13,Data Science,1,Stripe,no_prior_renewal
+S14630,U03642,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,,,8,5,21,AI & Machine Learning,1,PayPal,no_prior_renewal
+S14664,U03676,SMB,B2B,monthly,2024-04-14,2024-05-14,199.0,,,19,6,22,Leadership,1,MercadoPago,no_prior_renewal
+S14670,U03682,SMB,B2B,monthly,2024-04-12,2024-05-12,199.0,,,18,12,57,Marketing,1,Stripe,no_prior_renewal
+S05600,U01098,SMB,B2B,monthly,2024-04-08,2024-05-08,233.79,233.79,0.0,20,6,40,Startup,16,Stripe,flat
+S06324,U01221,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,9,8,28,English,14,Stripe,flat
+S06668,U01277,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,6,3,24,Design,14,Stripe,flat
+S07735,U01462,B2C,B2C,annual,2023-05-13,2024-05-12,33.25,,,8,5,45,Design,1,Stripe,no_prior_renewal
+S07737,U01464,B2C,B2C,annual,2023-05-26,2024-05-25,33.25,,,5,2,7,DevOps,1,MercadoPago,no_prior_renewal
+S07772,U01471,B2C,B2C,annual,2023-05-29,2024-05-28,33.25,,,6,8,6,DevOps,1,PayPal,no_prior_renewal
+S07806,U01476,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,5,10,8,DevOps,12,Payoneer,flat
+S07853,U01484,B2C,B2C,annual,2023-05-20,2024-05-19,33.25,,,7,8,31,English,1,MercadoPago,no_prior_renewal
+S07946,U01498,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,12,8,20,Product Management,12,PayPal,flat
+S08074,U01528,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,5,10,33,Leadership,12,MercadoPago,flat
+S08557,U01622,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,8,7,6,English,12,Stripe,flat
+S08648,U01643,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,4,8,27,AI & Machine Learning,11,MercadoPago,flat
+S09286,U01763,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,9,8,38,AI & Machine Learning,10,MercadoPago,flat
+S09301,U01765,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,4,3,14,Software Development,10,MercadoPago,flat
+S09364,U01779,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,5,1,29,DevOps,10,Stripe,flat
+S09393,U01784,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,7,10,44,English,10,PayPal,flat
+S09857,U01879,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,13,8,43,Leadership,9,PayPal,flat
+S09930,U01895,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,22,3,10,Leadership,9,Stripe,flat
+S10090,U01930,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,7,4,6,Marketing,9,MercadoPago,flat
+S10532,U02034,Enterprise,B2B,monthly,2024-04-16,2024-05-16,1293.77,1293.77,0.0,23,14,49,Cloud Computing,9,Stripe,flat
+S10619,U02056,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,8,2,41,Business,8,Payoneer,flat
+S10766,U02088,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,20,2,7,Leadership,8,PayPal,flat
+S10774,U02089,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,22,8,13,Marketing,8,Stripe,flat
+S10821,U02102,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,18,5,11,AI & Machine Learning,8,Stripe,flat
+S10887,U02119,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,6,9,34,Marketing,8,PayPal,flat
+S10963,U02133,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,21,8,25,Leadership,8,Stripe,flat
+S10994,U02140,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,15,5,34,Software Development,8,PayPal,flat
+S11056,U02158,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,6,7,25,Leadership,8,MercadoPago,flat
+S11144,U02177,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,13,5,9,Product Management,8,MercadoPago,flat
+S11346,U02239,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,6,5,38,AI & Machine Learning,7,MercadoPago,flat
+S11363,U02245,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,20,2,14,Business,7,MercadoPago,flat
+S11496,U02287,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,11,9,43,Business,7,Stripe,flat
+S11653,U02324,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,16,9,24,Leadership,7,PayPal,flat
+S11831,U02371,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,6,10,36,Cloud Computing,7,MercadoPago,flat
+S11907,U02402,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,9,8,10,Startup,6,Stripe,flat
+S12268,U02502,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,17,8,20,Cloud Computing,6,Payoneer,flat
+S12562,U02601,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,19,1,26,English,5,PayPal,flat
+S12595,U02612,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,7,3,12,Cloud Computing,5,MercadoPago,flat
+S12608,U02616,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,21,3,8,Startup,5,MercadoPago,flat
+S12753,U02664,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,16,2,18,Marketing,5,Stripe,flat
+S12810,U02682,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,12,6,35,Leadership,5,Stripe,flat
+S12841,U02691,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,15,1,23,English,5,MercadoPago,flat
+S12874,U02702,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,14,8,5,DevOps,5,MercadoPago,flat
+S13016,U02754,SMB,B2B,monthly,2024-04-18,2024-05-18,238.29,238.29,0.0,9,9,17,Marketing,5,PayPal,flat
+S13107,U02792,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,13,10,6,Software Development,4,PayPal,flat
+S13214,U02835,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,4,7,34,Startup,4,Stripe,flat
+S13312,U02872,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,21,9,18,English,4,Stripe,flat
+S13384,U02900,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,17,5,39,Cloud Computing,4,MercadoPago,flat
+S13463,U02929,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,15,8,17,Cloud Computing,4,Stripe,flat
+S13506,U02950,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,18,6,41,Marketing,4,PayPal,flat
+S13570,U02973,SMB,B2B,monthly,2024-04-24,2024-05-24,199.0,199.0,0.0,22,3,50,AI & Machine Learning,4,Stripe,flat
+S13652,U03012,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,20,2,21,Software Development,3,Stripe,flat
+S13737,U03053,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,15,6,32,DevOps,3,MercadoPago,flat
+S13783,U03072,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,16,1,21,Product Management,3,MercadoPago,flat
+S13876,U03122,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,12,8,11,Business,3,Payoneer,flat
+S13945,U03156,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,12,6,8,English,3,Stripe,flat
+S13977,U03171,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,6,1,11,AI & Machine Learning,3,MercadoPago,flat
+S13991,U03179,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,12,3,6,Marketing,3,MercadoPago,flat
+S14116,U03251,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,10,6,6,Business,2,Stripe,flat
+S14143,U03269,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,9,3,34,Startup,2,MercadoPago,flat
+S14218,U03316,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,7,2,42,English,2,Stripe,flat
+S14306,U03367,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,16,2,39,Data Science,3,PayPal,flat
+S14331,U03381,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,11,1,44,Software Development,2,Stripe,flat
+S14426,U03441,SMB,B2B,monthly,2024-04-12,2024-05-12,209.26,199.0,10.259999999999991,10,8,34,English,2,Stripe,expansion
+S14447,U03459,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,13,1,38,Marketing,1,MercadoPago,no_prior_renewal
+S14496,U03508,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,10,7,38,English,1,Stripe,no_prior_renewal
+S14502,U03514,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,19,6,5,Business,1,PayPal,no_prior_renewal
+S14523,U03535,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,6,5,44,Cloud Computing,1,Stripe,no_prior_renewal
+S14548,U03560,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,,,10,2,44,English,1,PayPal,no_prior_renewal
+S14552,U03564,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,,,5,9,33,Business,1,MercadoPago,no_prior_renewal
+S14566,U03578,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,,,15,6,40,DevOps,1,Stripe,no_prior_renewal
+S14570,U03582,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,,,22,9,33,Design,1,MercadoPago,no_prior_renewal
+S05260,U01043,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,22,7,42,Cloud Computing,16,MercadoPago,flat
+S05484,U01080,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,11,2,33,Design,16,MercadoPago,flat
+S06588,U01267,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,19,4,23,Cloud Computing,14,Stripe,flat
+S07687,U01452,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,7,8,11,Startup,12,Stripe,flat
+S08129,U01537,B2C,B2C,annual,2023-05-15,2024-05-14,33.25,,,18,5,31,Startup,1,MercadoPago,no_prior_renewal
+S08167,U01542,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,4,1,41,Product Management,13,PayPal,flat
+S08271,U01559,SMB,B2B,annual,2023-05-24,2024-05-23,149.92,,,10,6,43,DevOps,1,Stripe,no_prior_renewal
+S09191,U01748,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,9,9,29,DevOps,10,MercadoPago,flat
+S09424,U01789,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,9,6,20,Business,10,PayPal,flat
+S09705,U01839,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,21,8,45,Leadership,10,Payoneer,flat
+S09867,U01881,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,18,1,6,Cloud Computing,9,Stripe,flat
+S09989,U01907,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,18,2,32,Startup,9,MercadoPago,flat
+S10266,U01967,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,7,9,10,Business,9,Stripe,flat
+S10332,U01978,B2C,B2C,monthly,2024-04-20,2024-05-20,49.0,49.0,0.0,15,8,45,Design,9,Payoneer,flat
+S10362,U01986,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,13,7,21,Software Development,10,Payoneer,flat
+S10912,U02123,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,16,10,7,Business,8,MercadoPago,flat
+S10944,U02129,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,4,8,39,AI & Machine Learning,8,PayPal,flat
+S11015,U02149,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,14,7,17,DevOps,9,Stripe,flat
+S11335,U02235,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,18,10,32,Cloud Computing,7,Stripe,flat
+S11725,U02345,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,10,6,5,Startup,7,PayPal,flat
+S12168,U02478,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,9,8,40,Design,6,PayPal,flat
+S12590,U02611,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,10,8,10,English,5,Stripe,flat
+S12647,U02629,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,12,1,41,Data Science,5,Stripe,flat
+S12767,U02667,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,5,3,38,Product Management,5,Stripe,flat
+S12846,U02692,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,18,7,44,Startup,5,Stripe,flat
+S13142,U02805,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,8,10,44,Startup,4,MercadoPago,flat
+S13190,U02823,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,22,2,32,Startup,4,Payoneer,flat
+S13406,U02908,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,19,2,10,Product Management,4,Stripe,flat
+S13639,U03006,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,7,7,30,Data Science,3,Stripe,flat
+S13694,U03033,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,5,2,42,Data Science,3,Payoneer,flat
+S13704,U03037,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,14,5,36,AI & Machine Learning,3,MercadoPago,flat
+S13731,U03051,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,49.0,0.0,5,2,9,DevOps,3,Stripe,flat
+S13773,U03068,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,17,8,24,DevOps,3,Stripe,flat
+S13922,U03146,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,20,6,6,Leadership,3,PayPal,flat
+S14075,U03228,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,7,2,21,Marketing,2,MercadoPago,flat
+S14112,U03249,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,21,9,5,Marketing,2,Stripe,flat
+S14126,U03257,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,16,2,42,Software Development,2,Stripe,flat
+S14156,U03277,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,14,8,13,Leadership,2,MercadoPago,flat
+S14268,U03347,B2C,B2C,monthly,2024-04-24,2024-05-24,49.0,49.0,0.0,17,10,29,DevOps,2,PayPal,flat
+S14270,U03348,B2C,B2C,monthly,2024-04-17,2024-05-17,49.0,49.0,0.0,22,9,20,Product Management,2,Stripe,flat
+S14327,U03379,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,13,3,15,Cloud Computing,2,MercadoPago,flat
+S14341,U03388,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,22,2,11,Design,2,Payoneer,flat
+S14377,U03410,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,12,6,33,English,2,Stripe,flat
+S14418,U03436,SMB,B2B,monthly,2024-04-19,2024-05-19,199.0,199.0,0.0,11,3,10,Leadership,2,Stripe,flat
+S14463,U03475,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,,,17,8,21,AI & Machine Learning,1,PayPal,no_prior_renewal
+S14467,U03479,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,,,4,4,31,Data Science,1,MercadoPago,no_prior_renewal
+S14476,U03488,B2C,B2C,monthly,2024-04-06,2024-05-06,49.0,,,9,8,34,Business,1,PayPal,no_prior_renewal
+S14479,U03491,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,,,17,6,24,English,1,Payoneer,no_prior_renewal
+S14497,U03509,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,,,19,9,31,Software Development,1,MercadoPago,no_prior_renewal
+S14518,U03530,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,,,20,10,8,Leadership,1,MercadoPago,no_prior_renewal
+S14535,U03547,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,,,10,10,16,Design,1,Stripe,no_prior_renewal
+S14619,U03631,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,,,18,4,45,DevOps,1,Payoneer,no_prior_renewal
+S05670,U01112,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,12,10,40,English,15,MercadoPago,flat
+S05945,U01165,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,15,5,40,Cloud Computing,15,MercadoPago,flat
+S06390,U01234,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,17,6,29,Design,14,PayPal,flat
+S06431,U01239,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,10,7,40,Product Management,14,PayPal,flat
+S07082,U01349,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,13,5,18,AI & Machine Learning,13,Stripe,flat
+S07517,U01421,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,14,4,26,DevOps,13,Stripe,flat
+S08023,U01518,B2C,B2C,annual,2023-05-06,2024-05-05,33.25,,,6,8,19,Product Management,1,MercadoPago,no_prior_renewal
+S08100,U01532,B2C,B2C,annual,2023-05-04,2024-05-03,33.25,,,20,3,16,Leadership,1,Stripe,no_prior_renewal
+S08335,U01573,SMB,B2B,monthly,2024-04-04,2024-05-04,210.36,210.36,0.0,9,2,22,DevOps,12,MercadoPago,flat
+S08366,U01582,Enterprise,B2B,annual,2023-05-09,2024-05-08,825.0,,,17,12,53,Data Science,1,Wire Transfer,no_prior_renewal
+S08408,U01592,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,9,8,33,Cloud Computing,11,Stripe,flat
+S08466,U01604,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,12,4,23,Software Development,11,PayPal,flat
+S09311,U01766,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,19,10,15,AI & Machine Learning,10,PayPal,flat
+S10388,U01995,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,22,1,27,Business,10,MercadoPago,flat
+S10685,U02070,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,4,3,13,Startup,8,Payoneer,flat
+S11709,U02341,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,4,7,18,Marketing,7,PayPal,flat
+S11762,U02354,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,12,3,40,Marketing,7,Stripe,flat
+S12209,U02488,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,12,4,6,Product Management,6,Stripe,flat
+S12829,U02688,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,5,6,31,Marketing,5,PayPal,flat
+S12917,U02717,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,10,9,42,Cloud Computing,5,PayPal,flat
+S12953,U02730,B2C,B2C,monthly,2024-04-12,2024-05-12,49.0,49.0,0.0,20,1,45,DevOps,5,Stripe,flat
+S13172,U02818,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,21,1,15,Product Management,4,PayPal,flat
+S13186,U02822,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,19,5,35,Startup,4,Stripe,flat
+S13294,U02865,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,12,1,5,Leadership,4,MercadoPago,flat
+S13389,U02902,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,6,7,5,Business,4,Stripe,flat
+S13443,U02921,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,15,9,24,Startup,4,Payoneer,flat
+S13670,U03022,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,22,1,8,Marketing,3,Stripe,flat
+S13688,U03031,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,4,1,22,Leadership,3,MercadoPago,flat
+S13932,U03151,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,6,9,8,Cloud Computing,3,PayPal,flat
+S14236,U03326,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,17,6,28,Data Science,2,MercadoPago,flat
+S14317,U03374,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,18,8,12,Product Management,2,PayPal,flat
+S14319,U03375,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,49.0,0.0,17,9,34,DevOps,2,MercadoPago,flat
+S14396,U03422,SMB,B2B,monthly,2024-04-30,2024-05-30,199.0,199.0,0.0,14,10,10,Software Development,3,Stripe,flat
+S14445,U03457,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,,,8,8,11,Marketing,1,Stripe,no_prior_renewal
+S14457,U03469,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,,,10,2,22,DevOps,1,MercadoPago,no_prior_renewal
+S14508,U03520,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,21,1,42,Startup,1,PayPal,no_prior_renewal
+S14513,U03525,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,,,5,6,39,Cloud Computing,1,MercadoPago,no_prior_renewal
+S14515,U03527,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,,,20,7,7,Software Development,1,PayPal,no_prior_renewal
+S14528,U03540,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,,,4,8,33,DevOps,1,Stripe,no_prior_renewal
+S14539,U03551,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,,,12,3,45,Startup,1,MercadoPago,no_prior_renewal
+S14546,U03558,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,,,21,9,16,Product Management,1,MercadoPago,no_prior_renewal
+S14596,U03608,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,,,13,3,7,Product Management,1,Stripe,no_prior_renewal
+S14598,U03610,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,,,22,6,11,Startup,1,Payoneer,no_prior_renewal
+S14660,U03672,SMB,B2B,monthly,2024-04-04,2024-05-04,199.0,,,19,3,33,Cloud Computing,1,MercadoPago,no_prior_renewal
+S05379,U01063,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,15,7,10,Leadership,17,PayPal,flat
+S05851,U01150,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,13,7,12,Product Management,15,Stripe,flat
+S06004,U01172,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,9,5,17,AI & Machine Learning,15,Stripe,flat
+S06351,U01227,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,21,8,5,Cloud Computing,14,Stripe,flat
+S06495,U01250,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,9,7,40,Design,14,Stripe,flat
+S06528,U01256,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,20,1,7,Business,14,PayPal,flat
+S06765,U01293,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,11,6,43,Data Science,14,PayPal,flat
+S06853,U01308,SMB,B2B,monthly,2024-04-11,2024-05-11,158.22,134.7,23.52000000000001,16,11,23,Software Development,14,MercadoPago,expansion
+S07384,U01393,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,16,3,24,Startup,13,Stripe,flat
+S07421,U01399,B2C,B2C,monthly,2024-04-16,2024-05-16,49.0,49.0,0.0,14,8,7,Cloud Computing,13,Stripe,flat
+S07807,U01477,B2C,B2C,annual,2023-05-11,2024-05-10,33.25,,,19,3,25,Product Management,1,Payoneer,no_prior_renewal
+S07973,U01505,B2C,B2C,monthly,2024-04-09,2024-05-09,49.0,49.0,0.0,10,6,29,DevOps,12,Payoneer,flat
+S07996,U01512,B2C,B2C,annual,2023-05-27,2024-05-26,33.25,,,18,8,39,English,1,MercadoPago,no_prior_renewal
+S08310,U01570,SMB,B2B,monthly,2024-04-15,2024-05-15,199.0,199.0,0.0,23,3,48,English,12,PayPal,flat
+S08422,U01595,B2C,B2C,monthly,2024-04-15,2024-05-15,49.0,49.0,0.0,18,10,32,Startup,11,Stripe,flat
+S09039,U01718,SMB,B2B,annual,2023-06-01,2024-05-31,149.92,,,11,8,45,Data Science,1,PayPal,no_prior_renewal
+S09122,U01737,B2C,B2C,monthly,2024-04-26,2024-05-26,49.0,49.0,0.0,4,3,13,Marketing,10,Stripe,flat
+S09132,U01738,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,4,7,42,Leadership,10,Stripe,flat
+S09276,U01762,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,4,6,36,Startup,10,Stripe,flat
+S09533,U01810,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,19,9,43,Leadership,10,Stripe,flat
+S09554,U01813,B2C,B2C,monthly,2024-04-08,2024-05-08,49.0,49.0,0.0,19,8,27,Leadership,10,PayPal,flat
+S10024,U01915,B2C,B2C,monthly,2024-04-18,2024-05-18,49.0,49.0,0.0,19,6,5,Software Development,9,MercadoPago,flat
+S10101,U01933,B2C,B2C,monthly,2024-04-10,2024-05-10,49.0,49.0,0.0,8,2,23,AI & Machine Learning,9,Stripe,flat
+S10297,U01972,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,21,6,40,Leadership,9,PayPal,flat
+S10541,U02036,B2C,B2C,monthly,2024-04-07,2024-05-07,49.0,49.0,0.0,15,10,5,Design,8,PayPal,flat
+S10655,U02064,B2C,B2C,monthly,2024-04-21,2024-05-21,49.0,49.0,0.0,22,9,28,Cloud Computing,8,Stripe,flat
+S11122,U02169,B2C,B2C,monthly,2024-04-19,2024-05-19,49.0,49.0,0.0,14,6,9,Business,8,MercadoPago,flat
+S11195,U02189,SMB,B2B,monthly,2024-04-06,2024-05-06,249.88,219.14,30.74000000000001,23,12,30,AI & Machine Learning,8,PayPal,expansion
+S11458,U02277,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,49.0,0.0,20,3,8,Business,7,MercadoPago,flat
+S11512,U02291,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,5,10,30,Software Development,7,PayPal,flat
+S11549,U02298,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,49.0,0.0,6,7,6,Leadership,7,Stripe,flat
+S11803,U02367,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,13,6,34,AI & Machine Learning,7,MercadoPago,flat
+S12300,U02511,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,21,3,26,Leadership,6,MercadoPago,flat
+S12412,U02541,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,16,10,45,Data Science,6,Stripe,flat
+S12480,U02566,SMB,B2B,monthly,2024-04-10,2024-05-10,271.15,229.62,41.52999999999997,13,7,24,Data Science,6,Stripe,expansion
+S12664,U02635,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,15,3,30,Business,5,MercadoPago,flat
+S12805,U02681,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,49.0,0.0,19,4,13,Software Development,5,PayPal,flat
+S12836,U02690,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,4,5,43,AI & Machine Learning,5,PayPal,flat
+S12967,U02736,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,22,7,20,Product Management,5,MercadoPago,flat
+S13026,U02756,SMB,B2B,monthly,2024-04-19,2024-05-19,269.21,269.21,0.0,18,6,60,Product Management,5,Stripe,flat
+S13116,U02795,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,5,4,19,Startup,4,MercadoPago,flat
+S13290,U02864,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,20,3,25,Startup,4,PayPal,flat
+S13561,U02970,SMB,B2B,monthly,2024-04-06,2024-05-06,223.83,223.83,0.0,9,5,41,Product Management,4,Stripe,flat
+S13566,U02972,SMB,B2B,monthly,2024-04-01,2024-05-01,199.0,199.0,0.0,24,10,35,Product Management,4,PayPal,flat
+S13576,U02975,SMB,B2B,monthly,2024-04-21,2024-05-21,213.07,213.07,0.0,8,6,22,AI & Machine Learning,4,MercadoPago,flat
+S13624,U02999,B2C,B2C,monthly,2024-04-11,2024-05-11,49.0,49.0,0.0,19,7,43,AI & Machine Learning,3,PayPal,flat
+S13666,U03020,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,49.0,0.0,12,2,21,Startup,3,Stripe,flat
+S13714,U03042,B2C,B2C,monthly,2024-04-27,2024-05-27,49.0,49.0,0.0,6,2,13,Design,3,MercadoPago,flat
+S13734,U03052,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,49.0,0.0,22,1,11,Cloud Computing,3,Payoneer,flat
+S13929,U03150,B2C,B2C,monthly,2024-04-03,2024-05-03,49.0,49.0,0.0,6,2,38,AI & Machine Learning,3,Stripe,flat
+S14090,U03236,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,49.0,0.0,4,3,37,Marketing,2,MercadoPago,flat
+S14097,U03240,B2C,B2C,monthly,2024-04-05,2024-05-05,49.0,49.0,0.0,11,9,9,Marketing,2,MercadoPago,flat
+S14108,U03246,B2C,B2C,monthly,2024-04-04,2024-05-04,49.0,49.0,0.0,14,1,30,Leadership,2,MercadoPago,flat
+S14245,U03332,B2C,B2C,monthly,2024-04-01,2024-05-01,49.0,49.0,0.0,15,9,20,AI & Machine Learning,2,Stripe,flat
+S14388,U03418,SMB,B2B,monthly,2024-04-20,2024-05-20,199.0,199.0,0.0,10,8,51,DevOps,2,PayPal,flat
+S14510,U03522,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,,,11,8,34,Business,1,PayPal,no_prior_renewal
+S14512,U03524,B2C,B2C,monthly,2024-04-14,2024-05-14,49.0,,,4,5,26,Data Science,1,MercadoPago,no_prior_renewal
+S14522,U03534,B2C,B2C,monthly,2024-04-02,2024-05-02,49.0,,,4,10,11,Product Management,1,PayPal,no_prior_renewal
+S14530,U03542,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,21,2,20,Software Development,1,Payoneer,no_prior_renewal
+S14557,U03569,B2C,B2C,monthly,2024-04-25,2024-05-25,49.0,,,8,4,16,Leadership,1,Stripe,no_prior_renewal
+S14599,U03611,B2C,B2C,monthly,2024-04-13,2024-05-13,49.0,,,4,5,36,DevOps,1,Stripe,no_prior_renewal
+S14606,U03618,B2C,B2C,monthly,2024-04-28,2024-05-28,49.0,,,5,2,34,Business,1,Stripe,no_prior_renewal
+S14611,U03623,B2C,B2C,monthly,2024-04-22,2024-05-22,49.0,,,7,7,22,Product Management,1,MercadoPago,no_prior_renewal
+S14615,U03627,B2C,B2C,monthly,2024-04-23,2024-05-23,49.0,,,21,6,13,English,1,Payoneer,no_prior_renewal
+S08009,U01513,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,12,6,29,Cloud Computing,13,,flat
+S14391,U03419,SMB,B2B,monthly,2024-04-30,2024-05-30,218.88,199.0,19.879999999999995,16,2,52,AI & Machine Learning,3,,expansion
+S11949,U02413,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,16,1,44,Leadership,7,,flat
+S08607,U01633,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,13,9,26,English,12,,flat
+S13550,U02965,SMB,B2B,monthly,2024-04-30,2024-05-30,228.58,199.0,29.580000000000013,25,12,48,Cloud Computing,5,,expansion
+S13777,U03070,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,12,5,45,Leadership,3,,flat
+S14232,U03323,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,4,10,37,Business,2,,flat
+S11228,U02203,SMB,B2B,monthly,2024-04-29,2024-05-29,199.0,199.0,0.0,15,11,44,Cloud Computing,9,,flat
+S14290,U03358,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,6,4,14,Data Science,3,,flat
+S06303,U01219,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,11,9,36,Marketing,15,,flat
+S11210,U02196,SMB,B2B,monthly,2024-04-30,2024-05-30,187.23,187.23,0.0,10,12,49,Startup,9,,flat
+S11267,U02215,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,13,6,27,Cloud Computing,8,,flat
+S14562,U03574,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,,,10,6,26,English,1,,no_prior_renewal
+S12496,U02570,SMB,B2B,monthly,2024-04-30,2024-05-30,262.83,262.83,0.0,18,2,13,Leadership,7,,flat
+S12996,U02746,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,17,3,34,English,6,,flat
+S14517,U03529,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,,,6,9,37,AI & Machine Learning,1,,no_prior_renewal
+S11242,U02209,Enterprise,B2B,monthly,2024-04-30,2024-05-30,1233.19,1068.67,164.51999999999998,17,4,54,AI & Machine Learning,9,,expansion
+S13410,U02909,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,6,4,11,Marketing,4,,flat
+S10160,U01949,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,49.0,0.0,19,8,6,DevOps,10,,flat
+S14223,U03318,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,8,6,20,Cloud Computing,3,,flat
+S14375,U03409,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,10,5,33,Startup,2,,flat
+S08542,U01620,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,21,6,30,AI & Machine Learning,12,,flat
+S11735,U02348,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,13,3,31,Cloud Computing,8,,flat
+S14600,U03612,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,,,7,9,32,Cloud Computing,1,,no_prior_renewal
+S14059,U03216,SMB,B2B,monthly,2024-04-29,2024-05-29,199.0,199.0,0.0,24,12,40,English,3,,flat
+S14280,U03353,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,21,2,32,AI & Machine Learning,3,,flat
+S07322,U01387,B2C,B2C,monthly,2024-04-30,2024-05-30,49.0,49.0,0.0,12,2,30,Data Science,14,,flat
+S14624,U03636,B2C,B2C,monthly,2024-04-29,2024-05-29,49.0,,,9,1,43,Design,1,,no_prior_renewal

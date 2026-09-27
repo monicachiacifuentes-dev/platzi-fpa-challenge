@@ -1,0 +1,13 @@
+segment,plan_type,active_subs
+B2C,monthly,844
+B2C,annual,692
+B2C,Total,1536
+SMB,monthly,113
+SMB,annual,190
+SMB,Total,303
+Enterprise,monthly,12
+Enterprise,annual,90
+Enterprise,Total,102
+Total,monthly,969
+Total,annual,972
+Total,Total,1941
