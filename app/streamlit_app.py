@@ -37,9 +37,11 @@ st.set_page_config(page_title="Platzi FP&A Dashboard", page_icon="\U0001F4C8", l
 BASE_LAYOUT = dict(
     plot_bgcolor=SURFACE, paper_bgcolor=SURFACE,
     font=dict(family="Segoe UI, -apple-system, sans-serif", color=INK, size=13),
-    margin=dict(l=10, r=10, t=50, b=10),
+    # Title across the top; legend in its own column on the right, so the two never overlap
+    margin=dict(l=10, r=10, t=60, b=10),
+    title=dict(x=0, xanchor="left", y=0.97, yanchor="top", font=dict(size=16)),
     hovermode="x unified",
-    legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0, bgcolor="rgba(0,0,0,0)"),
+    legend=dict(orientation="v", xanchor="left", x=1.02, yanchor="top", y=1, bgcolor="rgba(0,0,0,0)"),
 )
 
 
