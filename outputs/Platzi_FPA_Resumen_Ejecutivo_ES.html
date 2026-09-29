@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resumen Ejecutivo Platzi</title>
+<style>
+  :root {
+    --surface: #fcfcfb; --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+    --rule: #e1e0d9; --accent: #2a78d6; --accent-soft: #eef4fc; --warn-soft: #fdf1ec;
+  }
+  @page { size: Letter; margin: 0.4in 0.45in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink);
+         font: 8.6pt/1.33 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  .page { max-width: 7.6in; margin: 0 auto; }
+  h1 { font-size: 16pt; line-height: 1.2; margin: 0 0 2px; }
+  h2 { font-size: 10.5pt; margin: 12px 0 5px; padding-bottom: 2px; border-bottom: 1px solid var(--rule); }
+  p { margin: 0 0 6px; }
+  .meta { color: var(--ink2); font-size: 8.3pt; margin-bottom: 8px; }
+  .bottomline { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 7px 10px; margin-bottom: 8px; }
+  .bottomline ul { margin: 3px 0 0; padding-left: 16px; }
+  .bottomline li { margin-bottom: 2px; }
+  .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 6px 0 4px; }
+  .kpi { border: 1px solid var(--rule); border-radius: 6px; padding: 5px 7px; }
+  .kpi .v { font-size: 14pt; font-weight: 700; line-height: 1.1; }
+  .kpi .l { font-size: 7.6pt; color: var(--ink2); }
+  table { width: 100%; border-collapse: collapse; font-size: 8pt; margin: 2px 0 6px; }
+  th, td { text-align: left; padding: 3px 5px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--ink2); font-weight: 600; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; margin: 4px 0; }
+  .charts img { width: 100%; display: block; }
+  .find { margin-bottom: 6px; }
+  .find b.t { display: block; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .small { font-size: 7.6pt; color: var(--ink2); }
+  .small ul { margin: 2px 0; padding-left: 14px; }
+  .caveat { background: var(--warn-soft); padding: 5px 8px; border-radius: 4px; }
+  .pb { break-before: page; }
+  ul.tight { margin: 2px 0 6px; padding-left: 16px; }
+  ul.tight li { margin-bottom: 2px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+
+<h1>Platzi: crecimiento acelerado, pero la retención B2C define si es rentable</h1>
+<div class="meta">Revisión FP&amp;A para el CEO y el CFO · Datos: ene 2023 – abr 2024 (16 meses, datasets simulados) · Preparado por Monica Chia · Dashboard interactivo: <a href="https://platzi-challenge-3wrgxevauckcvnh6rbdvaf.streamlit.app/">platzi-challenge-3wrgxevauckcvnh6rbdvaf.streamlit.app</a></div>
+<div class="bottomline">
+  <b>Conclusión</b>
+  <ul>
+    <li><b>El crecimiento es real y los márgenes escalan.</b> El MRR llegó a <b>$204.7k</b> (×5.9 en 12 meses) y el margen bruto pasó de negativo a <b>41%</b>, porque los ingresos crecieron más rápido que los costos. La empresa aún tiene pérdida operativa (−$78k en abr-24), pero se ha reducido ≈ $9k por mes desde nov-23.</li>
+    <li><b>B2B es el motor económico; B2C pierde dinero en cada adquisición pagada.</b> SMB y Enterprise generan 3–4× su costo de adquisición con el margen actual. B2C recupera solo 0.5–0.7×.</li>
+    <li><b>El churn es la fuga, y se ve venir.</b> Los clientes que casi no usan el producto durante su período de facturación son los que cancelan. Un programa de alerta y rescate a mitad de ciclo es la palanca más rápida y barata (+$7.7k de MRR en 6 meses).</li>
+  </ul>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">$204.7k</div><div class="l">MRR, abr-24</div></div>
+  <div class="kpi"><div class="v">1,941</div><div class="l">Suscriptores activos</div></div>
+  <div class="kpi"><div class="v">90.1%</div><div class="l">Tasa de renovación Q1-24 (B2C 89.5% · B2B 93.8%)</div></div>
+  <div class="kpi"><div class="v">63.7%</div><div class="l">NDR, últimos 12 meses (81.6% a 6 meses)</div></div>
+  <div class="kpi"><div class="v">41%</div><div class="l">Margen bruto, abr-24 (29% prom. 6 meses)</div></div>
+</div>
+
+<h2>Respuestas a las cuatro preguntas</h2>
+<table>
+  <tr><th style="width:23%">Pregunta</th><th>Respuesta</th><th style="width:30%">Cómo se mide</th></tr>
+  <tr><td>1. MRR, abril 2024</td><td><b>$204,709</b>: B2C $64,365 (31%) · SMB $53,869 (26%) · Enterprise $86,475 (42%)</td><td>Suma del MRR mensualizado de las suscripciones activas al 30-abr-24 (planes anuales ÷ 12)</td></tr>
+  <tr><td>2. Retención Q1-24</td><td>El <b>90.1%</b> de las renovaciones se concretó. B2C <b>89.5%</b> vs. B2B <b>93.8%</b> (SMB 93.8%, Ent 93.9%). En $: 92.2% · 89.5% · 95.2%</td><td>Suscripciones cuyo período terminó en ene–mar 24: renovadas ÷ (renovadas + canceladas)</td></tr>
+  <tr><td>3. Suscriptores activos, abr-24</td><td><b>1,941</b>: B2C 844 mensuales / 692 anuales · SMB 113 / 190 · Enterprise 12 / 90</td><td>El período de la suscripción cubre el 30-abr-24</td></tr>
+  <tr><td>4. NDR, últimos 12 meses</td><td><b>63.7%</b> (retención bruta 59.9%). B2C 43.1% · SMB 89.8% · Enterprise 71.8%</td><td>MRR de abr-24 ÷ MRR de abr-23 de los 417 clientes activos en abr-23. Base pequeña y temprana; a 6 meses (1,124 clientes): 81.6%</td></tr>
+</table>
+
+<div class="charts">
+  <img src="charts/c1_mrr_by_segment.png" alt="Barras apiladas del MRR mensual por segmento de ene-23 a abr-24, hasta $204.7k; Enterprise es el segmento más grande">
+  <img src="charts/c4_ltv_cac.png" alt="LTV:CAC por segmento: B2C 0.5 a 0.7 veces, SMB 2.9 a 4.1 veces, Enterprise 2.2 a 3.0 veces, frente a una referencia de 3 veces">
+</div>
+
+<h2>Lo que dicen los números</h2>
+<div class="find"><b class="t">1 · B2B sostiene el negocio: Enterprise impulsa el crecimiento del MRR y SMB la expansión.</b>
+B2B aporta el 69% del MRR con el 21% de los suscriptores; en 12 meses Enterprise sumó +$76k de MRR y SMB +$45k. Con el margen actual de 41%, SMB devuelve <b>4.1×</b> su costo total de adquisición (recuperación ≈ 10 meses) y Enterprise <b>3.0×</b> (≈ 12 meses); con el margen conservador de 6 meses y considerando el churn, la recuperación sube a ≈ 17 y ≈ 21 meses. SMB además genera <b>4× más ingreso por expansión</b> que Enterprise. La contracción es mínima (&lt; 1.2% del MRR inicial); lo que reduce el NDR es el churn.</div>
+<div class="find"><b class="t">2 · La adquisición pagada de B2C hoy no se recupera.</b>
+B2C recibe el 52% del presupuesto de marketing ($790k de $1.52M). Conseguir un cliente B2C que pague cuesta <b>$392</b>, y ese cliente genera ≈ <b>$200–280</b> de utilidad bruta en toda su vida. Los "nuevos usuarios" de marketing son registros: solo ~10% se convierte en suscriptor pagado, por lo que el costo de $37 por registro parece engañosamente bajo. Los suscriptores B2C mensuales cancelan ≈ 10% al mes, y ninguno se ha cambiado al plan anual, que retiene mucho mejor.</div>
+
+<div class="pb"></div>
+<div class="charts">
+  <img src="charts/c3_churn_by_engagement.png" alt="Tasa de churn según días activos en el período de facturación: 100% con 1-3 días, 24% con 4-6, 16% con 7-9, 15% con 10-12, 0% con 13 o más">
+  <img src="charts/c2_scenarios.png" alt="MRR real hasta abr-24 y proyección a 12 meses: pesimista $320k, base $354k, optimista $452k a abr-25">
+</div>
+
+<div class="find"><b class="t">3 · El churn es predecible, pero solo dentro del período de facturación.</b>
+Todos los períodos con ≤ 3 días activos terminaron en cancelación; ninguno con 13 días o más (los datos simulados hacen esta señal más nítida de lo que será en la realidad). El uso del mes anterior <i>no</i> predice el churn de este mes, así que hay que actuar <b>a mitad de ciclo</b>. De las <b>1,024</b> suscripciones que renuevan en may-24 ($87.8k de MRR), <b>72 son de alto riesgo</b>; la lista nominal está lista para Customer Success. Advertencia: los datos registran el uso por período completo, así que la alerta de los días 10–15 debe validarse con datos de uso diario en el piloto.</div>
+<div class="find"><b class="t">4 · El apalancamiento operativo está funcionando.</b>
+Los ingresos crecieron 28× entre ene-23 y abr-24, mientras los costos de servicio crecieron 1.7×, lo que llevó el margen bruto de muy negativo a 41%. Hoy, cada dólar de MRR retenido se convierte en gran parte en utilidad bruta, lo que hace de la retención el uso más rentable del próximo dólar. Después de marketing y G&amp;A el negocio aún pierde dinero (−$78k en abr-24; −$2.0M en 16 meses), pero la pérdida mensual bajó desde −$122k en nov-23.</div>
+
+<h2>Recomendaciones (ordenadas por esfuerzo vs. impacto)</h2>
+<table>
+  <tr><th>Iniciativa</th><th class="n">MRR a 6 meses</th><th class="n">NDR</th><th>Esfuerzo · plazo</th><th>Por qué</th></tr>
+  <tr><td><b>1. Alerta de bajo uso a mitad de ciclo + rescate</b>: identificar suscripciones con poco uso entre los días 10 y 15; mensajes en la app para B2C y llamada de un CSM para B2B. Empezar con la lista de may-24.</td><td class="n"><b>+$7.7k</b><br>(+2.7%)</td><td class="n">+2.7 pp</td><td>Bajo · 1 mes</td><td>Basada en reglas, con datos que ya tenemos. Supone rescatar al 20% de los clientes señalados que iban a cancelar (rango 10–30% → +$3.8k a +$11.8k).</td></tr>
+  <tr><td><b>2. Playbook de expansión y renovación B2B</b>: revisiones trimestrales con SMB para crecer en licencias; acción de retención en la 2ª renovación de Enterprise, donde se concentra su contracción.</td><td class="n">+$1.6k<br>(+0.6%)</td><td class="n">+0.6 pp</td><td>Medio · 3 meses</td><td>Refuerza el segmento con la mejor rentabilidad por cliente; sin desventajas.</td></tr>
+  <tr><td><b>3. Oferta B2C mensual → anual</b>: plan anual prepagado ofrecido a usuarios mensuales activos.</td><td class="n">−$0.9k<br>(−0.3%)</td><td class="n">−0.2 pp<br>(+0.8 a 12 m)</td><td>Medio · equilibrio en ~9 meses</td><td>El churn anual es ~4%/año vs. ~10%/mes del plan mensual, pero cada cambio baja el MRR de $49 a $33. Aporta ≈ $72k de caja anticipada en 6 meses. Lanzar después de la #1.</td></tr>
+</table>
+<p><b>Asignación de capital:</b> mantener plana la inversión en adquisición pagada B2C hasta que mejoren la conversión y la retención (meta LTV:CAC ≥ 3×), y dirigir el presupuesto incremental a B2B (SMB y Enterprise, 3–4× LTV:CAC con el margen actual).</p>
+
+<h2>Proyección a 12 meses (a abr-25)</h2>
+<p><b>Base: $354k de MRR (+73%), 3,119 suscriptores</b>, suponiendo que la adquisición se mantiene en el promedio de los últimos 6 meses y que el churn sigue en sus tasas recientes (un escenario prudente). <b>Pesimista: $320k</b> (más churn, adquisición igual o menor, la mitad de la expansión). <b>Optimista: $452k</b> (la adquisición sigue creciendo y las tres iniciativas se cumplen). Validado sobre los últimos 6 meses, el error promedio del modelo fue de ~10% del MRR real (subestimó, porque el crecimiento se aceleró).</p>
+
+<div class="two">
+  <div class="small caveat"><b>Supuestos y advertencias clave</b>
+    <ul>
+      <li>El MRR sale de las suscripciones; los montos de pagos son precios de lista y no reflejan los cambios de precio en B2B.</li>
+      <li>CAC = gasto de marketing + ventas + una parte del G&amp;A, ÷ nuevos clientes <i>que pagan</i> (no registros).</li>
+      <li>Los costos de servicio (CS, infraestructura, contenido) se asignan según la participación en el MRR, por lo que todos los segmentos tienen el mismo margen %. El LTV se limita a 60 meses.</li>
+      <li>El NDR a 12 meses se basa en 417 clientes tempranos (12 Enterprise); la vista a 6 meses es más robusta.</li>
+      <li>Cada usuario = un cliente: los dominios corporativos mezclan segmentos, así que no se pueden reconstruir las cuentas B2B.</li>
+    </ul>
+  </div>
+  <div class="small"><b>Próximos pasos</b>
+    <ul>
+      <li>Pilotear la alerta con la lista de may-24; medir la tasa de rescate frente a un grupo de control.</li>
+      <li>Hacer un test A/B de la oferta anual (precio y momento) antes de lanzarla a todos.</li>
+      <li>Agregar IDs de licencia y de cuenta para B2B, y el canal de origen de los clientes que pagan, para afinar el análisis de CAC y expansión.</li>
+      <li>Dashboard interactivo (filtro por segmento, lista de riesgo de churn, simulador de escenarios): <a href="https://platzi-challenge-3wrgxevauckcvnh6rbdvaf.streamlit.app/">https://platzi-challenge-3wrgxevauckcvnh6rbdvaf.streamlit.app/</a>. Modelo y SQL: ver los archivos adjuntos. Todas las cifras son reproducibles desde el pipeline SQL.</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

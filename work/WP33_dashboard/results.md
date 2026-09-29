@@ -206,3 +206,117 @@ file `app/streamlit_app.py`. Community Cloud will use `app/requirements.txt`.
 
 No files were modified in `sql/**`, `Docs/**`, `outputs/*.html|pdf|xlsx`,
 `work/WP40_model/**`, or `db/platzi.duckdb` (all read-only for this WP).
+
+## Multi-select filter (2026-09-27)
+
+The sidebar's single-choice segment radio (All / B2C / SMB / Enterprise) was
+replaced with `st.sidebar.multiselect("Segments", ["B2C","SMB","Enterprise"],
+default=all three)`, so the dashboard can show any one or more segments at
+once (7 non-empty combinations). Clearing the widget entirely falls back to
+all three segments, with a `st.sidebar.caption` explaining that.
+
+**Resolution helper.** `resolve_group(selected)` maps the selection to
+`(precomputed_group_label, display_label)`: all three → `("Total", "All
+segments")`; `{SMB, Enterprise}` → `("B2B", "B2B")`; a single segment →
+`(segment, segment)`; any other combination (only `{B2C, SMB}` and `{B2C,
+Enterprise}` are possible with 3 base segments) → `(None, "B2C + SMB")`-style
+label, signalling to callers that there is no rollup row and they must
+aggregate from the base B2C/SMB/Enterprise rows.
+
+**Per-mart handling** (a family of `..._scoped()` helpers built on top of
+`resolve_group`, one per mart shape):
+
+- **Aggregated when there's no rollup row** (sum additive $ / count columns,
+  recompute ratios from summed numerators/denominators, never averaged):
+  `bridge_scoped` (MRR bridge: sums opening/new/expansion/contraction/
+  churn/closing MRR + active_customers, used for the Overview KPI tile, the
+  MRR-bridge chart, and the Scenarios actuals line), `subs_scoped` (active
+  subs; falls through to a sum even when `resolve_group` returns `"B2B"`
+  because `mart_q3_active_subs_apr24` has no B2B row), `retention_scoped`
+  (logo/$ retention = Σn_renewed/Σn_ended, Σ$num/Σ$den),
+  `ndr_scoped`/`ndr_t6m_scoped` (NDR = Σend_mrr/Σstart_mrr; GRR =
+  Σ(start-contraction-churn)/Σstart), `gm_scoped` (GM% = Σgross_profit/Σrevenue
+  — additive because COGS is allocated by MRR share, D-07), `waterfall_scoped`
+  (sums each waterfall step's $ amount across segments — verified additive:
+  B2C+SMB+Enterprise reproduces the Total row and SMB+Enterprise reproduces
+  the B2B row to floating-point precision), `proj_scoped` (projection-monthly
+  $ / count flow columns, all additive), `scenario_summary_scoped` (MRR/subs
+  summed; forward NDR/GRR recomputed as Σ(rate × mrr_apr24_actual) /
+  Σmrr_apr24_actual, since `mrr_apr24_actual` is each segment's NDR
+  denominator — verified this reconstruction reproduces the mart's own
+  precomputed B2B and Total rows to 1e-10), and `panel_scoped` (the
+  interactive-scenario engine's output panel — every column is an additive
+  flow, so this mirrors what `scn.add_rollups()` already does for its own
+  B2B/Total rows).
+- **Per-segment rows, never blended, when the mart's numbers are ratios**
+  (LTV:CAC, CAC, payback, GM basis sensitivities): `ue_view` (Unit economics
+  tab's LTV:CAC chart and CAC/payback table) and `sens_scoped` (Sensitivity
+  table) show one row/bar per selected segment for any combination without a
+  precomputed rollup (sensitivity does have a `Total` row, used when all three
+  are selected; there's no B2B row for either mart, so `{SMB, Enterprise}`
+  also renders as two rows there). `strategy_impact_scoped` follows the same
+  rule: MRR deltas are additive but %/pp deltas are not, so a custom
+  combination shows one row per selected segment plus a caption explaining
+  why, while the 5 precomputed combinations (Total/B2B/single) use the
+  mart's own row directly. The funnel and the LTV:CAC/tier-summary bar charts
+  already draw one mark per segment by construction, so they needed no
+  aggregation logic at all — just iterate over the selected segments instead
+  of a hardcoded list.
+- **Fallback to the closest valid group, with a caption** where the mart
+  simply has no finer breakdown: `cohort_group_for()` maps the selection to
+  Total/B2C/B2B (the only granularity `mart_a1_01_cohort_retention` has,
+  A-30) — exact for {all three}, {B2C}, {SMB, Enterprise}; falls back to B2B
+  for a lone SMB or Enterprise (existing A-30 behavior, now flagged
+  explicitly as non-exact); falls back to Total for the two custom
+  B2C-containing combinations, with an `st.info` explaining the fallback.
+- **Plain `segment.isin(selected)` filter, no rollup logic needed**: marts
+  that only ever had base B2C/SMB/Enterprise rows to begin with —
+  `mart_a1_03_churn_indicators_base` (churn-by-engagement chart),
+  `mart_a1_06_may24_churn_risk` (tier summary, at-risk table, CSV download —
+  filename now a `seg_slug()` like `b2c_smb.csv`), and
+  `mart_a2_03_funnel_segment_monthly` (funnel).
+
+**Colors follow the segment, not position**: every chart still keys off the
+fixed `SEG_COLOR` dict (B2C `#2a78d6`, SMB `#eb6834`, Enterprise `#1baf7a`),
+looked up by segment name in every loop (`for seg in selected_segments: ...
+marker_color=SEG_COLOR[seg]`), so removing/adding a segment from the
+selection never reassigns another segment's color. The BASE_LAYOUT
+right-hand legend from the prior iteration was left untouched.
+
+### Verification
+
+Rewrote `app/test_app.py` around `AppTest`:
+
+- `test_segment_combinations_run_without_exception_on_every_tab` drives all 7
+  non-empty combinations of {B2C, SMB, Enterprise} plus the empty selection
+  through every toggle (cohort $/logo, NDR T6M/T12M), the GM-basis radio, the
+  case select-slider (low/base/high), and all 3 scenario sliders (at min and
+  max) — asserting `at.exception` is empty at every step.
+- `test_empty_selection_falls_back_to_all_with_caption` checks the sidebar
+  caption text and that KPIs match the all-three-segments case.
+- `test_segment_kpis_match_expected_values` checks MRR/subs for 4 required
+  combinations: all three → $204,709.09 / 1,941; {SMB, Enterprise} →
+  $140,344.09 / 405; {B2C, SMB} → $118,234.37 / 1,839; {B2C} → $64,365.00 /
+  1,536 — the two-segment cases exercise the `bridge_scoped`/`subs_scoped`
+  summation path (SMB+Enterprise is exact-match/precomputed lookup; B2C+SMB
+  has no rollup row and is genuinely summed).
+- `test_custom_combo_retention_matches_precomputed_rollup` reads
+  `mart_q2_retention_q1_24.csv` directly, confirms the B2B row's logo_rate is
+  0.9377 and the Total row's is 0.9009, then checks the app's Q1-24 retention
+  KPI tile matches each to one decimal place for `{SMB, Enterprise}` and for
+  the default all-three selection.
+
+Result: `.venv/Scripts/python.exe -m pytest app/test_app.py -q` → **7 passed
+in ~72s** (a transient run once took 11+ minutes with one flaky failure in
+the combinations test under heavy concurrent background load on the
+machine — rerun in isolation twice more, and the full suite once more,
+all green in 50-75s each; no logic issue reproduced).
+
+**Headless server check** (port 8599, not 8501): `streamlit run
+app/streamlit_app.py --server.headless true --server.port 8599`, `curl
+http://localhost:8599/_stcore/health` → `ok` at ~2s and again at ~10s, log
+free of tracebacks, process killed by PID afterward. Port 8501 (the user's
+running app) was left untouched throughout.
+
+Only `app/streamlit_app.py`, `app/test_app.py`, and this section of
+`results.md` were changed for this pass.

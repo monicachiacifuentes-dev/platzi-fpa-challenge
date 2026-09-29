@@ -13,7 +13,7 @@
 | P0 Setup | WP00, WP01 | ✅ |
 | P1 Ad-hoc questions | WP10–WP13 | ✅ |
 | P2 Analyses | WP20–WP23 | ✅ WP20–WP23 done & consolidated (31/31 tests pass) |
-| P3 Bonus | WP30–WP34 | ✅ WP30 SQL · WP31 scenarios · WP32 churn model · WP33 Streamlit · WP34 BigQuery (Looker Studio: the user builds it from the guide) |
+| P3 Bonus | WP30–WP34 | ✅ WP30 local · WP31 scenarios · WP32 churn model · WP33 Streamlit (deployed) · WP34 BigQuery: 49 tables loaded + Q1–Q4 native BigQuery SQL reconciled 242/242 (WP34b). Looker Studio dropped (time) |
 | P4 Packaging | WP40–WP42 | ✅ WP40 model `outputs/Platzi_FPA_Model.xlsx` (46/46 verified) · WP41 charts ✅ · WP42 summary ✅ (name placeholder) · WP33 Streamlit ✅ (9/9 tests) |
 | P5 QA & AI comparison | WP50–WP51 | ✅ WP50 QA 130/130 (`work/WP50_qa/results.md`) · 🟨 WP51 kit ready in `comparison/` (the user runs the prompts; the lead reviews the scorecard) |
 
@@ -248,10 +248,10 @@ Qualitative comparison (1–5 each): insight quality, recommendations, clarity, 
 ---
 
 ## 7. HANDOFF (2026-09-27): read this first in a new session
-**Done:** P0, P1 (Q1–Q4), P2 (WP20–23), WP30 (local SQL), WP31 scenarios, WP32 churn model, WP41 charts, WP42 executive summary (`outputs/Platzi_FPA_Executive_Summary.pdf`, 2 pages; **replace "[Candidate name]"** in the .html, then re-print with headless Edge from PowerShell using `--user-data-dir`).
+**Done:** P0, P1 (Q1–Q4), P2 (WP20–23), WP30 (local SQL), WP31 scenarios, WP32 churn model, WP41 charts, WP42 executive summary (`outputs/Platzi_FPA_Executive_Summary.pdf`, 2 pages; name set to Monica Chia and PDF re-printed 2026-09-27; to re-print after edits, change the .html then print with headless Edge from PowerShell using `--user-data-dir`).
 **Launched but NOT yet reviewed (Sonnet agents, may have finished):**
 - WP40 model → `outputs/Platzi_FPA_Model.xlsx`, `work/WP40_model/{build_model.py,verify_model.py,results.md}`
-- WP33 Streamlit ✅ reviewed 2026-09-27 (lead reran `pytest app/test_app.py`: 9/9 pass). Proposed IDs D-25..D-27, A-30, A-31 are in its results.md. Note: the agent deleted a stray `work/WP31_scenarios_test.duckdb` (unused scratch file).
+- WP33 Streamlit ✅ **deployed** (Streamlit Cloud, checked 2026-09-27, all 5 tabs render, KPIs match): https://platzi-challenge-3wrgxevauckcvnh6rbdvaf.streamlit.app/ · reviewed 2026-09-27 (lead reran `pytest app/test_app.py`: 9/9 pass). Proposed IDs D-25..D-27, A-30, A-31 are in its results.md. Note: the agent deleted a stray `work/WP31_scenarios_test.duckdb` (unused scratch file).
 - WP40 ✅ reviewed 2026-09-27: `verify_model.py` 46/46 pass. Retention-adjusted payback on the 60-mo curve: B2C > 60 · SMB 17 mo · Ent 21 mo.
 - WP34 ✅ 2026-09-27: 49/49 tables loaded to BigQuery `project-b7f9b2e4-dcdc-4e36-b89.platzi_fpa` by `sql/bigquery/load_to_bigquery.ps1` (the script prepends the portable gcloud bin to PATH). Verified in BigQuery: Apr-24 MRR 204,709.09 / 1,941 subs from the raw tables. **Sandbox tables expire after 60 days.** Looker Studio click-guide: `outputs/Looker_Studio_Guide.md` (the user builds it).
 **GitHub:** public repo https://github.com/monicachiacifuentes-dev/platzi-fpa-challenge (gh CLI installed via winget, not on PATH in old shells: `%LOCALAPPDATA%/Microsoft/WinGet/Packages/GitHub.cli_*/bin/gh.exe`). `.gitignore` excludes *.duckdb, .venv, Docs/Originals, CLAUDE.md. Next: the user deploys Streamlit Cloud (main file `app/streamlit_app.py`, Python 3.12) → add the link to the README + summary.
@@ -263,3 +263,4 @@ Qualitative comparison (1–5 each): insight quality, recommendations, clarity, 
 4. WP34: BigQuery Sandbox upload (user runs `! gcloud auth login`) + Looker Studio click-guide (one table per chart).
 5. WP50 QA checklist, WP51 AI comparison (§6), submission package (Deliverables_Framework §4).
 **Rules:** execution → Sonnet subagents; review/writing → Opus. Rebuild the db: `PYTHONIOENCODING=utf-8 ./.venv/Scripts/python.exe sql/run_pipeline.py` (31/31 tests pass).
+- 2026-09-27 (session a0998f4c): exec summary PDF re-printed with name (Monica Chia) + Streamlit link. **WP34b ✅** Q1–Q4 ported to BigQuery SQL from raw tables (`sql/bigquery/q*.sql`, `run_bigquery.ps1`, `reconcile.py` → `outputs/bigquery_reconciliation.csv`, 242/242 PASS; lead re-queried bq_q1 live). **Looker Studio dropped** from deliverables (not built); BigQuery presented as the cloud warehouse. **WP43 ✅** architecture diagram `Deliverables/06_Architecture.drawio` (built by `work/WP43_architecture/build_drawio.py`; preview via `drawio_url.py`).
