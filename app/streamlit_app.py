@@ -52,6 +52,13 @@ def style_axes(fig, yfmt=None, showlegend=True):
     return fig
 
 
+def month_axis(fig):
+    """Month-end data points: centre each bar/point on its calendar month, so Apr-30 reads as Apr, not May."""
+    fig.update_traces(xperiod="M1", xperiodalignment="middle", xhoverformat="%b %Y")
+    fig.update_xaxes(dtick="M2", tickformat="%b %Y", ticklabelmode="period")
+    return fig
+
+
 # --------------------------------------------------------------------------- data loading
 @st.cache_data
 def load_mart(name: str) -> pd.DataFrame:
@@ -66,11 +73,42 @@ def load_mart_dates(name: str, date_cols: tuple[str, ...]) -> pd.DataFrame:
     return df
 
 
-SEGMENTS = ["All", "B2C", "SMB", "Enterprise"]
+SEGMENT_ORDER = ["B2C", "SMB", "Enterprise"]
 
 
-def seg_key(choice: str) -> str:
-    return "Total" if choice == "All" else choice
+def order_segments(selected) -> list[str]:
+    """Segments in the fixed B2C / SMB / Enterprise order, regardless of the
+    order the widget returns them in."""
+    return [s for s in SEGMENT_ORDER if s in selected]
+
+
+def resolve_group(selected: list[str]) -> tuple[str | None, str]:
+    """Resolve a multi-segment selection to (precomputed_group_label, display_label).
+
+    Several marts carry precomputed rollup rows that are exact -- "Total" (all
+    three segments), "B2B" (SMB + Enterprise), and each base segment on its
+    own. When the selection matches one of those exactly, the first element is
+    that label and callers should read the rollup row directly. Any other
+    combination (e.g. {B2C, SMB}) has no precomputed row: the first element is
+    None and callers must aggregate from the base segment rows instead (sum
+    additive columns, recompute ratios from summed numerators/denominators).
+    """
+    s = set(selected)
+    if s == {"B2C", "SMB", "Enterprise"}:
+        return "Total", "All segments"
+    if s == {"SMB", "Enterprise"}:
+        return "B2B", "B2B"
+    if len(s) == 1:
+        only = next(iter(s))
+        return only, only
+    return None, " + ".join(order_segments(selected))
+
+
+def seg_slug(selected: list[str]) -> str:
+    """Filename-safe slug for the current selection, e.g. 'all', 'b2b', 'b2c_smb'."""
+    if set(selected) == {"B2C", "SMB", "Enterprise"}:
+        return "all"
+    return "_".join(seg.lower() for seg in order_segments(selected))
 
 
 def fmt_money(x: float, decimals: int = 0) -> str:
@@ -81,12 +119,185 @@ def fmt_pct(x: float, decimals: int = 1) -> str:
     return f"{x * 100:,.{decimals}f}%"
 
 
+# --------------------------------------------------------------------------- segment aggregation helpers
+# Every helper below takes the raw selection (`selected`) plus the precomputed
+# group label from resolve_group (`group`, None when the selection has no
+# rollup row) and returns data scoped to that selection: the rollup row
+# when `group` is given (exact), otherwise base B2C/SMB/Enterprise rows summed
+# on their additive columns with ratios recomputed from the summed
+# numerators/denominators -- never averaged, never mixed with a rollup row.
+
+BRIDGE_COLS = ["opening_mrr", "new_mrr", "expansion_mrr", "contraction_mrr", "churn_mrr", "closing_mrr", "active_customers"]
+
+
+def bridge_scoped(bridge: pd.DataFrame, selected: list[str], group: str | None) -> pd.DataFrame:
+    if group is not None:
+        return bridge[bridge.segment == group].sort_values("month_end").copy()
+    sub = bridge[bridge.segment.isin(selected)].copy()
+    sub[BRIDGE_COLS] = sub[BRIDGE_COLS].fillna(0.0)
+    return sub.groupby("month_end", as_index=False)[BRIDGE_COLS].sum().sort_values("month_end")
+
+
+def subs_scoped(q3: pd.DataFrame, selected: list[str], group: str | None, plan_type: str = "Total") -> float:
+    # mart_q3_active_subs_apr24 has Total and each base segment, but no B2B rollup
+    # row -- fall through to the sum whenever the precomputed row isn't there.
+    if group is not None:
+        match = q3[(q3.segment == group) & (q3.plan_type == plan_type)]
+        if not match.empty:
+            return float(match.active_subs.iloc[0])
+    sub = q3[q3.segment.isin(selected) & (q3.plan_type == plan_type)]
+    return float(sub.active_subs.sum())
+
+
+def retention_scoped(q2: pd.DataFrame, selected: list[str], group: str | None,
+                      split: str = "all", method: str = "M06_primary") -> dict:
+    if group is not None:
+        row = q2.loc[(q2.segment == group) & (q2.split == split) & (q2.method == method)].iloc[0]
+        return dict(logo_rate=row.logo_rate, dollar_rate=row.dollar_rate)
+    sub = q2[q2.segment.isin(selected) & (q2.split == split) & (q2.method == method)]
+    n_renewed, n_ended = sub.n_renewed.sum(), sub.n_ended.sum()
+    dollar_num, dollar_den = sub.dollar_numerator.sum(), sub.dollar_denominator.sum()
+    return dict(logo_rate=n_renewed / n_ended, dollar_rate=dollar_num / dollar_den)
+
+
+def ndr_scoped(q4: pd.DataFrame, selected: list[str], group: str | None, method: str = "M08_M09_M10") -> dict:
+    """NDR = end / start; GRR = (start - contraction - churn) / start (expansion excluded)."""
+    if group is not None:
+        row = q4.loc[(q4.segment == group) & (q4.method == method)].iloc[0]
+        return dict(ndr=row.ndr, grr=row.grr)
+    sub = q4[q4.segment.isin(selected) & (q4.method == method)]
+    start, contraction, churn, end = sub.start_mrr.sum(), sub.contraction_mrr.sum(), sub.churn_mrr.sum(), sub.end_mrr.sum()
+    return dict(ndr=end / start, grr=(start - contraction - churn) / start)
+
+
+def ndr_t6m_scoped(a303: pd.DataFrame, selected: list[str], group: str | None) -> float:
+    if group is not None:
+        return float(a303.loc[a303.segment == group, "ndr"].iloc[0])
+    sub = a303[a303.segment.isin(selected)]
+    return float(sub.end_mrr.sum() / sub.start_mrr.sum())
+
+
+def gm_scoped(gm: pd.DataFrame, selected: list[str], group: str | None, month: pd.Timestamp) -> float:
+    """GM% = gross profit / revenue; both additive across segments (COGS is
+    allocated by MRR share, D-07, so summing gross_profit_base reconstructs
+    the company total exactly)."""
+    if group is not None:
+        return float(gm.loc[(gm.month == month) & (gm.segment == group), "gm_pct_base"].iloc[0])
+    sub = gm[(gm.month == month) & (gm.segment.isin(selected))]
+    return float(sub.gross_profit_base.sum() / sub.revenue.sum())
+
+
+STEP_ORDER = {"Start MRR": 1, "Churn": 2, "Contraction": 3, "Expansion": 4, "End MRR": 5}
+
+
+def waterfall_scoped(wf: pd.DataFrame, selected: list[str], group: str | None) -> pd.DataFrame:
+    if group is not None:
+        return wf[wf.segment == group].sort_values("step_order").copy()
+    sub = wf[wf.segment.isin(selected)]
+    out = sub.groupby("step", as_index=False)["amount"].sum()
+    out["step_order"] = out["step"].map(STEP_ORDER)
+    return out.sort_values("step_order")
+
+
+def cohort_group_for(selected: list[str]) -> tuple[str, bool]:
+    """mart_a1_01_cohort_retention only splits cohorts into Total / B2C / B2B
+    (A-30 -- no SMB/Enterprise split was ever computed at that granularity).
+    Maps the selection to the closest of those three; the bool flags an exact
+    match vs. a fallback."""
+    s = set(selected)
+    if s == {"B2C", "SMB", "Enterprise"}:
+        return "Total", True
+    if s == {"B2C"}:
+        return "B2C", True
+    if s == {"SMB", "Enterprise"}:
+        return "B2B", True
+    if s in ({"SMB"}, {"Enterprise"}):
+        return "B2B", False
+    return "Total", False  # custom combos that include B2C, e.g. {B2C, SMB}: no valid subset exists
+
+
+def sens_scoped(sens: pd.DataFrame, selected: list[str], group: str | None) -> pd.DataFrame:
+    """Sensitivity results are ratios (CAC, GM%, LTV:CAC, payback) and are not
+    additive across segments, so there is no B2B or custom-combo rollup here:
+    the precomputed Total row when all three segments are selected, otherwise
+    one row per selected base segment."""
+    if group == "Total":
+        return sens[sens.segment == "Total"].copy()
+    return sens[sens.segment.isin(selected)].copy()
+
+
+PROJ_COLS = ["opening_customers", "opening_mrr", "new_customers", "new_mrr", "expansion_mrr", "contraction_mrr",
+             "churn_customers", "churn_mrr", "migration_out_customers", "migration_out_mrr",
+             "migration_in_customers", "migration_in_mrr", "closing_customers", "closing_mrr"]
+
+
+def proj_scoped(proj: pd.DataFrame, selected: list[str], group: str | None) -> pd.DataFrame:
+    base = proj[proj.plan_type == "ALL"]
+    if group is not None:
+        return base[base.segment == group].sort_values(["scenario", "month_end"]).copy()
+    sub = base[base.segment.isin(selected)]
+    out = sub.groupby(["scenario", "month_index", "month_end"], as_index=False)[PROJ_COLS].sum()
+    return out.sort_values(["scenario", "month_end"])
+
+
+def scenario_summary_scoped(summary: pd.DataFrame, selected: list[str], group: str | None, label: str) -> pd.DataFrame:
+    """MRR/subs are summed (additive); forward NDR/GRR are recomputed as
+    sum(rate x mrr_apr24_actual) / sum(mrr_apr24_actual) -- mrr_apr24_actual is
+    each segment's NDR/GRR denominator (start MRR), so this is exactly
+    Sigma numerator / Sigma denominator, never an average of rates."""
+    if group is not None:
+        return summary[summary.segment == group].copy()
+    sub = summary[summary.segment.isin(selected)]
+    rate_cols = ["forward_ndr_m6", "forward_grr_m6", "forward_ndr_m12", "forward_grr_m12"]
+    rows = []
+    for scen, g in sub.groupby("scenario"):
+        mrr24, mrr25 = g.mrr_apr24_actual.sum(), g.mrr_apr25.sum()
+        row = dict(scenario=scen, segment=label,
+                   mrr_apr24_actual=mrr24, mrr_apr25=mrr25,
+                   mrr_growth_pct=(mrr25 / mrr24 - 1) * 100,
+                   subs_apr24_actual=g.subs_apr24_actual.sum(), subs_apr25=g.subs_apr25.sum())
+        for c in rate_cols:
+            row[c] = (g[c] * g.mrr_apr24_actual).sum() / mrr24
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def strategy_impact_scoped(strat: pd.DataFrame, selected: list[str], group: str | None) -> tuple[pd.DataFrame, bool]:
+    """MRR deltas are additive but %/pp deltas are not, so a custom combination
+    (no precomputed row) is shown as one row per selected segment rather than
+    a blended average -- the caller adds a caption explaining this. Returns
+    (view, is_exact)."""
+    if group is not None:
+        return strat[strat.segment == group].copy(), True
+    return strat[strat.segment.isin(selected)].copy(), False
+
+
+def panel_scoped(panel: pd.DataFrame, selected: list[str], group: str | None) -> pd.DataFrame:
+    """Interactive-scenario panel (from scn.simulate/add_rollups) scoped to the
+    selection. Every column is an additive $ / count flow, so summing the base
+    segment rows is exact -- add_rollups builds its own 'B2B'/'Total' rows the
+    same way."""
+    base = panel[panel.plan_type == "ALL"]
+    if group is not None:
+        return base[base.segment == group].sort_values("month_index").copy()
+    sub = base[base.segment.isin(selected)]
+    num_cols = [c for c in sub.columns if c not in ("month_index", "segment", "plan_type", "month_end")]
+    return sub.groupby(["month_index", "month_end"], as_index=False)[num_cols].sum().sort_values("month_index")
+
+
 # =============================================================================
 # Sidebar
 # =============================================================================
 st.sidebar.title("Filters")
-segment_choice = st.sidebar.radio("Segment", SEGMENTS, index=0, help="Scopes every chart and table on the page.")
-SEG = seg_key(segment_choice)
+selected_segments = st.sidebar.multiselect(
+    "Segments", SEGMENT_ORDER, default=SEGMENT_ORDER,
+    help="Scopes every chart and table on the page. Pick one or more segments.",
+)
+if not selected_segments:
+    st.sidebar.caption("No segment selected -- showing all segments.")
+    selected_segments = list(SEGMENT_ORDER)
+selected_segments = order_segments(selected_segments)
+SEG_GROUP, SEG_LABEL = resolve_group(selected_segments)
 st.sidebar.caption(
     "Data: `outputs/marts/*.csv` (DuckDB pipeline, WP30). "
     "Numbers reconcile to `outputs/Platzi_FPA_Executive_Summary.html`."
@@ -103,7 +314,7 @@ st.sidebar.caption(
 st.title("Platzi FP&A Executive Dashboard")
 st.caption(
     "Data window: **Jan 2023 - Apr 2024** (16 months) &nbsp;|&nbsp; "
-    f"Segment: **{segment_choice}** &nbsp;|&nbsp; "
+    f"Segment: **{SEG_LABEL}** &nbsp;|&nbsp; "
     "All datasets are **simulated** for this take-home exercise -- treat every number as illustrative, not real Platzi data."
 )
 
@@ -123,26 +334,27 @@ with tab_overview:
     gm = load_mart_dates("mart_a2_08_gm_monthly", ("month",))
 
     apr24 = pd.Timestamp("2024-04-30")
-    mrr_apr24 = bridge.loc[(bridge.month_end == apr24) & (bridge.segment == SEG), "closing_mrr"].iloc[0]
-    subs_apr24 = q3.loc[(q3.segment == SEG) & (q3.plan_type == "Total"), "active_subs"].iloc[0]
-    ret_row = q2.loc[(q2.segment == SEG) & (q2.split == "all") & (q2.method == "M06_primary")].iloc[0]
-    ndr_row = q4.loc[(q4.segment == SEG) & (q4.method == "M08_M09_M10")].iloc[0]
-    ndr_t6m = a303.loc[a303.segment == SEG, "ndr"].iloc[0]
-    gm_row = gm.loc[(gm.month == apr24) & (gm.segment == SEG)].iloc[0]
+    brow = bridge_scoped(bridge, selected_segments, SEG_GROUP)
+    mrr_apr24 = brow.loc[brow.month_end == apr24, "closing_mrr"].iloc[0]
+    subs_apr24 = subs_scoped(q3, selected_segments, SEG_GROUP, plan_type="Total")
+    ret = retention_scoped(q2, selected_segments, SEG_GROUP, split="all", method="M06_primary")
+    ndr = ndr_scoped(q4, selected_segments, SEG_GROUP, method="M08_M09_M10")
+    ndr_t6m = ndr_t6m_scoped(a303, selected_segments, SEG_GROUP)
+    gm_pct = gm_scoped(gm, selected_segments, SEG_GROUP, apr24)
 
     c1, c2, c3, c4, c5 = st.columns(5)
-    c1.metric(f"MRR, Apr-24 ({segment_choice})", fmt_money(mrr_apr24))
+    c1.metric(f"MRR, Apr-24 ({SEG_LABEL})", fmt_money(mrr_apr24))
     c2.metric("Active subscriptions", f"{int(subs_apr24):,}")
     c3.metric(
-        "Q1-24 retention (logo)", fmt_pct(ret_row.logo_rate),
-        help=f"$ basis: {fmt_pct(ret_row.dollar_rate)}. Renewal-event basis (M-06): renewed / (renewed + churned).",
+        "Q1-24 retention (logo)", fmt_pct(ret["logo_rate"]),
+        help=f"$ basis: {fmt_pct(ret['dollar_rate'])}. Renewal-event basis (M-06): renewed / (renewed + churned).",
     )
     c4.metric(
-        "NDR, trailing 12 mo", fmt_pct(ndr_row.ndr),
+        "NDR, trailing 12 mo", fmt_pct(ndr["ndr"]),
         help=f"Trailing 6 mo: {fmt_pct(ndr_t6m)}. M-08: MRR now / MRR 12 months ago, fixed customer base.",
     )
     c5.metric(
-        "Gross margin, Apr-24", fmt_pct(gm_row.gm_pct_base),
+        "Gross margin, Apr-24", fmt_pct(gm_pct),
         help="COGS allocated by MRR share (D-07/A-03) -> uniform % across segments by design.",
     )
     st.caption(
@@ -151,9 +363,7 @@ with tab_overview:
     )
 
     st.markdown("### MRR by segment")
-    b_seg = bridge[bridge.segment.isin(["B2C", "SMB", "Enterprise"])].copy()
-    if SEG != "Total":
-        b_seg = b_seg[b_seg.segment == SEG]
+    b_seg = bridge[bridge.segment.isin(selected_segments)].copy()
     piv = b_seg.pivot(index="month_end", columns="segment", values="closing_mrr").fillna(0)
     piv = piv[[c for c in ["B2C", "SMB", "Enterprise"] if c in piv.columns]]
     fig = go.Figure()
@@ -161,6 +371,7 @@ with tab_overview:
         fig.add_bar(x=piv.index, y=piv[seg], name=seg, marker_color=SEG_COLOR[seg])
     fig.update_layout(barmode="stack", title="MRR by segment, monthly (stacked)")
     style_axes(fig, yfmt="$,.0f", showlegend=len(piv.columns) > 1)
+    month_axis(fig)
     st.plotly_chart(fig, use_container_width=True)
     st.caption(
         "How to read: each bar is total MRR at month-end; colors are fixed segment identities "
@@ -170,7 +381,7 @@ with tab_overview:
         st.dataframe(piv.reset_index().assign(month_end=lambda d: d.month_end.dt.strftime("%Y-%m")), use_container_width=True)
 
     st.markdown("### MRR bridge (new / expansion / contraction / churn)")
-    br = bridge[bridge.segment == SEG].sort_values("month_end").copy()
+    br = bridge_scoped(bridge, selected_segments, SEG_GROUP)
     fig2 = go.Figure()
     fig2.add_bar(x=br.month_end, y=br.new_mrr.fillna(0), name="New", marker_color=MOVE_COLOR["New"])
     fig2.add_bar(x=br.month_end, y=br.expansion_mrr.fillna(0), name="Expansion", marker_color=MOVE_COLOR["Expansion"])
@@ -178,8 +389,9 @@ with tab_overview:
     fig2.add_bar(x=br.month_end, y=-br.churn_mrr.fillna(0), name="Churn", marker_color=MOVE_COLOR["Churn"])
     fig2.add_trace(go.Scatter(x=br.month_end, y=br.closing_mrr, mode="lines", name="Closing MRR",
                                line=dict(color=INK, width=2)))
-    fig2.update_layout(barmode="relative", title=f"MRR bridge by month -- {segment_choice}")
+    fig2.update_layout(barmode="relative", title=f"MRR bridge by month -- {SEG_LABEL}")
     style_axes(fig2, yfmt="$,.0f")
+    month_axis(fig2)
     st.plotly_chart(fig2, use_container_width=True)
     st.caption(
         "How to read: stacked bars are the monthly $ movement (new + expansion above zero, "
@@ -198,11 +410,12 @@ with tab_overview:
 # =============================================================================
 with tab_retention:
     st.markdown("### Cohort retention heatmap")
-    cohort_group = {"Total": "Total", "B2C": "B2C", "SMB": "B2B", "Enterprise": "B2B"}[SEG]
-    if SEG in ("SMB", "Enterprise"):
+    cohort_group, cohort_exact = cohort_group_for(selected_segments)
+    if not cohort_exact:
         st.info(
-            f"Cohort retention is only tracked at B2C vs. B2B granularity in the data model "
-            f"(mart_a1_01_cohort_retention has no SMB/Enterprise split) -- showing the **B2B** cohort matrix.",
+            f"Cohort retention is only tracked at Total / B2C / B2B granularity in the data model "
+            f"(A-30: mart_a1_01_cohort_retention has no SMB/Enterprise split) -- showing the **{cohort_group}** "
+            f"cohort matrix for {SEG_LABEL}.",
             icon="ℹ️",
         )
     dollar_toggle = st.toggle("Show $ (dollar) retention instead of logo retention", value=False, key="cohort_toggle")
@@ -237,7 +450,7 @@ with tab_retention:
     window_toggle = st.toggle("Show T6M instead of T12M", value=False, key="ndr_window_toggle")
     wf_name = "mart_a3_04_t6m_waterfall_long" if window_toggle else "mart_a3_02_t12m_waterfall_long"
     wf = load_mart(wf_name)
-    wf_seg = wf[wf.segment == SEG].sort_values("step_order")
+    wf_seg = waterfall_scoped(wf, selected_segments, SEG_GROUP)
     measures = ["absolute"] + ["relative"] * (len(wf_seg) - 2) + ["total"]
     fig = go.Figure(
         go.Waterfall(
@@ -250,7 +463,7 @@ with tab_retention:
         )
     )
     window_label = "T6M" if window_toggle else "T12M"
-    fig.update_layout(title=f"NDR waterfall, {window_label} -- {segment_choice}")
+    fig.update_layout(title=f"NDR waterfall, {window_label} -- {SEG_LABEL}")
     style_axes(fig, yfmt="$,.0f", showlegend=False)
     st.plotly_chart(fig, use_container_width=True)
     ndr_val = wf_seg.loc[wf_seg.step == "End MRR", "amount"].iloc[0] / wf_seg.loc[wf_seg.step == "Start MRR", "amount"].iloc[0]
@@ -264,12 +477,12 @@ with tab_retention:
 
     st.markdown("### Churn rate by in-period engagement")
     base = load_mart("mart_a1_03_churn_indicators_base")
-    bdf = base if SEG == "Total" else base[base.segment == SEG]
+    bdf = base[base.segment.isin(selected_segments)]
     order = ["0-5", "6-10", "11-15", "16-20", "21-25", "26-28"]
     g = bdf.groupby("active_days_bucket").agg(n=("churned", "size"), churn_rate=("churned", "mean")).reindex(order).dropna()
     fig = go.Figure(go.Bar(x=g.index, y=g.churn_rate * 100, marker_color=BLUE,
                             text=[f"{v:.0f}%" for v in g.churn_rate * 100], textposition="outside"))
-    fig.update_layout(title=f"Churn rate by active days in the billing period -- {segment_choice}")
+    fig.update_layout(title=f"Churn rate by active days in the billing period -- {SEG_LABEL}")
     fig.update_xaxes(title="Active days in the period")
     style_axes(fig, showlegend=False)
     fig.update_yaxes(tickformat=".0f", ticksuffix="%", range=[0, 110])
@@ -289,10 +502,10 @@ with tab_retention:
 # =============================================================================
 with tab_unit_econ:
     ue = load_mart("mart_a2_12_unit_economics_summary")
-    ue = ue[ue.segment.isin(["B2C", "SMB", "Enterprise"])].set_index("segment")
+    ue = ue[ue.segment.isin(SEGMENT_ORDER)].set_index("segment")
     gm_apr24 = load_mart_dates("mart_a2_08_gm_monthly", ("month",))
     gm_now = gm_apr24.loc[(gm_apr24.month == pd.Timestamp("2024-04-30")) & (gm_apr24.segment == "Total"), "gm_pct_base"].iloc[0]
-    ue_view = ue if SEG == "Total" else ue.loc[[SEG]]
+    ue_view = ue.loc[selected_segments]
 
     st.markdown("### LTV : CAC by segment")
     gm_basis = st.radio(
@@ -317,6 +530,8 @@ with tab_unit_econ:
         "How to read: LTV uses the T6M-average gross margin as the conservative base case (D-17); "
         "toggling to the Apr-24 run-rate margin shows the more optimistic reading as margins keep improving. "
         "Fully loaded CAC includes marketing + sales + an allocated share of G&A (D-05)."
+        + (" LTV:CAC is a ratio, not additive -- each bar is one selected segment, never a blended combination."
+           if len(selected_segments) > 1 else "")
     )
     with st.expander("Data table"):
         st.dataframe(pd.DataFrame({"segment": ue_view.index, "ltv_cac": ratio.round(2).values}), use_container_width=True)
@@ -338,7 +553,7 @@ with tab_unit_econ:
     agg["cost_per_signup"] = agg.spend / agg.signups
     agg["cost_per_paying"] = agg.spend / agg.paying
     agg["conversion"] = agg.paying / agg.signups
-    seg_for_funnel = [SEG] if SEG != "Total" else ["B2C", "SMB", "Enterprise"]
+    seg_for_funnel = selected_segments
     fig = go.Figure()
     for seg in seg_for_funnel:
         row = agg.loc[seg]
@@ -358,16 +573,21 @@ with tab_unit_econ:
 
     st.markdown("### Sensitivity table")
     sens = load_mart("mart_a2_13_sensitivity")
-    sens_view = sens if SEG == "Total" else sens[sens.segment == SEG]
+    sens_view = sens_scoped(sens, selected_segments, SEG_GROUP)
     st.dataframe(sens_view.round(3), use_container_width=True)
-    st.caption("How to read: each row flexes one lever (CAC period, GM basis, lifetime cap) holding the rest at base case, from `mart_a2_13_sensitivity`.")
+    st.caption(
+        "How to read: each row flexes one lever (CAC period, GM basis, lifetime cap) holding the rest at base case, "
+        "from `mart_a2_13_sensitivity`."
+        + (" These are ratios, so a custom combination shows one row per selected segment rather than a blend."
+           if SEG_GROUP != "Total" and len(selected_segments) > 1 else "")
+    )
 
 # =============================================================================
 # TAB 4 -- Churn risk (May-24)
 # =============================================================================
 with tab_churn_risk:
     risk = load_mart_dates("mart_a1_06_may24_churn_risk", ("start_date", "end_date"))
-    risk_view = risk if SEG == "Total" else risk[risk.segment == SEG]
+    risk_view = risk[risk.segment.isin(selected_segments)]
 
     st.markdown("### Tier summary")
     summary = risk_view.groupby(["risk_tier", "segment"]).agg(
@@ -376,14 +596,15 @@ with tab_churn_risk:
     tier_order = ["High", "Medium", "Low"]
     summary["risk_tier"] = pd.Categorical(summary.risk_tier, categories=tier_order, ordered=True)
     summary = summary.sort_values(["risk_tier", "segment"])
+    multi = len(selected_segments) > 1
     fig = go.Figure()
-    for seg in (["B2C", "SMB", "Enterprise"] if SEG == "Total" else [SEG]):
+    for seg in selected_segments:
         d = summary[summary.segment == seg]
         d = d.set_index("risk_tier").reindex(tier_order).fillna(0)
         fig.add_bar(x=tier_order, y=d.expected_churned_mrr, name=seg, marker_color=SEG_COLOR[seg])
-    fig.update_layout(title="Expected churned MRR by risk tier" + (" x segment" if SEG == "Total" else f" -- {SEG}"),
-                       barmode="stack" if SEG == "Total" else "group")
-    style_axes(fig, yfmt="$,.0f", showlegend=SEG == "Total")
+    fig.update_layout(title="Expected churned MRR by risk tier" + (" x segment" if multi else f" -- {SEG_LABEL}"),
+                       barmode="stack" if multi else "group")
+    style_axes(fig, yfmt="$,.0f", showlegend=multi)
     st.plotly_chart(fig, use_container_width=True)
     st.caption(
         f"Population: {len(risk_view):,} subscriptions renewing in May-24 ($"
@@ -432,7 +653,7 @@ with tab_churn_risk:
     st.download_button(
         "Download filtered list (CSV)",
         data=table.to_csv(index=False).encode("utf-8"),
-        file_name=f"may24_at_risk_{segment_choice.lower()}.csv",
+        file_name=f"may24_at_risk_{seg_slug(selected_segments)}.csv",
         mime="text/csv",
     )
 
@@ -445,8 +666,8 @@ with tab_scenarios:
     proj = load_mart_dates("mart_s_02_projection_monthly", ("month_end",))
     summary = load_mart("mart_s_03_scenario_summary")
 
-    act = bridge[bridge.segment == SEG].sort_values("month_end")
-    proj_seg = proj[(proj.segment == SEG) & (proj.plan_type == "ALL")].sort_values(["scenario", "month_end"])
+    act = bridge_scoped(bridge, selected_segments, SEG_GROUP)
+    proj_seg = proj_scoped(proj, selected_segments, SEG_GROUP)
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=act.month_end, y=act.closing_mrr, name="Actual", line=dict(color=INK, width=3)))
@@ -457,7 +678,7 @@ with tab_scenarios:
         ys = pd.concat([pd.Series([last_v]), g.closing_mrr])
         fig.add_trace(go.Scatter(x=xs, y=ys, name=scen.capitalize(), line=dict(color=col, width=2.5)))
     fig.add_vline(x=last_d, line_dash="dot", line_color=GRID)
-    fig.update_layout(title=f"MRR: actual + 12-month projection -- {segment_choice}")
+    fig.update_layout(title=f"MRR: actual + 12-month projection -- {SEG_LABEL}")
     style_axes(fig, yfmt="$,.0f")
     st.plotly_chart(fig, use_container_width=True)
     st.caption(
@@ -466,20 +687,24 @@ with tab_scenarios:
         "their base case; Bear = churn stress + lower acquisition + halved expansion."
     )
     with st.expander("Data table -- scenario summary"):
-        st.dataframe(summary[summary.segment == SEG].round(1) if SEG != "Total" else summary.round(1),
+        st.dataframe(scenario_summary_scoped(summary, selected_segments, SEG_GROUP, SEG_LABEL).round(1),
                      use_container_width=True)
 
     st.markdown("### Strategy impact")
     strat = load_mart("mart_s_04_strategy_impact")
     case = st.select_slider("Case", options=["low", "base", "high"], value="base")
-    strat_view = strat[strat.case == case]
-    strat_view = strat_view if SEG == "Total" else strat_view[strat_view.segment == SEG]
+    strat_view, strat_exact = strategy_impact_scoped(strat[strat.case == case], selected_segments, SEG_GROUP)
     st.dataframe(
         strat_view[["strategy", "segment", "mrr_delta_m6", "mrr_delta_pct_m6", "mrr_delta_m12", "mrr_delta_pct_m12",
                     "ndr_delta_pp_m6", "ndr_delta_pp_m12", "effort", "time_to_impact_months"]].round(2),
         use_container_width=True,
     )
-    st.caption("How to read: 6- and 12-month MRR delta and NDR delta per strategy, isolated on top of the Base acquisition case. See `work/WP23_strategies/results.md` for the full writeup.")
+    st.caption(
+        "How to read: 6- and 12-month MRR delta and NDR delta per strategy, isolated on top of the Base acquisition "
+        "case. See `work/WP23_strategies/results.md` for the full writeup."
+        + ("" if strat_exact else " Showing one row per selected segment for this custom combination: MRR deltas "
+                                   "are additive but %/pp deltas are not, so they are not blended across segments.")
+    )
 
     st.markdown("### Interactive projection (simplified)")
     st.caption(
@@ -546,7 +771,7 @@ with tab_scenarios:
     panel = scn.add_rollups(panel)
     month_ends = pd.date_range("2024-05-31", periods=12, freq="ME")
     panel["month_end"] = panel.month_index.map(dict(enumerate(month_ends, start=1)))
-    line = panel[(panel.segment == SEG) & (panel.plan_type == "ALL")].sort_values("month_index")
+    line = panel_scoped(panel, selected_segments, SEG_GROUP)
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=act.month_end, y=act.closing_mrr, name="Actual", line=dict(color=INK, width=3)))
@@ -559,12 +784,12 @@ with tab_scenarios:
     ys = pd.concat([pd.Series([last_v]), line.closing_mrr])
     fig.add_trace(go.Scatter(x=xs, y=ys, name="Your scenario", line=dict(color="#8c2f24", width=3)))
     fig.add_vline(x=last_d, line_dash="dot", line_color=GRID)
-    fig.update_layout(title=f"Interactive projection vs. official scenarios -- {segment_choice}")
+    fig.update_layout(title=f"Interactive projection vs. official scenarios -- {SEG_LABEL}")
     style_axes(fig, yfmt="$,.0f")
     st.plotly_chart(fig, use_container_width=True)
 
     end_mrr = line.closing_mrr.iloc[-1]
-    st.metric(f"Your scenario: MRR Apr-25 ({segment_choice})", fmt_money(end_mrr),
+    st.metric(f"Your scenario: MRR Apr-25 ({SEG_LABEL})", fmt_money(end_mrr),
               delta=f"{(end_mrr / last_v - 1) * 100:+.1f}% vs. Apr-24")
     with st.expander("Data table -- your scenario, monthly"):
         st.dataframe(line[["month_end", "opening_mrr", "new_mrr", "expansion_mrr", "contraction_mrr", "churn_mrr", "closing_mrr"]]

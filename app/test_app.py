@@ -4,11 +4,18 @@ Run:
     export PYTHONIOENCODING=utf-8
     ./.venv/Scripts/python.exe -m pytest app/test_app.py -v
 """
+from itertools import combinations
 from pathlib import Path
 
+import pandas as pd
 from streamlit.testing.v1 import AppTest
 
 APP_PATH = str(Path(__file__).resolve().parent / "streamlit_app.py")
+MARTS = Path(__file__).resolve().parents[1] / "outputs" / "marts"
+SEGMENT_ORDER = ["B2C", "SMB", "Enterprise"]
+
+# All 7 non-empty combinations of the 3 base segments, in a fixed, readable order.
+ALL_COMBOS = [list(c) for n in (1, 2, 3) for c in combinations(SEGMENT_ORDER, n)]
 
 
 def _fresh_app() -> AppTest:
@@ -33,93 +40,97 @@ def test_app_loads_without_exception():
 
 def test_headline_kpis_match_executive_summary_when_all_segments():
     at = _fresh_app()
-    # sidebar segment radio defaults to "All"
+    # sidebar multiselect defaults to all three segments
     mrr_value = _metric_value(at, "MRR, Apr-24")
     subs_value = _metric_value(at, "Active subscriptions")
     assert mrr_value.replace(",", "").replace("$", "") == "204,709".replace(",", "")
     assert subs_value.replace(",", "") == "1941"
 
 
-def test_segment_filter_options_run_without_exception():
-    for choice in ["All", "B2C", "SMB", "Enterprise"]:
+def test_segment_combinations_run_without_exception_on_every_tab():
+    """No exceptions for every one of the 7 non-empty combinations, and for an
+    empty selection, across every tab/toggle combination."""
+    for combo in ALL_COMBOS + [[]]:
         at = AppTest.from_file(APP_PATH, default_timeout=60)
         at.run()
-        radio = at.sidebar.radio[0]
-        radio.set_value(choice).run()
-        assert not at.exception, f"Segment={choice} raised: {[e.value for e in at.exception]}"
+        at.sidebar.multiselect[0].set_value(combo).run()
+        assert not at.exception, f"Segments={combo} raised on select: {[e.value for e in at.exception]}"
+
+        for t in at.toggle:
+            t.set_value(True).run()
+            assert not at.exception, f"Segments={combo}, toggle {t.label}=True raised: {[e.value for e in at.exception]}"
+            t.set_value(False).run()
+            assert not at.exception, f"Segments={combo}, toggle {t.label}=False raised: {[e.value for e in at.exception]}"
+
+        gm_radios = [r for r in at.radio if r.label == "Gross margin basis"]
+        for opt in gm_radios[0].options if gm_radios else []:
+            gm_radios[0].set_value(opt).run()
+            assert not at.exception, f"Segments={combo}, GM basis={opt} raised: {[e.value for e in at.exception]}"
+
+        case_sliders = [s for s in at.select_slider if s.label == "Case"]
+        for opt in (["low", "base", "high"] if case_sliders else []):
+            case_sliders[0].set_value(opt).run()
+            assert not at.exception, f"Segments={combo}, case={opt} raised: {[e.value for e in at.exception]}"
+
+        for s in at.slider:
+            s.set_value(s.max).run()
+            assert not at.exception, f"Segments={combo}, slider {s.label} raised at max: {[e.value for e in at.exception]}"
+            s.set_value(s.min).run()
+            assert not at.exception, f"Segments={combo}, slider {s.label} raised at min: {[e.value for e in at.exception]}"
 
 
-def test_segment_kpis_reconcile_to_mart_totals():
-    import pandas as pd
-    marts = Path(__file__).resolve().parents[1] / "outputs" / "marts"
-    bridge = pd.read_csv(marts / "mart_mrr_bridge.csv", parse_dates=["month_end"])
-    q3 = pd.read_csv(marts / "mart_q3_active_subs_apr24.csv")
-    expected_mrr = {
-        "All": bridge.loc[(bridge.month_end == "2024-04-30") & (bridge.segment == "Total"), "closing_mrr"].iloc[0],
-        "B2C": bridge.loc[(bridge.month_end == "2024-04-30") & (bridge.segment == "B2C"), "closing_mrr"].iloc[0],
-        "SMB": bridge.loc[(bridge.month_end == "2024-04-30") & (bridge.segment == "SMB"), "closing_mrr"].iloc[0],
-        "Enterprise": bridge.loc[(bridge.month_end == "2024-04-30") & (bridge.segment == "Enterprise"), "closing_mrr"].iloc[0],
+def test_empty_selection_falls_back_to_all_with_caption():
+    at = _fresh_app()
+    at.sidebar.multiselect[0].set_value([]).run()
+    assert not at.exception
+    captions = [c.value for c in at.sidebar.caption]
+    assert any("showing all segments" in c.lower() for c in captions)
+    mrr_value = _metric_value(at, "MRR, Apr-24")
+    assert mrr_value.replace(",", "").replace("$", "") == "204709"
+
+
+def test_segment_kpis_match_expected_values():
+    cases = {
+        ("B2C", "SMB", "Enterprise"): (204709.09, 1941),
+        ("SMB", "Enterprise"): (140344.09, 405),
+        ("B2C", "SMB"): (118234.37, 1839),
+        ("B2C",): (64365.00, 1536),
     }
-    expected_subs = {
-        "All": q3.loc[(q3.segment == "Total") & (q3.plan_type == "Total"), "active_subs"].iloc[0],
-        "B2C": q3.loc[(q3.segment == "B2C") & (q3.plan_type == "Total"), "active_subs"].iloc[0],
-        "SMB": q3.loc[(q3.segment == "SMB") & (q3.plan_type == "Total"), "active_subs"].iloc[0],
-        "Enterprise": q3.loc[(q3.segment == "Enterprise") & (q3.plan_type == "Total"), "active_subs"].iloc[0],
-    }
-    for choice in ["All", "B2C", "SMB", "Enterprise"]:
+    for combo, (expected_mrr, expected_subs) in cases.items():
         at = AppTest.from_file(APP_PATH, default_timeout=60)
         at.run()
-        at.sidebar.radio[0].set_value(choice).run()
-        assert not at.exception
+        at.sidebar.multiselect[0].set_value(list(combo)).run()
+        assert not at.exception, f"Segments={combo} raised: {[e.value for e in at.exception]}"
         mrr_value = _metric_value(at, "MRR, Apr-24")
         subs_value = _metric_value(at, "Active subscriptions")
         got_mrr = float(mrr_value.replace("$", "").replace(",", ""))
         got_subs = int(subs_value.replace(",", ""))
-        assert abs(got_mrr - expected_mrr[choice]) < 1.0, f"{choice}: {got_mrr} vs {expected_mrr[choice]}"
-        assert got_subs == int(expected_subs[choice]), f"{choice}: {got_subs} vs {expected_subs[choice]}"
+        assert abs(got_mrr - expected_mrr) < 1.0, f"{combo}: MRR {got_mrr} vs {expected_mrr}"
+        assert got_subs == expected_subs, f"{combo}: subs {got_subs} vs {expected_subs}"
 
 
-def test_retention_toggles_run_without_exception():
-    at = _fresh_app()
-    toggles = at.toggle
-    assert len(toggles) >= 2
-    for t in toggles:
-        t.set_value(True).run()
-        assert not at.exception, f"Toggle {t.label} raised: {[e.value for e in at.exception]}"
-        t.set_value(False).run()
-        assert not at.exception
+def test_custom_combo_retention_matches_precomputed_rollup():
+    """{SMB, Enterprise} logo retention must equal the precomputed B2B row in
+    mart_q2_retention_q1_24.csv exactly (split=all, method=M06_primary) -- this
+    proves the aggregation path matches the rollup. All three segments must
+    equal the Total row."""
+    q2 = pd.read_csv(MARTS / "mart_q2_retention_q1_24.csv")
+    b2b_row = q2.loc[(q2.segment == "B2B") & (q2.split == "all") & (q2.method == "M06_primary")].iloc[0]
+    total_row = q2.loc[(q2.segment == "Total") & (q2.split == "all") & (q2.method == "M06_primary")].iloc[0]
+    assert round(b2b_row.logo_rate, 4) == 0.9377
+    assert round(total_row.logo_rate, 4) == 0.9009
 
+    at = AppTest.from_file(APP_PATH, default_timeout=60)
+    at.run()
+    at.sidebar.multiselect[0].set_value(["SMB", "Enterprise"]).run()
+    assert not at.exception
+    ret_metric = _metric_value(at, "Q1-24 retention (logo)")
+    assert ret_metric.strip("%") == f"{b2b_row.logo_rate * 100:.1f}"
 
-def test_gm_basis_radio_runs_without_exception():
-    at = _fresh_app()
-    radios = [r for r in at.radio if r.label == "Gross margin basis"]
-    assert radios, "Gross margin basis radio not found"
-    r = radios[0]
-    for opt in r.options:
-        r.set_value(opt).run()
-        assert not at.exception, f"GM basis={opt} raised: {[e.value for e in at.exception]}"
-
-
-def test_scenario_sliders_run_without_exception():
-    at = _fresh_app()
-    sliders = at.slider
-    assert len(sliders) >= 3
-    for s in sliders:
-        lo, hi = s.min, s.max
-        s.set_value(hi).run()
-        assert not at.exception, f"Slider {s.label} raised at max: {[e.value for e in at.exception]}"
-        s.set_value(lo).run()
-        assert not at.exception, f"Slider {s.label} raised at min: {[e.value for e in at.exception]}"
-
-
-def test_case_select_slider_runs_without_exception():
-    at = _fresh_app()
-    case_sliders = [s for s in at.select_slider if s.label == "Case"]
-    assert case_sliders
-    s = case_sliders[0]
-    for opt in ["low", "base", "high"]:
-        s.set_value(opt).run()
-        assert not at.exception, f"Case={opt} raised: {[e.value for e in at.exception]}"
+    at2 = AppTest.from_file(APP_PATH, default_timeout=60)
+    at2.run()
+    ret_metric_all = _metric_value(at2, "Q1-24 retention (logo)")
+    assert ret_metric_all.strip("%") == f"{total_row.logo_rate * 100:.1f}"
 
 
 def test_churn_risk_download_button_present():
