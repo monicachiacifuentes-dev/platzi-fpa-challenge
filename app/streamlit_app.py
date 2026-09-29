@@ -424,24 +424,29 @@ with tab_retention:
     metric_col = "dollar_retention" if dollar_toggle else "logo_retention"
     heat = cg.pivot(index="cohort_month", columns="month_k", values=metric_col)
     heat = heat.sort_index()
+    # Fixed 30-100% scale (observed range is 36-103%) so shades are comparable across segments and toggles;
+    # values above 100% (B2B dollar expansion) take the darkest shade.
     fig = go.Figure(
         data=go.Heatmap(
             z=heat.values * 100,
             x=[f"M{k}" for k in heat.columns],
-            y=heat.index,
-            colorscale=[[0, "#eef4fc"], [0.5, BLUE], [1, BLUE_DARK]],
-            zmin=0, zmax=100,
-            colorbar=dict(title="%", ticksuffix="%"),
+            y=pd.to_datetime(heat.index).strftime("%b %Y"),
+            colorscale=[[0, "#f3f8fe"], [0.35, BLUE_LIGHT], [0.7, BLUE], [1, BLUE_DARK]],
+            zmin=30, zmax=100,
+            texttemplate="%{z:.0f}", textfont=dict(size=10),
+            xgap=1, ygap=1,
+            colorbar=dict(title="%", ticksuffix="%", tickvals=[30, 50, 70, 90, 100]),
             hovertemplate="Cohort %{y}<br>Month %{x}<br>Retention %{z:.1f}%<extra></extra>",
         )
     )
     fig.update_layout(title=f"{'Dollar' if dollar_toggle else 'Logo'} retention by signup cohort -- {cohort_group}",
-                       yaxis=dict(autorange="reversed"))
+                       yaxis=dict(autorange="reversed", type="category"), height=560)
     style_axes(fig, showlegend=False)
+    fig.update_yaxes(showgrid=False)
     st.plotly_chart(fig, use_container_width=True)
     st.caption(
         "How to read: each row is a signup-month cohort; each column is months since signup. "
-        "Darker = more of the cohort's logos (or $) retained. Blank cells = cohort hasn't reached that age yet."
+        "Cell labels are % retained; darker = more retained (scale 30-100%). Blank cells = cohort hasn't reached that age yet."
     )
     with st.expander("Data table"):
         st.dataframe((heat * 100).round(1), use_container_width=True)
