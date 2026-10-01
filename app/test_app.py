@@ -156,3 +156,15 @@ def test_payback_table_follows_margin_basis_and_matches_summary():
     payback = table["Payback, months (6-mo CAC)"]
     # Executive summary: SMB payback ~10 months, Enterprise ~12 at the Apr-24 41% margin
     assert payback.loc["SMB"] == 10.4 and payback.loc["Enterprise"] == 12.2
+
+
+def test_sensitivity_table_is_per_segment_with_readable_labels():
+    at = _fresh_app()
+    table = next(df.value for df in at.dataframe if "Δ LTV:CAC vs base" in df.value.columns)
+    assert set(table["Segment"]) == set(SEGMENT_ORDER)  # never the Total roll-up
+    assert table["Assumption tested"].notna().all() and table["Scenario"].notna().all()
+    base = table[(table["Segment"] == "SMB") & (table["Scenario"] == "Last 6 months ★ base")]
+    assert base["LTV:CAC"].item() == "2.92x" and base["Δ LTV:CAC vs base"].item() == "—"
+    # B2C with CS/infra allocated by customers has negative margin: payback must read "Never", not a negative number
+    neg = table[(table["Segment"] == "B2C") & (table["Scenario"] == "CS & infrastructure by number of customers")]
+    assert neg["Payback (months)"].item().startswith("Never")

@@ -216,14 +216,38 @@ def cohort_group_for(selected: list[str]) -> tuple[str, bool]:
     return "Total", False  # custom combos that include B2C, e.g. {B2C, SMB}: no valid subset exists
 
 
-def sens_scoped(sens: pd.DataFrame, selected: list[str], group: str | None) -> pd.DataFrame:
-    """Sensitivity results are ratios (CAC, GM%, LTV:CAC, payback) and are not
-    additive across segments, so there is no B2B or custom-combo rollup here:
-    the precomputed Total row when all three segments are selected, otherwise
-    one row per selected base segment."""
-    if group == "Total":
-        return sens[sens.segment == "Total"].copy()
-    return sens[sens.segment.isin(selected)].copy()
+# Plain-language names for mart_a2_13_sensitivity; dict order = display order (CAC side, then LTV side).
+SENS_LEVER_LABEL = {
+    "cac_period": "CAC time window",
+    "gna_pct_allocated": "Share of G&A charged to acquisition",
+    "gna_split_method": "How G&A is split across segments",
+    "gm_allocation": "How delivery costs are split across segments",
+    "lifetime_cap": "Customer lifetime cap",
+    "retention_curve": "Retention curve used for lifetime",
+    "gm_x_lifetime_grid": "Combined: cost split x lifetime cap",
+}
+SENS_SCENARIO_LABEL = {
+    "T6M (base)": "Last 6 months ★ base",
+    "T16M": "All 16 months",
+    "0% of G&A (T6M)": "0% of G&A",
+    "25% of G&A (T6M)": "25% of G&A",
+    "50% of G&A (T6M)": "50% of G&A (base ≈ 51%)",
+    "base_by_marketing_share (T6M)": "By marketing spend ★ base",
+    "sens_by_customer_share (T6M)": "By number of new customers",
+    "base (all COGS by MRR share, neutral)": "All costs by MRR share ★ base",
+    "downside sensitivity (CS/Infra by customers)": "CS & infrastructure by number of customers",
+    "36 months": "36 months",
+    "60 months (base)": "60 months ★ base",
+    "uncapped (reference only)": "No cap (reference only)",
+    "base ($ / dollar retention curve)": "Dollar retention ★ base",
+    "sensitivity (logo survival curve)": "Customer (logo) retention",
+    "base GM x 36mo cap": "By MRR share x 36 months",
+    "base GM x 60mo cap": "By MRR share x 60 months ★ base",
+    "base GM x uncapped": "By MRR share x no cap",
+    "downside GM x 36mo cap": "CS & infra by customers x 36 months",
+    "downside GM x 60mo cap": "CS & infra by customers x 60 months",
+    "downside GM x uncapped": "CS & infra by customers x no cap",
+}
 
 
 PROJ_COLS = ["opening_customers", "opening_mrr", "new_customers", "new_mrr", "expansion_mrr", "contraction_mrr",
@@ -610,15 +634,34 @@ with tab_unit_econ:
     with st.expander("Data table"):
         st.dataframe(agg.round(2), use_container_width=True)
 
-    st.markdown("### Sensitivity table")
+    st.markdown("### Sensitivity table: how much do the assumptions move LTV:CAC?")
     sens = load_mart("mart_a2_13_sensitivity")
-    sens_view = sens_scoped(sens, selected_segments, SEG_GROUP)
-    st.dataframe(sens_view.round(3), use_container_width=True)
+    # Per segment, never Total: reallocating costs between segments nets out at Total, hiding the effect.
+    sv = sens[sens.segment.isin(selected_segments)].copy()
+    sv["Assumption tested"] = sv.lever.map(SENS_LEVER_LABEL)
+    sv["Scenario"] = sv.scenario.map(SENS_SCENARIO_LABEL).fillna(sv.scenario)
+    base = sv[(sv.lever == "cac_period") & (sv.scenario == "T6M (base)")].set_index("segment").ltv_cac
+    sv["Δ LTV:CAC vs base"] = (sv.ltv_cac - sv.segment.map(base)).map(lambda d: "—" if abs(d) < 0.005 else f"{d:+.2f}x")
+    sv["Payback (months)"] = [f"{p:.1f}" if gm > 0 else "Never (GM < 0)" for p, gm in zip(sv.cac_payback_months, sv.gm_pct)]
+    sv = sv.assign(
+        _lever=sv.lever.map({k: i for i, k in enumerate(SENS_LEVER_LABEL)}),
+        _seg=sv.segment.map({s: i for i, s in enumerate(SEGMENT_ORDER)}),
+        CAC=sv.cac.map("${:,.0f}".format), **{"Gross margin": sv.gm_pct.map("{:.1%}".format)},
+        **{"Lifetime (months)": sv.lifetime_months.round(1)}, LTV=sv.ltv.map(lambda v: f"-${-v:,.0f}" if v < 0 else f"${v:,.0f}"),
+        **{"LTV:CAC": sv.ltv_cac.map("{:.2f}x".format)},
+    ).sort_values(["_seg", "_lever"], kind="stable")
+    lever_pick = st.selectbox("Assumption", ["All assumptions"] + list(SENS_LEVER_LABEL.values()), key="sens_lever")
+    if lever_pick != "All assumptions":
+        sv = sv[sv["Assumption tested"] == lever_pick]
+    cols = ["segment", "Assumption tested", "Scenario", "CAC", "Gross margin", "Lifetime (months)", "LTV",
+            "LTV:CAC", "Δ LTV:CAC vs base", "Payback (months)"]
+    st.dataframe(sv[cols].rename(columns={"segment": "Segment"}), use_container_width=True, hide_index=True)
     st.caption(
-        "How to read: each row flexes one lever (CAC period, GM basis, lifetime cap) holding the rest at base case, "
-        "from `mart_a2_13_sensitivity`."
-        + (" These are ratios, so a custom combination shows one row per selected segment rather than a blend."
-           if SEG_GROUP != "Total" and len(selected_segments) > 1 else "")
+        "How to read: each row changes ONE assumption and keeps the rest at the base case "
+        "(6-month CAC, 29.3% margin split by MRR share, 60-month lifetime on the dollar-retention curve). "
+        "'Δ LTV:CAC vs base' is the change versus that base; '—' = no change. The G&A share base is ~51% "
+        "(marketing's share of total spend), so the 50% row is almost identical to base. "
+        "Payback = CAC / (ARPA x margin) and does not depend on lifetime."
     )
 
 # =============================================================================
