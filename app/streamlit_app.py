@@ -579,20 +579,33 @@ with tab_unit_econ:
     agg["cost_per_signup"] = agg.spend / agg.signups
     agg["cost_per_paying"] = agg.spend / agg.paying
     agg["conversion"] = agg.paying / agg.signups
-    seg_for_funnel = selected_segments
-    fig = go.Figure()
-    for seg in seg_for_funnel:
+    st.markdown("**Sign-ups → paying customers, trailing 6 months** (each segment on its own scale)")
+    # One small funnel per segment: on a shared axis B2C (~10k sign-ups) flattens SMB and Enterprise to slivers.
+    for seg, col in zip(selected_segments, st.columns(len(selected_segments))):
         row = agg.loc[seg]
-        fig.add_trace(go.Funnel(
-            name=seg, y=["Sign-ups", "Paying customers"], x=[row.signups, row.paying],
-            marker=dict(color=SEG_COLOR[seg]), textinfo="value+percent initial",
+        fig = go.Figure(go.Funnel(
+            y=["Sign-ups", "Paying"], x=[row.signups, row.paying],
+            marker=dict(color=SEG_COLOR[seg]), connector=dict(fillcolor=GRID),
+            texttemplate="%{value:,.0f}", textposition="auto",
         ))
-    fig.update_layout(title="Sign-ups -> paying customers, trailing 6 months")
-    style_axes(fig, showlegend=len(seg_for_funnel) > 1)
-    st.plotly_chart(fig, use_container_width=True)
+        fig.update_layout(title=seg, height=260)
+        style_axes(fig, showlegend=False)
+        fig.update_layout(hovermode="closest", margin=dict(l=10, r=10, t=40, b=10))
+        with col:
+            st.plotly_chart(fig, use_container_width=True)
+            st.markdown(
+                f"**{row.conversion:.0%}** sign-up → paying  \n"
+                # "\\$" keeps Streamlit markdown from reading a pair of $ signs as LaTeX
+                f"**\\${row.cost_per_signup:,.0f}** marketing cost per sign-up  \n"
+                f"**\\${row.cost_per_paying:,.0f}** marketing cost per paying customer"
+            )
+            if row.conversion > 1:
+                st.caption("More paying customers than marketing sign-ups: marketing likely counts deals, not "
+                           "individual users, for this segment (D-06).")
     st.caption(
         "How to read: marketing counts sign-ups, not paying customers (D-06). Cost per sign-up looks cheap; "
-        "cost per **paying** customer (= fully loaded CAC's numerator) is the number that matters for LTV:CAC."
+        "cost per **paying** customer is the number that matters. Adding the allocated G&A to it gives the "
+        "fully loaded CAC used in LTV:CAC."
     )
     with st.expander("Data table"):
         st.dataframe(agg.round(2), use_container_width=True)
