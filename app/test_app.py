@@ -168,3 +168,11 @@ def test_sensitivity_table_is_per_segment_with_readable_labels():
     # B2C with CS/infra allocated by customers has negative margin: payback must read "Never", not a negative number
     neg = table[(table["Segment"] == "B2C") & (table["Scenario"] == "CS & infrastructure by number of customers")]
     assert neg["Payback (months)"].item().startswith("Never")
+
+
+def test_strategy_table_uses_summary_numbering_and_readable_columns():
+    at = _fresh_app()
+    table = next(df.value for df in at.dataframe if "MRR gain, month 6" in df.value.columns)
+    assert list(table["Strategy"]) == ["1. Mid-cycle low-usage alert + save", "2. B2B expansion & renewal playbook",
+                                       "3. B2C monthly → annual offer"]
+    assert table["MRR gain, month 6"].iloc[0] == "+$7,690"  # executive summary: +$7.7k

@@ -776,17 +776,37 @@ with tab_scenarios:
     strat = load_mart("mart_s_04_strategy_impact")
     case = st.select_slider("Case", options=["low", "base", "high"], value="base")
     strat_view, strat_exact = strategy_impact_scoped(strat[strat.case == case], selected_segments, SEG_GROUP)
-    st.dataframe(
-        strat_view[["strategy", "segment", "mrr_delta_m6", "mrr_delta_pct_m6", "mrr_delta_m12", "mrr_delta_pct_m12",
-                    "ndr_delta_pp_m6", "ndr_delta_pp_m12", "effort", "time_to_impact_months"]].round(2),
-        use_container_width=True,
-    )
+    # Numbered as in the executive summary (ranked by effort vs impact), not by the mart's internal ids.
+    strat_label = {"strategy_1_engagement_alert": "1. Mid-cycle low-usage alert + save",
+                   "strategy_3_b2b_playbook": "2. B2B expansion & renewal playbook",
+                   "strategy_2_annual_migration": "3. B2C monthly → annual offer"}
+    sv = strat_view.assign(_order=strat_view.strategy.map(list(strat_label).index)).sort_values(["_order", "segment"])
+    money = lambda v: f"-${-v:,.0f}" if v < 0 else f"+${v:,.0f}"
+    strat_table = pd.DataFrame({
+        "Strategy": sv.strategy.map(strat_label),
+        "Segment": sv.segment,
+        "MRR gain, month 6": sv.mrr_delta_m6.map(money),
+        "MRR gain, month 6 (%)": sv.mrr_delta_pct_m6.map("{:+.1f}%".format),
+        "MRR gain, month 12": sv.mrr_delta_m12.map(money),
+        "MRR gain, month 12 (%)": sv.mrr_delta_pct_m12.map("{:+.1f}%".format),
+        "NDR change, month 6": sv.ndr_delta_pp_m6.map("{:+.1f} pp".format),
+        "NDR change, month 12": sv.ndr_delta_pp_m12.map("{:+.1f} pp".format),
+        "Effort": sv.effort,
+        "Months to first impact": sv.time_to_impact_months,
+    })
+    st.dataframe(strat_table, use_container_width=True, hide_index=True)
     st.caption(
-        "How to read: 6- and 12-month MRR delta and NDR delta per strategy, isolated on top of the Base acquisition "
-        "case. See `work/WP23_strategies/results.md` for the full writeup."
+        "How to read: extra MRR and NDR each strategy adds on its own, on top of the Base scenario. "
+        "'%' is versus the Base scenario's projected MRR at that month (not today's MRR); 'pp' = percentage points of NDR. "
+        "Use the Case slider for the low / base / high assumption (e.g. a 10% / 20% / 30% save rate for strategy 1). "
+        "See `work/WP23_strategies/results.md` for the full writeup."
         + ("" if strat_exact else " Showing one row per selected segment for this custom combination: MRR deltas "
                                    "are additive but %/pp deltas are not, so they are not blended across segments.")
     )
+    with st.expander("What to track and main risk, per strategy"):
+        kr = sv.drop_duplicates("strategy")
+        st.dataframe(pd.DataFrame({"Strategy": kr.strategy.map(strat_label), "KPI to track": kr.kpi, "Main risk": kr.risk}),
+                     use_container_width=True, hide_index=True)
 
     st.markdown("### Interactive projection (simplified)")
     st.caption(
