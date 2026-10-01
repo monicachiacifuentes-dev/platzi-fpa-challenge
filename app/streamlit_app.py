@@ -509,31 +509,35 @@ with tab_unit_econ:
     ue = load_mart("mart_a2_12_unit_economics_summary")
     ue = ue[ue.segment.isin(SEGMENT_ORDER)].set_index("segment")
     gm_apr24 = load_mart_dates("mart_a2_08_gm_monthly", ("month",))
-    gm_now = gm_apr24.loc[(gm_apr24.month == pd.Timestamp("2024-04-30")) & (gm_apr24.segment == "Total"), "gm_pct_base"].iloc[0]
+    gm_total = gm_apr24[gm_apr24.segment == "Total"].sort_values("month")
+    gm_now = gm_total.gm_pct_base.iloc[-1]
+    gm_t3m = gm_total.gm_pct_base.tail(3).mean()
     ue_view = ue.loc[selected_segments]
 
     st.markdown("### LTV : CAC by segment")
-    gm_basis = st.radio(
-        "Gross margin basis", ["Trailing 6 months (29.3%, base/conservative)", "Apr-24 run-rate (40.9%, D-17 sensitivity)"],
-        horizontal=True, key="gm_basis",
-    )
-    use_runrate = gm_basis.startswith("Apr-24")
     gm_t6m = ue.gm_pct_t6m_base.iloc[0]
-    ratio = ue_view.ltv_base / ue_view.cac_fully_loaded_t6m
-    if use_runrate:
-        ratio = ratio * (gm_now / gm_t6m)
+    # Only the gross-margin input changes; ARPA, lifetime and CAC stay on their T6M basis.
+    gm_options = {
+        f"Trailing 6 months ({gm_t6m:.1%}, base/conservative)": ("trailing 6mo", gm_t6m),
+        f"Trailing 3 months ({gm_t3m:.1%})": ("trailing 3mo", gm_t3m),
+        f"Apr-24 run-rate ({gm_now:.1%}, D-17 sensitivity)": ("Apr-24 run-rate", gm_now),
+    }
+    gm_basis = st.radio("Gross margin basis", list(gm_options), horizontal=True, key="gm_basis")
+    gm_label, gm_used = gm_options[gm_basis]
+    ratio = ue_view.ltv_base / ue_view.cac_fully_loaded_t6m * (gm_used / gm_t6m)
     fig = go.Figure()
     for seg in ue_view.index:
         fig.add_bar(x=[seg], y=[ratio.loc[seg]], name=seg, marker_color=SEG_COLOR[seg], showlegend=False,
                     text=f"{ratio.loc[seg]:.1f}x", textposition="outside")
     fig.add_hline(y=3, line_dash="dash", line_color=INK2, annotation_text="3x benchmark", annotation_position="top left")
-    fig.update_layout(title=f"LTV : CAC ({'Apr-24 run-rate' if use_runrate else 'trailing 6mo'} gross margin)")
+    fig.update_layout(title=f"LTV : CAC ({gm_label} gross margin)")
     style_axes(fig, showlegend=False)
     fig.update_yaxes(ticksuffix="x")
     st.plotly_chart(fig, use_container_width=True)
     st.caption(
         "How to read: LTV uses the T6M-average gross margin as the conservative base case (D-17); "
-        "toggling to the Apr-24 run-rate margin shows the more optimistic reading as margins keep improving. "
+        "the trailing-3-month and Apr-24 run-rate margins show progressively more optimistic readings as margins keep "
+        "improving. Only the margin changes; ARPA, lifetime and CAC stay on their T6M basis. "
         "Fully loaded CAC includes marketing + sales + an allocated share of G&A (D-05)."
         + (" LTV:CAC is a ratio, not additive -- each bar is one selected segment, never a blended combination."
            if len(selected_segments) > 1 else "")

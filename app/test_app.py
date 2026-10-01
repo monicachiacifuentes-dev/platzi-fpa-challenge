@@ -136,3 +136,12 @@ def test_custom_combo_retention_matches_precomputed_rollup():
 def test_churn_risk_download_button_present():
     at = _fresh_app()
     assert len(at.get("download_button")) >= 1
+
+
+def test_ltv_cac_margin_basis_has_three_options_and_runs():
+    at = _fresh_app()
+    radio = at.radio(key="gm_basis")
+    assert [o.split(" (")[0] for o in radio.options] == ["Trailing 6 months", "Trailing 3 months", "Apr-24 run-rate"]
+    for opt in radio.options:
+        at.radio(key="gm_basis").set_value(opt).run()
+        assert not at.exception, f"App raised for margin basis {opt!r}: {[e.value for e in at.exception]}"
