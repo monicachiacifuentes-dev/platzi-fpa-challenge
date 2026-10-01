@@ -145,3 +145,14 @@ def test_ltv_cac_margin_basis_has_three_options_and_runs():
     for opt in radio.options:
         at.radio(key="gm_basis").set_value(opt).run()
         assert not at.exception, f"App raised for margin basis {opt!r}: {[e.value for e in at.exception]}"
+
+
+def test_payback_table_follows_margin_basis_and_matches_summary():
+    at = _fresh_app()
+    radio = at.radio(key="gm_basis")
+    apr = next(o for o in radio.options if o.startswith("Apr-24"))
+    at.radio(key="gm_basis").set_value(apr).run()
+    table = next(df.value for df in at.dataframe if "Payback, months (6-mo CAC)" in df.value.columns)
+    payback = table["Payback, months (6-mo CAC)"]
+    # Executive summary: SMB payback ~10 months, Enterprise ~12 at the Apr-24 41% margin
+    assert payback.loc["SMB"] == 10.4 and payback.loc["Enterprise"] == 12.2

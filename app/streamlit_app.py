@@ -546,10 +546,27 @@ with tab_unit_econ:
         st.dataframe(pd.DataFrame({"segment": ue_view.index, "ltv_cac": ratio.round(2).values}), use_container_width=True)
 
     st.markdown("### CAC and payback")
-    pay_cols = ["cac_fully_loaded_t6m", "cac_fully_loaded_t16m", "cac_payback_months_t6m", "cac_payback_months_t16m",
-                "ltv_cac_t6m", "ltv_cac_t16m", "benchmark_ltv_cac_pass_ge3", "benchmark_payback_pass"]
-    st.dataframe(ue_view[pay_cols].round(2), use_container_width=True)
-    st.caption("How to read: T6M = fully loaded CAC / payback calibrated on the last 6 months; T16M = the whole 16-month window. Benchmarks: LTV:CAC >= 3x, payback < 12 months.")
+    # Same margin as the chart above: payback = CAC / (ARPA x GM); LTV scales linearly with GM.
+    gm_profit = ue_view.arpa_t6m_avg * gm_used
+    ltv = ue_view.ltv_base * (gm_used / gm_t6m)
+    pay = pd.DataFrame({
+        "CAC (6 mo)": ue_view.cac_fully_loaded_t6m.map("${:,.0f}".format),
+        "CAC (16 mo)": ue_view.cac_fully_loaded_t16m.map("${:,.0f}".format),
+        "Payback, months (6-mo CAC)": (ue_view.cac_fully_loaded_t6m / gm_profit).round(1),
+        "Payback, months (16-mo CAC)": (ue_view.cac_fully_loaded_t16m / gm_profit).round(1),
+        "LTV:CAC (6-mo CAC)": (ltv / ue_view.cac_fully_loaded_t6m).map("{:.2f}x".format),
+        "LTV:CAC (16-mo CAC)": (ltv / ue_view.cac_fully_loaded_t16m).map("{:.2f}x".format),
+    })
+    pay["LTV:CAC ≥ 3x?"] = (ltv / ue_view.cac_fully_loaded_t6m >= 3).map({True: "✅ Yes", False: "❌ No"})
+    pay["Payback < 12 mo?"] = (pay["Payback, months (6-mo CAC)"] < 12).map({True: "✅ Yes", False: "❌ No"})
+    st.dataframe(pay.rename_axis("Segment"), use_container_width=True)
+    st.caption(
+        f"How to read: gross margin = {gm_label} ({gm_used:.1%}), same as the chart above. "
+        "'6-mo CAC' = fully loaded CAC (marketing + sales + allocated G&A) on Nov-23 to Apr-24, the base case; "
+        "'16-mo CAC' = the whole Jan-23 to Apr-24 window, higher because early acquisition was costlier. "
+        "Payback = CAC / (monthly ARPA x gross margin), before churn. Benchmarks use the 6-mo CAC: "
+        "LTV:CAC >= 3x, payback < 12 months."
+    )
 
     st.markdown("### Acquisition funnel")
     funnel = load_mart_dates("mart_a2_03_funnel_segment_monthly", ("month",))
